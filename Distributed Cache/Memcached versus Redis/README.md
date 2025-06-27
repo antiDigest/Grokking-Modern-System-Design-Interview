@@ -12,7 +12,7 @@ Memcached has a client and server component, each of which is necessary to run t
 
 Due to the disconnected design, Memcached is able to achieve almost a deterministic query speed (O(1)) serving millions of keys per second using a high-end system. Therefore, Memcached offers a high throughput and low latency.
  
-[Design of a typical Memcached cluster](./memcached.jpg)
+![Design of a typical Memcached cluster](./memcached.jpg)
  
 As evident from the design of a typical Memcached cluster, Memcached scales well horizontally. The client process is usually maintained with the service host that also interacts with the authoritative storage (back-end database).
 
@@ -27,13 +27,13 @@ Some of the simple commands of Memcached include the following:
 ```
 get <key_1> <key_2> <key_3> ...
 set <key> <value> ...
-delete <key>[<time>] ...
+delete <key>![<time>] ...
 ```
 At Facebook, Memcached sits between the MySQL database and the web layer that uses roughly 28 TeraBytes of RAM spread across more than 800 servers (as of 2013, Facebook and Memcached - Tech Talk). By an approximation of least recently used (LRU) eviction policy, Facebook is able to achieve a cache hit rate of 95%.
 
 The following illustration shows the high-level design of caching architecture at Facebook. As we can see, out of a total of 50 million requests made by the web layer, only 2.5 million requests reach the persistence layer.
 
-[Facebook using a layer of Memcached sitting between persistence and web layer](./fb.jpg)
+![Facebook using a layer of Memcached sitting between persistence and web layer](./fb.jpg)
 
 
 ## Redis
@@ -44,14 +44,14 @@ Redis is a data structure store that can be used as a cache, database, and messa
 - Message broker: Asynchronous communication is a vital requirement in distributed systems. Redis can translate millions of messages per second from one component to another in a system.
 Redis provides a built-in replication mechanism, automatic failover, and different levels of persistence. Apart from that, Redis understands Memcached protocols, and therefore, solutions using Memcached can translate to Redis. A particularly good aspect of Redis is that it separates data access from cluster management. It decouples data and controls the plane. This results in increased reliability and performance. Finally, Redis doesn’t provide strong consistency due to the use of asynchronous replication.
 
-[Redis structure supporting automatic failover using redundant secondary replicas](./redis_replicas.jpg)
+![Redis structure supporting automatic failover using redundant secondary replicas](./redis_replicas.jpg)
 
 ### Redis cluster
 Redis has built-in cluster support that provides high availability. This is called Redis Sentinel. A cluster has one or more Redis databases that are queried using multithreaded proxies. Redis clusters perform automatic sharding where each shard has primary and secondary nodes. However, the number of shards in a database or node is configurable to meet the expectations and requirements of an application.
 
 Each Redis cluster is maintained by a cluster manager whose job is to detect failures and perform automatic failovers. The management layer consists of monitoring and configuration software components.
 
-[Architecture of Redis clusters](./redis_clusters.jpg)
+![Architecture of Redis clusters](./redis_clusters.jpg)
 
 ### Pipelining in Redis
 Since Redis uses a client-server model, each request blocks the client until the server receives the result. A Redis client looking to send subsequent requests will have to wait for the server to respond to the first request. So, the overall latency will be higher.
@@ -62,7 +62,7 @@ Redis uses pipelining to speed up the process. Pipelining is the process of comb
 The round-trip-time (RTT) is the latency for a request to travel from the client to the server and back.
 ```
 
-[Redis client-server communication without pipelining versus Redis client-server communication with pipelining](./redis_communication.jpg)
+![Redis client-server communication without pipelining versus Redis client-server communication with pipelining](./redis_communication.jpg)
 
 The process of pipelining reduces the latency through RTT and the time to do socket level I/O. Also, mode switching through system calls in the operating system is an expensive operation that’s reduced significantly via pipelining. Pipelining the commands from the client side has no impact on how the server processes these requests.
 
@@ -143,3 +143,20 @@ The main advantage is that Redis can modify data in place without wasting networ
 
 ## Conclusion
 It’s impossible to imagine high-speed large-scale solutions without the use of a caching system. In this chapter, we covered the need for a caching system and its fundamental details, and we orchestrated a basic distributed cache system. We also familiarized ourselves with the design and features of two of the most well-known caching frameworks.
+
+
+
+
+## How will we design distributed cache?
+We’ll divide the task of designing and reinforcing learning major concepts of distributed cache into five lessons:
+
+1. [Background of Distributed Cache](../Background%20of%20Distributed%20Cache/README.md): It’s imperative to build the background knowledge necessary to make critical decisions when designing distributed caches. This lesson will revisit some basic but important concepts.
+2. [High-level Design of a Distributed Cache](../High-level%20Design%20of%20a%20Distributed%20Cache/README.md): We’ll build a high-level design of a distributed cache in this lesson.
+3. [Detailed Design of a Distributed Cache](../Detailed%20Design%20of%20a%20Distributed%20Cache/README.md): We’ll identify some limitations of our high-level design and work toward a scalable, affordable, and performant solution.
+4. [Evaluation of a Distributed Cache Design](../Evaluation%20of%20a%20Distributed%20Cache's%20Design/README.md): This lesson will evaluate our design for various non-functional requirements, such as scalability, consistency, availability, and so on.
+5. [Memcached versus Redis](../Memcached%20versus%20Redis/README.md): We’ll discuss well-known industrial solutions, namely Memcached and Redis. We’ll also go through their details and compare their features to help us understand their potential use cases and how they relate to our design.
+Let’s begin by exploring the background of the distributed cache in the next lesson.
+
+
+
+## Move on to [Distributed message queue](../../Distributed%20Messaging%20Queue/System%20Design%20The%20Distributed%20Messaging%20Queue/README.md)

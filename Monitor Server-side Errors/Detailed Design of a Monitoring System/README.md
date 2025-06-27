@@ -8,7 +8,7 @@ We need to store metrics and know which action to perform if a metric has reache
 
 Here, we have identified two more components in our design—that is, a rules and action database and a storage node (a blob store).
 
-[Adding blob storage and a rules and action database](./system.jpg)
+![Adding blob storage and a rules and action database](./system.jpg)
 
 
 ## Data collector
@@ -34,7 +34,7 @@ The data collector is responsible for fetching metrics from the services it moni
 
 Let’s add our newly identified component to our existing design.
 
-[Adding the service discoverer](./discoverer.jpg)
+![Adding the service discoverer](./discoverer.jpg)
 
 ## Querying service
 We want a service to access the database and fetch the relevant query results. We need this because we want to view the errors like values of a particular node’s memory usage, or send an alert if a metric exceeds the set limit. Let’s add the two components we need along with querying.
@@ -47,7 +47,7 @@ We can set dashboards by using the collected metrics to display the required inf
 
 Let’s add the components discussed above, which completes our design of the monitoring system.
 
-[Detailed design of monitoring system](./dashboard.jpg)
+![Detailed design of monitoring system](./dashboard.jpg)
 
 Our all-in-one monitoring service works for actively tracking systems and services. It collects and stores data, and it supports searches, graphs, and alerts.
 
@@ -63,7 +63,7 @@ Let’s think of a way to overcome the problems with our monitoring service.
 ## Improving our design
 We want to improve our design so that our system can scale better and decide what data to keep and what to delete. Let’s see how the push-based approach works. In a push-based approach, the application pushes its data to the monitoring system.
 
-[Push-based monitoring system](./push.jpg)
+![Push-based monitoring system](./push.jpg)
 
 We used a pull-based strategy to avoid network congestion. This also allows the applications to be free of the aspect that they have to send the relevant monitoring data of to the system. Instead, the monitoring system fetches or pulls the data itself. To cater to scaling needs, we need to apply a push-based approach too. We’ll use a hybrid approach by combining our pull-based strategy with the push-based strategy.
 
@@ -76,9 +76,9 @@ We’ll use blob storage to store our excessive data, apply elastic search, and 
 ```
 Note: Using a hierarchy of systems for scaling is a common design pattern in system design. By increasing nodes on a level or introducing additional levels in the hierarchy, we get the ability to scale according to our current needs.
 ```
-[Monitoring systems pull the data from various servers and then push the data to the data center monitoring system](./monitor1.jpg)
+![Monitoring systems pull the data from various servers and then push the data to the data center monitoring system](./monitor1.jpg)
 
-[The data center monitoring systems push the data to the global monitoring system](./monitor2.jpg)
+![The data center monitoring systems push the data to the global monitoring system](./monitor2.jpg)
 
 ```
 Question 1
@@ -99,3 +99,20 @@ The actual deployment of a monitoring system needs special care. We might have a
 It also helps to have external components to the monitoring, where external might mean an independent service provider’s infrastructure. However, designing such a system is complex and is more expensive.
 
 Humans need to consume enormous amounts of data, and even after different kinds of data summarizations, the data can still be huge. Next, we’ll tackle how to present enormous data to human administrators.
+
+
+## How will we design a distributed monitoring system?
+We’ve divided the distributed monitoring system design into the following chapters and lessons:
+
+1. Distributed Monitoring
+- [Introduction to Distributed Monitoring](../Introduction%20to%20Distributed%20Monitoring/README.md): Learn why monitoring in a distributed system is crucial, how costly downtime is, and the types of monitoring.
+- [Prerequisites for a Monitoring System](../System%20Design%20Distributed%20Monitoring/README.md): Explore a few essential concepts about metrics and alerting in a monitoring system.
+2. [Monitoring Server-side Errors](../../Monitor%20Server-side%20Errors/Design%20of%20a%20Blob%20Store/README.md)
+- [Designing a Monitoring System](../../Monitor%20Server-side%20Errors/Design%20of%20aa%20Blob%20Store/README.md): Define the requirements and high-level design of the monitoring system.
+- [A Detailed Design of the Monitoring System](../../Monitor%20Server-side%20Errors/Detailed%20Design%20of%20a%20Monitoring%20System/README.md): Go into the details of designing a monitoring system, and explore the components involved.
+- [Visualize Data in a Monitoring System](../../Monitor%20Server-side%20Errors/Visualize%20Data%20in%20a%20Monitoring%20System/README.md): Learn a unique way to visualize an enormous amount of monitoring data.
+3. [Monitor Client-side Errors](../../Monitor%20Client-side%20Errors/Focus%20on%20Client-side%20Errors%20in%20a%20Monitoring%20System/README.md)
+- [Focus on Client-side Errors](../../Monitor%20Client-side%20Errors/Focus%20on%20Client-side%20Errors%20in%20a%20Monitoring%20System/README.md): Get introduced to client-side errors and why it’s important to monitor them.
+- [Design a Client-side Monitoring System](../../Monitor%20Client-side%20Errors/Design%20of%20a%20Client-side%20Monitoring%20System/README.md): Learn to design a system that monitors the client-side errors.
+
+In the next lesson, we’ll look at why monitoring is essential in a distributed system through an example. We’ll also look at the downtime cost of failures and monitoring types.

@@ -25,7 +25,7 @@ Storage required per year:
 
 60GB/day×365=21.9TB/year
 
-[Storage requirements for the typeahead suggestion system](./storage.jpg)
+![Storage requirements for the typeahead suggestion system](./storage.jpg)
 
 ### Bandwidth estimation
 3.5 billion queries will reach our system every day. Assume that each query a user types is 15 characters long on average.
@@ -42,7 +42,7 @@ Since each character takes 2 Bytes, the bandwidth our system would need is as fo
 
 9.7Mb/sec is the incoming bandwidth requirement for queries that have a maximum length of 15 characters. Our system would suggest the top ten queries that are roughly of the same length as the query length after each character a user types. Therefore, the outgoing bandwidth requirement would become the following: 15×10×9.7Mb/sec=1.46Gb/sec.
 
-[The total bandwidth required by the typeahead suggestion system](./bandwidth.jpg)
+![The total bandwidth required by the typeahead suggestion system](./bandwidth.jpg)
 
 ### Number of servers estimation
 Our system will receive 607,000 requests per second concurrently. Therefore, we need to have many servers installed to avoid burdening a single server. Let’s assume that a single server can handle 8,000 queries per second. So, we require around 76 servers to handle 607,000 queries.
@@ -55,7 +55,7 @@ The system will suggest queries after each character a user types. Therefore, ag
 
 Here, we only refer to the number of application servers. For simplicity, we ignored the number of cache and database servers. The actual number is higher than 76 because we would also need redundant servers to achieve availability.
 
-[The number of servers required for the typeahead suggestion system](./servers.jpg)
+![The number of servers required for the typeahead suggestion system](./servers.jpg)
 
 In the table below, adjust the values to see how the resource estimations change.
 ```
@@ -75,7 +75,7 @@ Number of Servers	76	Severs
 ## Building blocks we will use
 The design of the typeahead suggestion system consists of the following building blocks that have been discussed in the initial chapters of the course:
 
-[Building blocks required in the design of the typeahead suggestion system](./bb.jpg)
+![Building blocks required in the design of the typeahead suggestion system](./bb.jpg)
 
 - Databases are required to keep the data related to the queries’ prefixes.
 - Load balancers are required to disseminate incoming queries among a number of active servers.

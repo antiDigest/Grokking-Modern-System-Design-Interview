@@ -266,3 +266,6 @@ Caching capacity, network distance
 Explanation
 Caching capacity is not a relevant factor, but network distance is.
 ```
+
+
+### Moving on to [Sequencer](../../Sequencer/System%20Design%20Sequencer/README.md).

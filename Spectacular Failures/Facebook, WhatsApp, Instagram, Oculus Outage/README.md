@@ -17,7 +17,7 @@ When the networks routes where Facebook’s authoritative DNS was hosted were wi
 Then, no one was able to reach Facebook and its subsidiaries.
 The slides below depict the events in pictorial form.
 
-[Facebook’s high-level architecture](./arch)
+![Facebook’s high-level architecture](./arch)
 
 ## Analysis
 Some of the key takeaways from the series of events shown above are the following:

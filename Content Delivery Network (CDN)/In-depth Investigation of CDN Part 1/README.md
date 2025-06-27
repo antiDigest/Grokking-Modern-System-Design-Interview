@@ -6,14 +6,14 @@ Identifying content to cache is important in delivering up-to-date and popular w
 
 ### Push CDN
 Content gets sent automatically to the CDN proxy servers from the origin server in the push CDN model. The content delivery to the CDN proxy servers is the content provider’s responsibility. Push CDN is appropriate for static content delivery, where the origin server decides which content to deliver to users using the CDN. The content is pushed to proxy servers in various locations according to the content’s popularity. If the content is rapidly changing, the push model might struggle to keep up and will do redundant content pushes.
-[Push content to PoPs](./push.jpg)
+![Push content to PoPs](./push.jpg)
 
 ### Pull CDN
 A CDN pulls the unavailable data from origin servers when requested by a user. The proxy servers keep the files for a specified amount of time and then remove them from the cache if they’re no longer requested to balance capacity and cost.
 
 When users request web content in the pull CDN model, the CDN itself is responsible for pulling the requested content from the origin server and serving it to the users. Therefore, this type of CDN is more suited for serving dynamic content.
 
-[Content pull from origin server to the CDN PoPs](./pull.jpg)
+![Content pull from origin server to the CDN PoPs](./pull.jpg)
 
 As stated, the push CDN is mostly used for serving static content. Since static content is served to a wide range of users for longer than dynamic content, the push CDN scheme maintains more replicas than the pull CDN, thus improving availability. On the other hand, the pull CDN is favored for frequently changing content and a high traffic load. Low storage consumption is one of the main benefits of the pull CDN.
 
@@ -37,7 +37,7 @@ Note: Dynamic Adaptive Streaming one HTTP (DASH) uses a manifest file with URIs 
 The content provider sends the content to a large number of clients through a CDN. The task of distributing data to all the CDN proxy servers simultaneously is challenging and burdens the origin server significantly. CDNs follow a tree-like structure to ease the data distribution process for the origin server. The edge proxy servers have some peer servers that belong to the same hierarchy. This set of servers receives data from the parent nodes in the tree, which eventually receive data from the origin servers. The data is copied from the origin server to the proxy servers by following different paths in the tree.
 
 The tree structure for data distribution allows us to scale our system for increasing users by adding more server nodes to the tree. It also reduces the burden on the origin server for data distribution. A CDN typically has one or two tiers of proxy servers (caches). The following illustration shows the two tiers of proxy servers:
-[Data distribution among CDN proxy servers](./distribution.jpg)
+![Data distribution among CDN proxy servers](./distribution.jpg)
 
 Whenever a new proxy server enters the tree of a CDN, it requests the control core, which maintains information on all the proxy servers in the CDN and provides initial content with the configuration data.
 
@@ -46,7 +46,7 @@ The control core is a set of servers that manage the proxy servers within the Po
 ```
 
 Research shows that many contents have long-tail distribution. This means that, at some point, only a handful of content is very popular, and then we have a long tail of less popular content. Here, a multi-layer cache might be used to handle long-tail content.
-[Many kinds of data exhibit the long-tailed phenomenon](./statistics.jpg)
+![Many kinds of data exhibit the long-tailed phenomenon](./statistics.jpg)
 
 ```
 Question
@@ -79,7 +79,7 @@ Content providers can use DNS redirect to send a client to a specific CDN. As an
 
 Depending on the location of the user, the response of the DNS can be different. Let’s see the slides below to understand how DNS redirection works:
 
-[DNS redistribution](./redistribution)
+![DNS redistribution](./redistribution)
 ```
 Note: The nearest proxy server doesn’t necessarily mean the one that’s geographically the closest. It could be, but it’s not only the geography that matters. Other factors like network distance, bandwidth, and traffic load already on that route also matter.
 ```
@@ -126,3 +126,15 @@ Below is an example of an HTML snippet provided by Facebook. As is highlighted i
                          An example of HTML containing a redirection URL
 ```
 In the next lesson, we discuss the different details of content consistency and proxy server deployment in CDN.
+
+
+## How will we design a CDN?
+We’ve divided the design of CDN into six lessons:
+
+- [Introduction to a CDN](../Introduction%20to%20a%20CDN/README.md): We’ll provide a thorough introduction to CDNs and identify the functional and non-functional requirements.
+- [Design of a CDN](../Design%20of%20a%20CDN/README.md): We’ll explain how to design the CDN. We’ll also briefly describe the API design.
+- [In-depth Investigation of CDN: Part 1](../In-depth%20Investigation%20of%20CDN%20Part%201/README.md): This lesson explains caching strategies and CDN architecture. Also, we’ll discuss various approaches to finding the nearest proxy server.
+- [In-depth Investigation of CDN: Part 2](../In-depth%20Investigation%20of%20CDN%20Part%202/README.md): We’ll discuss how to make content consistent in a CDN and the deployment of proxy servers. We’ll also cover the custom and specialized CDN in detail.
+- [Evaluation of CDN](../Evaluation%20of%20CDN's%20Design/README.md): This lesson will provide an evaluation of our proposed design.
+- [Quiz on CDN System Design](../Quiz%20on%20CDN's%20Design/README.md): We’ll reinforce major concepts of CDN design with a quiz.
+Let’s think about the solution to the discussed issues in the next lesson.

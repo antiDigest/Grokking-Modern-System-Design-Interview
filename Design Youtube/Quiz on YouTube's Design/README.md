@@ -19,15 +19,15 @@ Consistency and HD video
 
 2。Consider the following design to upload content to the Netflix service:
 
-[design](./design.jpg)
+![design](./design.jpg)
 
-A.[A](./2A.jpg)
+A.![A](./2A.jpg)
 
-B.[B](./2B.jpg)
+B.![B](./2B.jpg)
 
-C.[C](./2C.jpg)
+C.![C](./2C.jpg)
 
-D.[D](./2D.jpg)
+D.![D](./2D.jpg)
 
 
 3 Which encoding technique is the most effective in terms of streaming to end users?
@@ -49,13 +49,13 @@ Encoding doesn’t matter at all.
 
 Considering the above explanation, which diagram explains adaptive bitrate the best?
 
-A.[A](./4A.jpg)
+A.![A](./4A.jpg)
 
-B.[B](./4B.jpg)
+B.![B](./4B.jpg)
 
-C.[C](./4C.jpg)
+C.![C](./4C.jpg)
 
-D.[D](./4D.jpg)
+D.![D](./4D.jpg)
 
 5. What is the most appropriate sequence from development to end user delivery to stream content?
 
@@ -75,13 +75,13 @@ Uploading to CDN, encoders, and bitrate conversion
 
 6. Assume that 100,000 users try to watch a football stream at 1080p in a densely populated city. If the CDN point of presence (PoP) in that area can provide a bandwidth of 300 Gbps for end users, which design best serves the clients without any buffering issues?
 
-A.[A](./6A.jpg)
+A.![A](./6A.jpg)
 
-B.[B](./6B.jpg)
+B.![B](./6B.jpg)
 
-C.[C](./6C.jpg)
+C.![C](./6C.jpg)
 
-D.[D](./6D.jpg)
+D.![D](./6D.jpg)
 
 
 

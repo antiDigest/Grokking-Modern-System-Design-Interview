@@ -31,7 +31,7 @@ How do we handle concurrent writes?
 What consistency model needs to be exposed to the end programmers?
 ```
 We’ll explore the answer to these questions in this lesson.
-[Replication in action](./replicas.jpg)
+![Replication in action](./replicas.jpg)
 
 Before we explain the different types of replication, let’s understand the synchronous and asynchronous approaches of replication.
 ## Synchronous versus asynchronous replication
@@ -47,7 +47,7 @@ The advantage of synchronous replication is that all the secondary nodes are com
 On the other hand, the advantage of asynchronous replication is that the primary node can continue its work even if all the secondary nodes are down. However, if the primary node fails, the writes that weren’t copied to the secondary nodes will be lost.
 
 The above paragraph explains a trade-off between data consistency and availability when different components of the system can fail.
-[Synchronous versus asynchronous replication](./sync_async.jpg)
+![Synchronous versus asynchronous replication](./sync_async.jpg)
 
 
 ## Data replication models
@@ -66,7 +66,7 @@ Primary-secondary replication is appropriate when our workload is read-heavy. To
 Another advantage of primary-secondary replication is that it’s read resilient. Secondary nodes can still handle read requests in case of primary node failure. Therefore, it’s a helpful approach for read-intensive applications.
 
 Replication via this approach comes with inconsistency if we use asynchronous replication. Clients reading from different replicas may see inconsistent data in the case of failure of the primary node that couldn’t propagate updated data to the secondary nodes. So, if the primary node fails, any missed updates not passed on to the secondary nodes can be lost.
-[Primary-secondary data replication model where data is replicated from primary to secondary](./1primary.jpg)
+![Primary-secondary data replication model where data is replicated from primary to secondary](./1primary.jpg)
 ```
 Question
 What happens when the primary node fails?
@@ -121,7 +121,7 @@ There are many topologies through which multi-leader replication is implemented,
 ### Peer-to-peer/leaderless replication
 In primary-secondary replication, the primary node is a bottleneck and a single point of failure. Moreover, it helps to achieve read scalability but fails in providing write scalability. The peer-to-peer replication model resolves these problems by not having a single primary node. All the nodes have equal weightage and can accept reads and writes requests. Amazon popularized such a scheme in their DynamoDB data store.
 
-[Peer-to-peer data replication model where all nodes apply reads and writes to all the data](./p2p.jpg)
+![Peer-to-peer data replication model where all nodes apply reads and writes to all the data](./p2p.jpg)
 
 Like primary-secondary replication, this replication can also yield inconsistency. This is because when several nodes accept write requests, it may lead to concurrent writes. A helpful approach used for solving write-write inconsistency is called quorums.
 
@@ -130,5 +130,5 @@ Let’s suppose we have three nodes. If at least two out of three nodes are guar
 
 If we have n nodes, then every write must be updated in at least w nodes to be considered a success, and we must read from r nodes. We’ll get an updated value from reading as long as w + r > n because at least one of the nodes must have an updated write from which we can read. Quorum reads and writes adhere to these r and w values. These n, w and r are configurable in Dynamo-style databases.
 
-[Reader getting an updated value from replica 2](./dynamo.jpg)
+![Reader getting an updated value from replica 2](./dynamo.jpg)
 

@@ -14,13 +14,13 @@ Cache hit: When the requested data is found in the cache, the server responds wi
 Cache miss: When the requested data isn’t found in the cache, it’s called a cache miss.
 ```
 
-[Service before using caching](./no_cache.jpg)
+![Service before using caching](./no_cache.jpg)
 
-[Service using caching to improve performance.](./no_cache.jpg)
+![Service using caching to improve performance.](./no_cache.jpg)
 
 A cache is a nonpersistent storage area used to keep repeatedly read and written data, which provides the end user with lower latency. Therefore, a cache must serve data from a storage component that is fast, has enough storage, and is affordable in terms of dollar cost as we scale the caching service. The following illustration highlights the suitability of RAM as the raw building block for caching:
 
-[An approximation that depicts how RAM is the optimal choice for serving cached data](./interest.jpg)
+![An approximation that depicts how RAM is the optimal choice for serving cached data](./interest.jpg)
 
 We understand the need for a cache and suitable storage hardware, but what is distributed cache? Let’s discuss this next.
 
@@ -63,12 +63,13 @@ Database             Database cache, buffers, and key-value data store          
 Apart from the three system layers above, caching is also performed at DNS and client-side technologies like browsers or end-devices.
 ```
 
+
 ## How will we design distributed cache?
 We’ll divide the task of designing and reinforcing learning major concepts of distributed cache into five lessons:
 
-1. Background of Distributed Cache: It’s imperative to build the background knowledge necessary to make critical decisions when designing distributed caches. This lesson will revisit some basic but important concepts.
-2. High-level Design of a Distributed Cache: We’ll build a high-level design of a distributed cache in this lesson.
-3. Detailed Design of a Distributed Cache: We’ll identify some limitations of our high-level design and work toward a scalable, affordable, and performant solution.
-4. Evaluation of a Distributed Cache Design: This lesson will evaluate our design for various non-functional requirements, such as scalability, consistency, availability, and so on.
-5. Memcached versus Redis: We’ll discuss well-known industrial solutions, namely Memcached and Redis. We’ll also go through their details and compare their features to help us understand their potential use cases and how they relate to our design.
+1. [Background of Distributed Cache](../Background%20of%20Distributed%20Cache/README.md): It’s imperative to build the background knowledge necessary to make critical decisions when designing distributed caches. This lesson will revisit some basic but important concepts.
+2. [High-level Design of a Distributed Cache](../High-level%20Design%20of%20a%20Distributed%20Cache/README.md): We’ll build a high-level design of a distributed cache in this lesson.
+3. [Detailed Design of a Distributed Cache](../Detailed%20Design%20of%20a%20Distributed%20Cache/README.md): We’ll identify some limitations of our high-level design and work toward a scalable, affordable, and performant solution.
+4. [Evaluation of a Distributed Cache Design](../Evaluation%20of%20a%20Distributed%20Cache's%20Design/README.md): This lesson will evaluate our design for various non-functional requirements, such as scalability, consistency, availability, and so on.
+5. [Memcached versus Redis](../Memcached%20versus%20Redis/README.md): We’ll discuss well-known industrial solutions, namely Memcached and Redis. We’ll also go through their details and compare their features to help us understand their potential use cases and how they relate to our design.
 Let’s begin by exploring the background of the distributed cache in the next lesson.

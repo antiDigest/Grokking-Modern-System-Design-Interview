@@ -36,7 +36,7 @@ As shown in the figure a couple paragraphs below, the Employee table is divided 
 
 Vertical sharding has its intricacies and is more amenable to manual partitioning, where stakeholders carefully decide how to partition data. In comparison, horizontal sharding is suitable to automate even under dynamic conditions.
 
-[Vertical partitioning](./vertical.jpg)
+![Vertical partitioning](./vertical.jpg)
 
 ### Horizontal sharding
 At times, some tables in the databases become too big and affect read/write latency. Horizontal sharding or partitioning is used to divide a table into multiple tables by splitting data row-wise, as shown in the figure in the next section. Each partition of the original table distributed over database servers is called a shard. Usually, there are two strategies available:
@@ -49,10 +49,10 @@ Hash based sharding
 In the key-range based sharding, each partition is assigned a continuous range of keys.
 
 In the following figure, horizontal partitioning on the Invoice table is performed using the key-range based sharding with Customer_Id as the partition key. The two different colored tables represent the partitions.
-[Horizontal partitioning](./horizontal.jpg)
+![Horizontal partitioning](./horizontal.jpg)
 
 Sometimes, a database consists of multiple tables bound by foreign key relationships. In such a case, the horizontal partition is performed using the same partition key on all tables in a relation. Tables (or subtables) that belong to the same partition key are distributed to one database shard. The following figure shows that several tables with the same partition key are placed in a single database shard:
-[Horizontal partitioning on a set of tables](./horizontal_tables.jpg)
+![Horizontal partitioning on a set of tables](./horizontal_tables.jpg)
 
 The basic design techniques used in multi-table sharding are as follows:
 
@@ -86,7 +86,7 @@ If keys aren’t selected properly, some nodes may have to store more data due t
 Hash-based sharding uses a hash-like function on an attribute, and it produces different values based on which attribute the partitioning is performed. The main concept is to use a hash function on the key to get a hash value and then mod by the number of partitions. Once we’ve found an appropriate hash function for keys, we may give each partition a range of hashes (rather than a range of keys). Any key whose hash occurs inside that range will be kept in that partition.
 
 In the illustration below, we use a hash function of Value mod = n. The n is the number of nodes, which is four. We allocate keys to nodes by checking the mod for each key. Keys with a mod value of 2 are allocated to node 2. Keys with a mod value of 1 are allocated to node 1. Keys with a mod value of 3 are allocated to node 3. Because there’s no key with a mod value of 0, node 0 is left vacant.
-[Hash-based sharding](./hash.jpg)
+![Hash-based sharding](./hash.jpg)
 ##### Advantages
 Keys are uniformly distributed across the nodes.
 
@@ -155,14 +155,14 @@ We can partition with secondary indexes in the following ways.
 Each partition is fully independent in this indexing approach. Each partition has its secondary indexes covering just the documents in that partition. It’s unconcerned with the data held in other partitions. If we want to write anything to our database, we need to handle that partition only containing the document ID we’re writing. It’s also known as the local index. In the illustration below, there are three partitions, each having its own identity and data. If we want to get all the customer IDs with the name John, we have to request from all partitions.
 
 However, this type of querying on secondary indexes can be expensive. As a result of being restricted by the latency of a poor-performing partition, read query latencies may increase.
-[Partitioning secondary indexes by document](./partition1.jpg)
+![Partitioning secondary indexes by document](./partition1.jpg)
 #### Partition secondary indexes by the term
 Instead of creating a secondary index for each partition (a local index), we can make a global index for secondary terms that encompasses data from all partitions.
 
 In the illustration below, we create indexes on names (the term on which we’re partitioning) and store all the indexes for names on separated nodes. To get the cust_id of all the customers named John, we must determine where our term index is located. The index 0 contains all the customers with names starting with “A” to “M.” The index 1 includes all the customers with names beginning with “N” to “Z.” Because John lies in index 0, we fetch a list of cust_id with the name John from index 0.
 
 Partitioning secondary indexes by the term is more read-efficient than partitioning secondary indexes by the document. This is because it only accesses the partition that contains the term. However, a single write in this approach affects multiple partitions, making the method write-intensive and complex.
-[Partitioning secondary indexes by term](./partition2.jpg)
+![Partitioning secondary indexes by term](./partition2.jpg)
 ## Request routing
 We’ve learned how to partition our data. However, one question arises here: How does a client know which node to connect to while making a request? The allocation of partitions to nodes varies after rebalancing. If we want to read a specific key, how do we know which IP address we need to connect to read?
 

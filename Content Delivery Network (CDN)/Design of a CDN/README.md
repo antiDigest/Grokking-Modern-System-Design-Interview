@@ -13,7 +13,7 @@ The following components comprise a CDN:
 - Origin servers: The CDN infrastructure facilitates users with data received from the origin servers. The origin servers serve any unavailable data at the CDN to clients. Origin servers will use appropriate stores to keep content and other mapping metadata. Though, we won’t discuss the internal architecture of origin infrastructure here.
 - Management system: The management systems are important in CDNs from a business and managerial aspect where resource usage and statistics are constantly observed. This component measures important metrics, like latency, downtime, packet loss, server load, and so on. For third-party CDNs, accounting information can also be used for billing purposes.
 
-[CDN components]
+![CDN components]
 
 ### Workflow
 The workflow for the abstract design is given below:
@@ -60,7 +60,7 @@ description                  This specifies the content detail—for example, th
 The above API gives a response in a JSON file, which contains the text, content types, links to the images or videos in the content, and so on.
 
 ```Javascript
-"Object_links": [
+"Object_links": ![
                  {
                  "name": "videos"
                  "link": https://app_server.com/api/assets/videos/
@@ -110,7 +110,7 @@ user_id            This is the unique ID of the user who requested the content.
 The specified proxy server returns the particular content to the requested users in response to the above API.
 
 ```Javascript
-"Object_links": [
+"Object_links": ![
                  {
                  "name": "components"
                  "link": https://cdn.app_server.com/api/components/
@@ -170,3 +170,13 @@ In the upcoming lessons, we’ll dive deep into the characteristics of CDNs.
 
 
 
+## How will we design a CDN?
+We’ve divided the design of CDN into six lessons:
+
+- [Introduction to a CDN](../Introduction%20to%20a%20CDN/README.md): We’ll provide a thorough introduction to CDNs and identify the functional and non-functional requirements.
+- [Design of a CDN](../Design%20of%20a%20CDN/README.md): We’ll explain how to design the CDN. We’ll also briefly describe the API design.
+- [In-depth Investigation of CDN: Part 1](../In-depth%20Investigation%20of%20CDN%20Part%201/README.md): This lesson explains caching strategies and CDN architecture. Also, we’ll discuss various approaches to finding the nearest proxy server.
+- [In-depth Investigation of CDN: Part 2](../In-depth%20Investigation%20of%20CDN%20Part%202/README.md): We’ll discuss how to make content consistent in a CDN and the deployment of proxy servers. We’ll also cover the custom and specialized CDN in detail.
+- [Evaluation of CDN](../Evaluation%20of%20CDN's%20Design/README.md): This lesson will provide an evaluation of our proposed design.
+- [Quiz on CDN System Design](../Quiz%20on%20CDN's%20Design/README.md): We’ll reinforce major concepts of CDN design with a quiz.
+Let’s think about the solution to the discussed issues in the next lesson.

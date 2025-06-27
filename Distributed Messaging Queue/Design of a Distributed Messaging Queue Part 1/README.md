@@ -15,7 +15,7 @@ Before diving deep into the design, let’s assume the following points to make 
 
 The following figure demonstrates a high-level design of a distributed messaging queue that’s composed of several components.
 
-[High-level architecture of distributed messaging queue](./design.jpg)
+![High-level architecture of distributed messaging queue](./design.jpg)
 
 The essential components of our design are described in detail below.
 
@@ -52,16 +52,16 @@ There are two different approaches to organizing the metadata cache clusters:
 
 1. If the metadata that needs to be stored is small and can reside on a single machine, then it’s replicated on each cluster server. Subsequently, the request can be served from any random server. In this approach, a load balancer can also be introduced between the front-end servers and metadata services.
 
-[A load balancer is introduced between the front-end servers and metadata services](./lb.jpg)
+![A load balancer is introduced between the front-end servers and metadata services](./lb.jpg)
 
 2。If the metadata that needs to be stored is too large, then one of the following modes can be followed:
 - The first strategy is to use the sharding approach to divide data into different shards. Sharding can be performed based on some partition key or hashing techniques, as was discussed in the lesson on database partitioning. Each shard is stored on a different host in the cluster. Moreover, each shard is also replicated on different hosts to enhance availability. In this cluster-organization approach, the front-end server has a mapping table between shards and the hosts. Therefore, the front-end server is responsible for redirecting requests to the host where the data is stored.
 
-[Mapping table resides on the front-end servers](./mapping_table1.jpg)
+![Mapping table resides on the front-end servers](./mapping_table1.jpg)
 
 - The second approach is similar to the first one. However, the mapping table in this approach is stored on each host instead of just on the front-end servers. Because of this, any random host can receive a request and forward it to the host where the data resides. This technique is suitable for read-intensive applications.
 
-[Mapping table resides on each metadata server](./mapping_table2.jpg)
+![Mapping table resides on each metadata server](./mapping_table2.jpg)
 
 In our discussion on distributed messaging queues, we focused on the high-level design of this type of queue. Furthermore, we explored each component in the high-level design, including the following:
 
@@ -71,3 +71,16 @@ In our discussion on distributed messaging queues, we focused on the high-level 
 - Metadata clusters and their organization.
 
 A vital part of the design is the organization of servers at the backend for queue creation, deletion, and other such operations. The next lesson focuses on the organization of back-end servers and the management of queues, along with other important operations related to message delivery and retrieval.
+
+
+
+## How do we design a distributed messaging queue?
+We divide the design of a distributed messaging queue into the following five lessons:
+
+1. [Requirements](../Requirements%20of%20a%20Distributed%20Messaging%20Queue’s%20Design/README.md): Here, we focus on the functional and non-functional requirements of designing a distributed messaging queue. We also discuss a single server messaging queue and its drawbacks in this lesson.
+2. [Design consideration](../Considerations%20of%20a%20Distributed%20Messaging%20Queue’s%20Design/README.md): In this lesson, we discuss some important factors that may affect the design of a distributed messaging queue—for example, the order of placing messages in a queue, their extraction, their visibility in the queue, and the concurrency of incoming messages.
+3. [Design: Part 1](../Design%20of%20a%20Distributed%20Messaging%20Queue%20Part%201/README.md): In this lesson, we discuss the design of a distributed messaging queue in detail. We also describe the process of replication of queues and the interaction between various building blocks involved in the design.
+4. [Design: Part 2](../Design%20of%20a%20Distributed%20Messaging%20Queue%20Part%202/README.md): In this lesson, we discuss the design of a distributed messaging queue in detail. We also describe the process of replication of queues and the interaction between various building blocks involved in the design.
+5. [Evaluation](../Evaluation%20of%20a%20Distributed%20Messaging%20Queue’s%20Design/README.md): In this lesson, we evaluate the design of a distributed messaging queue based on its functional and non-functional requirements.
+6. [Quiz](../Quiz%20on%20the%20Distributed%20Messaging%20Queue’s%20Design/README.md): At the end of the chapter, we evaluate understanding of the design of a distributed messages queue via a quiz.
+Let’s start by understanding the requirements of designing a distributed messaging queue.

@@ -43,7 +43,7 @@ Let’s look at the functional and non-functional requirements that we expect fr
 - Update: In most cases, content comes from the origin server, but if we run script in CDN, the CDN should be able to update the content within peer CDN proxy servers in a PoP.
 - Delete: Depending upon the type of content (static or dynamic), it should be possible to delete cached entries from the CDN servers after a certain period.
 
-[Functional requirements of a CDN](./req.jpg)
+![Functional requirements of a CDN](./req.jpg)
 
 ```
 A Point of Presence (PoP) is a physical place that allows two or more networks or devices to communicate with each other. Typically, each CDN PoP has a large number of cache servers.
@@ -59,14 +59,26 @@ A Point of Presence (PoP) is a physical place that allows two or more networks o
 In DDoS attacks, malicious agents overwhelm the origin or application server by sending a massive number of requests.
 ```
 
-[Non-functional requirements of CDN](./nfreq.jpg)
+![Non-functional requirements of CDN](./nfreq.jpg)
 
 ## Building blocks we will use
 The design of a CDN utilizes the following building blocks:
 
-[The building blocks used in CDN design](./bb.jpg)
+![The building blocks used in CDN design](./bb.jpg)
 
 - DNS is the service that maps human-friendly CDN domain names to machine-readable IP addresses. This IP address will take the users to the specified proxy server.
 - Load balancers distribute millions of requests among the operational proxy servers.
 In the next lesson, we’ll discuss the design of the CDN.
 
+
+
+## How will we design a CDN?
+We’ve divided the design of CDN into six lessons:
+
+- [Introduction to a CDN](../Introduction%20to%20a%20CDN/README.md): We’ll provide a thorough introduction to CDNs and identify the functional and non-functional requirements.
+- [Design of a CDN](../Design%20of%20a%20CDN/README.md): We’ll explain how to design the CDN. We’ll also briefly describe the API design.
+- [In-depth Investigation of CDN: Part 1](../In-depth%20Investigation%20of%20CDN%20Part%201/README.md): This lesson explains caching strategies and CDN architecture. Also, we’ll discuss various approaches to finding the nearest proxy server.
+- [In-depth Investigation of CDN: Part 2](../In-depth%20Investigation%20of%20CDN%20Part%202/README.md): We’ll discuss how to make content consistent in a CDN and the deployment of proxy servers. We’ll also cover the custom and specialized CDN in detail.
+- [Evaluation of CDN](../Evaluation%20of%20CDN's%20Design/README.md): This lesson will provide an evaluation of our proposed design.
+- [Quiz on CDN System Design](../Quiz%20on%20CDN's%20Design/README.md): We’ll reinforce major concepts of CDN design with a quiz.
+Let’s think about the solution to the discussed issues in the next lesson.

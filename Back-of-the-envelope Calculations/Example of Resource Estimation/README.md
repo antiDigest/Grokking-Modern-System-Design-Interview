@@ -19,7 +19,7 @@ For the number of servers, (Number of Request/sec) / RPS of server=115k/8k = 15 
 
 ```
 
-[Estimation of Number of Servers](./estimating_the_number_of_servers.jpg)
+![Estimation of Number of Servers](./estimating_the_number_of_servers.jpg)
 
 Indeed, the number above doesn’t seem right. If we only need 15 commodity servers to serve 500M daily users, then why do big services use millions of servers in a data center? The primary reason for this is that the RPS is not enough to estimate the number of servers required to provide a service. Also, we made some underlying assumptions in the calculations above. One of the assumptions was that a request is handled by one server only. In reality, requests go through to web servers that may interact with application servers that may also request data from storage servers. Each server may take a different amount of time to handle each request. Furthermore, each request may be handled differently depending upon the state of the data center, the application, and the request itself. Remember that we have a variety of servers for providing various services within a data center.
 
@@ -47,7 +47,7 @@ The tweet text and its metadata require a total of 250 Bytes of storage in the d
 
 Then, the following storage space will be required:
 
-[Estimation of Storage Requirements](./estimating_storage_req.jpg)
+![Estimation of Storage Requirements](./estimating_storage_req.jpg)
 
 ```
 Total tweets: 250M×3 = 750M x10^6 tweets per day
@@ -60,7 +60,7 @@ Storage required for 5 percent video content for one day:(750 x 10^6 x 10/100) x
 Total storage required for one day = 0.1875 TB + 15 TB + 112.5 TB = approximately 128TB
 Storage required for one year = 365 x 128 TB = 46.72 PB
 ```
-[Total Storage of Twittter for 1 year](./total_storage_yearly.jpg)
+![Total Storage of Twittter for 1 year](./total_storage_yearly.jpg)
 
 
 ## Bandwidth requirements
@@ -84,7 +84,7 @@ Note: We multiply by 8 in order to convert Bytes(B) into bits(b) because bandwid
 
 ### Outgoing traffic: Assume that a single user views 50 tweets in a day. Considering the same ratio of five percent and 10 percent for videos and images, respectively, for the 50 tweets, 2.5 tweets will contain video content whereas five tweets will contain an image. Considering that there are 250 M active daily users, we come to the following estimations:
 
-[Estimating Bandwidth Requirements](./estimating_bandwidth_req.jpg)
+![Estimating Bandwidth Requirements](./estimating_bandwidth_req.jpg)
 
 ```
 250M×50 tweets=12.5 billion tweets are viewed per day
@@ -99,4 +99,5 @@ The total outgoing traffic required will be equal to: 0.3 + 23.2 + 174 =approx 1
 Twitter will need a total of 12 Gbps of incoming traffic and 197.5 Gbps of outgoing, assuming that the uploaded content is not compressed. Total bandwidth requirements = 12 + 197.5 =209.5 Gbps
 
 
-[The total bandwidth required by Twitter](./total_bandwidth.jpg)
+![The total bandwidth required by Twitter](./total_bandwidth.jpg)
+

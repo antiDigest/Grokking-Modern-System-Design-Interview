@@ -47,31 +47,31 @@ For each term, the index computes the following information:
 
 ```
 Inverted Index
-Term                     Mapping ( [doc], [freq], [[loc])
+Term                     Mapping ( ![doc], ![freq], ![![loc])
 
-elasticsearch            ( [1, 2, 3], [1, 1, 1], [[1], [1], [1]] )
+elasticsearch            ( ![1, 2, 3], ![1, 1, 1], ![![1], ![1], ![1]] )
 
-distributed              ( [1, 3], [1, 1], [[4], [4]] )
+distributed              ( ![1, 3], ![1, 1], ![![4], ![4]] )
 
-restful                  ( [1], [1], [[5]] )
+restful                  ( ![1], ![1], ![![5]] )
 
-search                   ( [1, 2, 3], [1, 1, 1], [[6], [4], [5]] )
+search                   ( ![1, 2, 3], ![1, 1, 1], ![![6], ![4], ![5]] )
 
-analytics                ( [1, 3], [1, 1], [[8], [7]] )
+analytics                ( ![1, 3], ![1, 1], ![![8], ![7]] )
 
-engine                   ( [1, 2, 3], [1, 1, 1], [[9], [5], [8]] )
+engine                   ( ![1, 2, 3], ![1, 1, 1], ![![9], ![5], ![8]] )
 
-heart                    ( [1], [1], [[12]] )
+heart                    ( ![1], ![1], ![![12]] )
 
-elastic                  ( [1], [1], [[15]] )
+elastic                  ( ![1], ![1], ![![15]] )
 
-stack                    ( [1], [1], [[16]] )
+stack                    ( ![1], ![1], ![![16]] )
 
-lucene                   ( [2, 3], [1, 1], [[9], [12]] )
+lucene                   ( ![2, 3], ![1, 1], ![![9], ![12]] )
 
-library                  ( [2], [1], [[10]] )
+library                  ( ![2], ![1], ![![10]] )
 
-Apache                   ( [3], [1], [[11]] )
+Apache                   ( ![3], ![1], ![![11]] )
 ```
 In the table above, the “Term” column contains all the unique terms that are extracted from all of the documents. Each entry in the “Mapping” column consists of three lists:
 
@@ -120,9 +120,9 @@ Consider a system that has the following mappings when we search for the word �
 
 Term       Mapping
 
-search     ( [1, 2, 3], [1, 1, 1], [[6], [4], [5]] )
+search     ( ![1, 2, 3], ![1, 1, 1], ![![6], ![4], ![5]] )
 
-engine     ( [1, 2, 3], [1, 1, 1], [[9], [5], [8]] )
+engine     ( ![1, 2, 3], ![1, 1, 1], ![![9], ![5], ![8]] )
 
 Both of these words are found in documents 1, 2, and 3. Both words appear once in each document.
 
@@ -158,7 +158,7 @@ Invalid data: The data that makes no sense or doesn’t exist can affect the per
 ## Indexing on a centralized system
 In a centralized search system, all the search system components run on a single node, which is computationally quite capable. The architecture of a centralized search system is shown in the following illustration:
 
-[The architecture of a centralized search system](./arch.jpg)
+![The architecture of a centralized search system](./arch.jpg)
 
 - The indexing process takes the documents as input and converts them into an inverted index, which is stored in the form of a binary file.
 - The query processing or search process interprets the binary file that contains the inverted index. It also computes the intersection of the inverted lists for a given query to return the search results against the query.

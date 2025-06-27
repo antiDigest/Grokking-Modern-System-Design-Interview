@@ -87,7 +87,7 @@ Total storage (GB per day)                                         2.78
 
 ```             
 
-[Total storage required by Uber in an year](./storage.jpg)
+![Total storage required by Uber in an year](./storage.jpg)
 
 ```
 Note: We can adjust the values in the table to see how the estimations change.
@@ -118,7 +118,7 @@ Bandwidth for drivers (Megabits per second)            114
 Total bandwidth (Megabits per second)                  114.19
 ```
 
-[Total bandwidth required by Uber](./bandwidth.jpg)
+![Total bandwidth required by Uber](./bandwidth.jpg)
 
 ```
 Note: We can adjust the values in the table to see how the requirements change.
@@ -130,7 +130,7 @@ We need to handle concurrent requests coming from 20 million daily active users.
 
 Number of daily active users/RPS of a server= 20 x 10^6/8000=2500
 
-[Number of servers required for the Uber service](./servers.jpg)
+![Number of servers required for the Uber service](./servers.jpg)
 
 ```
                  Estimating the Number of Servers
@@ -149,7 +149,7 @@ Note: We can adjust the values in the table to see how the estimations change.
 ## Building blocks we will use
 The design of Uber utilizes the following building blocks:
 
-[Building blocks in high-level design of Uber](./bb.jpg)
+![Building blocks in high-level design of Uber](./bb.jpg)
 
 - Databases store the metadata of riders, drivers, and trips.
 - A cache stores the most requested data for quick responses.

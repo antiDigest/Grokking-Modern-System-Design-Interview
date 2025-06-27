@@ -7,7 +7,7 @@ We can also have concurrent events—that is, two events that occur independentl
 ```
 Note: The scenario described above can also be handled by assigning a unique ID and encoding the dependence of events using a social graph. We might also use a separate time data structure and a simple unique ID. However, we want a unique ID to do double duty—provide unique identification and also help with the causality of events.
 ```
-[visualization](./nc)
+![visualization](./nc)
 
 Some applications need the events to have unique identifiers and carry any relevant causality information. An example of this is giving an identifier to the concurrent writes of a key into a key-value store to implement the last-write-wins strategy.
 
@@ -62,7 +62,7 @@ UNIX time stamps are granular to the millisecond and can be used to distinguish 
 Note: Connect to the following terminal to view the UNIX time stamp in milliseconds.
 ```
 Our system works well with generating IDs, but it poses a crucial problem. The ID-generating server is a single point of failure (SPOF), and we need to handle it. To cater to SPOF, we can add more servers. Each server generates a unique ID for every millisecond. To make the overall identifier unique across the system, we attach the server ID with the UNIX time stamp. Then, we add a load balancer to distribute the traffic more efficiently. The design of a unique ID generator using a UNIX time stamps is given below:
-[Using the time stamp as an ID](./timestamps.jpg)
+![Using the time stamp as an ID](./timestamps.jpg)
 ### Pros
 This approach is simple, scalable, and easy to implement. It also enables multiple servers to handle concurrent requests.
 ### Cons
@@ -81,7 +81,7 @@ Using UNIX time stamps      ✖️              weak              ✔️        
 ## Twitter Snowflake
 Let’s try to use time efficiently. We can use some bits out of our targetted 64 bits for storing time and the remaining for other information. An overview of division is below:
 
-[Overview of the division of bits in Twitter Snowflake](./snowflakes.jpg)
+![Overview of the division of bits in Twitter Snowflake](./snowflakes.jpg)
 
 The explanation of the bits division is as follows:
 
@@ -98,7 +98,7 @@ The above calculations give us 69 years before we need a new algorithm to genera
 • Sequence number: The sequence number is 12 bits. For every ID generated on the server, the sequence number is incremented by one. It gives us 2^{12} = 4,096 unique sequence numbers. We’ll reset it to zero when it reaches 4,096. This number adds a layer to avoid duplication.
 
 The following slides show the conversion of the time stamp to UTC.
-[snowflakes](./conversion)
+![snowflakes](./conversion)
 
 
 ### Pros
@@ -172,10 +172,10 @@ The following slides explain the unique ID generation using vector clocks, where
 ```
 Note: In the following slides, we haven’t converted the data to bits for the sake of understanding. The pattern we’ll use for the unique ID is the following:
 
-[vector-clock][worker-id]
+![vector-clock]![worker-id]
 ```
 
-[vector clocks](./vector)
+![vector clocks](./vector)
 
 Our approach with vector clocks works. However, in order to completely capture causality, a vector clock must be at least n nodes in size. As a result, when the total number of participating nodes is enormous, vector clocks require a significant amount of storage. Some systems nowadays, such as web applications, treat every browser as a client of the system. Such information increases the ID length significantly, making it difficult to handle, store, use, and scale.
 ```
@@ -214,11 +214,11 @@ Google deploys a GPS receiver or atomic clock in each data center, and clocks ar
 
 The following slides explain how TrueTime’s time master servers work with GPS and atomic clocks in multiple data centers.
 
-[TrueTime](./Google)
+![TrueTime](./Google)
 
 The following slides explain how time is calculated when the client asks to give TrueTime.
 
-[TrueTime](./TrueTime)
+![TrueTime](./TrueTime)
 
 Spanner guarantees that two confidence intervals don’t overlap (that is, A_{earliest} < A_{latest} < B_{earliest} < B_{latest), then B definitely happened after A.
 
@@ -232,7 +232,7 @@ We generate our unique ID using TrueTime intervals. Let’s say the earliest int
 
 - Sequence number: This is eight bits. For every ID generated on the server, the sequence number is incremented by one. It gives us 2^{8} = 256 combinations. We’ll reset it to zero when it reaches 256.
 
-[Node B generating a unique ID for its event using TrueTime]
+![Node B generating a unique ID for its event using TrueTime]
 
 ### Pros
 TrueTime satisfies all the requirements. We’re able to generate a globally unique 64-bit identifier. The causality of events is maintained. The approach is scalable and highly available.
@@ -279,3 +279,15 @@ Note: Globally ordering events is an expensive procedure. A feature that was fas
 
 For example, Spanner, a geographically distributed database, reports that “if a read-update transaction on a single cell (one column in a single row) has a latency of 10 milliseconds (ms), then the maximum theoretical frequency of issuing of sequence values is 100 per second. This maximum applies to the entire database, regardless of the number of client application instances, or the number of nodes in the database. This is because a single node always manages a single row.” If we could compromise on the requirements for global orderings and gapless identifiers, we would be able to get many identifiers in a shorter time, that is, a better performance.
 
+
+
+## How do we design a sequencer?
+We’ve divided the sequencer’s comprehensive design into the following two lessons:
+
+1. [Design of a Unique ID Generator](../Design%20of%20a%20Unique%20ID%20Generator/README.md): After enlisting the requirements of the design, we discuss three ways to generate unique IDs: using UUID, using a database, and using a range handler.
+2. [Unique IDs with Causality](../Unique%20IDs%20with%20Causality/README.md): In this lesson, we incorporate an additional factor of time in the generation of IDs and explain the process by taking causality into consideration.
+
+Unique IDs are important for identifying events and objects within a distributed system. However, designing a unique ID generator within a distributed system is challenging. In the next lesson, let’s look at the requirements for a distributed unique ID generation system.
+
+
+## Move on to [Distributed Monitoring](../../Distributed%20Monitoring/System%20Design%20Distributed%20Monitoring/README.md)
