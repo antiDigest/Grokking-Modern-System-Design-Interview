@@ -137,9 +137,9 @@ In this lesson, we learned what distributed caches are and highlighted their sig
 ## How will we design distributed cache?
 We’ll divide the task of designing and reinforcing learning major concepts of distributed cache into five lessons:
 
-1. [Background of Distributed Cache](../Background%20of%20Distributed%20Cache/README.md): It’s imperative to build the background knowledge necessary to make critical decisions when designing distributed caches. This lesson will revisit some basic but important concepts.
-2. [High-level Design of a Distributed Cache](../High-level%20Design%20of%20a%20Distributed%20Cache/README.md): We’ll build a high-level design of a distributed cache in this lesson.
-3. [Detailed Design of a Distributed Cache](../Detailed%20Design%20of%20a%20Distributed%20Cache/README.md): We’ll identify some limitations of our high-level design and work toward a scalable, affordable, and performant solution.
-4. [Evaluation of a Distributed Cache Design](../Evaluation%20of%20a%20Distributed%20Cache's%20Design/README.md): This lesson will evaluate our design for various non-functional requirements, such as scalability, consistency, availability, and so on.
-5. [Memcached versus Redis](../Memcached%20versus%20Redis/README.md): We’ll discuss well-known industrial solutions, namely Memcached and Redis. We’ll also go through their details and compare their features to help us understand their potential use cases and how they relate to our design.
+1. [Background of Distributed Cache](../Background%20of%20Distributed%20Cache/): It’s imperative to build the background knowledge necessary to make critical decisions when designing distributed caches. This lesson will revisit some basic but important concepts.
+2. [High-level Design of a Distributed Cache](../High-level%20Design%20of%20a%20Distributed%20Cache/): We’ll build a high-level design of a distributed cache in this lesson.
+3. [Detailed Design of a Distributed Cache](../Detailed%20Design%20of%20a%20Distributed%20Cache/): We’ll identify some limitations of our high-level design and work toward a scalable, affordable, and performant solution.
+4. [Evaluation of a Distributed Cache Design](../Evaluation%20of%20a%20Distributed%20Cache's%20Design/): This lesson will evaluate our design for various non-functional requirements, such as scalability, consistency, availability, and so on.
+5. [Memcached versus Redis](../Memcached%20versus%20Redis/): We’ll discuss well-known industrial solutions, namely Memcached and Redis. We’ll also go through their details and compare their features to help us understand their potential use cases and how they relate to our design.
 Let’s begin by exploring the background of the distributed cache in the next lesson.

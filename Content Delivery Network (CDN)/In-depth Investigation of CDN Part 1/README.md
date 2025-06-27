@@ -131,10 +131,10 @@ In the next lesson, we discuss the different details of content consistency and 
 ## How will we design a CDN?
 We’ve divided the design of CDN into six lessons:
 
-- [Introduction to a CDN](../Introduction%20to%20a%20CDN/README.md): We’ll provide a thorough introduction to CDNs and identify the functional and non-functional requirements.
-- [Design of a CDN](../Design%20of%20a%20CDN/README.md): We’ll explain how to design the CDN. We’ll also briefly describe the API design.
-- [In-depth Investigation of CDN: Part 1](../In-depth%20Investigation%20of%20CDN%20Part%201/README.md): This lesson explains caching strategies and CDN architecture. Also, we’ll discuss various approaches to finding the nearest proxy server.
-- [In-depth Investigation of CDN: Part 2](../In-depth%20Investigation%20of%20CDN%20Part%202/README.md): We’ll discuss how to make content consistent in a CDN and the deployment of proxy servers. We’ll also cover the custom and specialized CDN in detail.
-- [Evaluation of CDN](../Evaluation%20of%20CDN's%20Design/README.md): This lesson will provide an evaluation of our proposed design.
-- [Quiz on CDN System Design](../Quiz%20on%20CDN's%20Design/README.md): We’ll reinforce major concepts of CDN design with a quiz.
+- [Introduction to a CDN](../Introduction%20to%20a%20CDN/): We’ll provide a thorough introduction to CDNs and identify the functional and non-functional requirements.
+- [Design of a CDN](../Design%20of%20a%20CDN/): We’ll explain how to design the CDN. We’ll also briefly describe the API design.
+- [In-depth Investigation of CDN: Part 1](../In-depth%20Investigation%20of%20CDN%20Part%201/): This lesson explains caching strategies and CDN architecture. Also, we’ll discuss various approaches to finding the nearest proxy server.
+- [In-depth Investigation of CDN: Part 2](../In-depth%20Investigation%20of%20CDN%20Part%202/): We’ll discuss how to make content consistent in a CDN and the deployment of proxy servers. We’ll also cover the custom and specialized CDN in detail.
+- [Evaluation of CDN](../Evaluation%20of%20CDN's%20Design/): This lesson will provide an evaluation of our proposed design.
+- [Quiz on CDN System Design](../Quiz%20on%20CDN's%20Design/): We’ll reinforce major concepts of CDN design with a quiz.
 Let’s think about the solution to the discussed issues in the next lesson.
