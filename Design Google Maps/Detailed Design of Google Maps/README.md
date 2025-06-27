@@ -84,3 +84,14 @@ To detect transitory and normal conditions, we keep two copies of all relevant d
 
 - The graph preprocessing service recalculates the new paths on the updated segment graph. We’ve seen how the paths are updated continuously in the background based on the live data.
 We’ve learned how the segments work, how a user finds the location between two points, and how the ETA's accuracy is improved by utilizing the live location data.
+
+
+## How will we design Google Maps?
+We divide the design of Google Maps into five lessons:
+
+1. [Requirements](../Requirements%20of%20Google%20Maps'%20Design/): In this lesson, we’ll list the functional and non-functional requirements of a Google Maps system. We will also identify the challenges involved in designing such a system. Lastly, we’ll estimate the resources like servers and bandwidth needed to serve queries by millions of users.
+2. [Design](../Design%20of%20Google%20Maps/): This lesson consists of the high-level and API design of a system like Google maps. We’ll describe the services and the workflow of the system.
+3. [Meeting the challenges](../Challenges%20of%20Google%20Maps'%20Design/): We will discuss how we overcome the challenges that we highlighted in the requirements lesson.
+4. [Detailed design](../Detailed%20Design%20of%20Google%20Maps/): Based on the solution to the challenges, we will improve our earlier design and also elaborate on different aspects of it. We will describe the detailed design, including storage schema.
+5. [Evaluation](../Evaluation%20of%20Google%20Maps'%20Design/): This lesson explains how our designed Google Maps system fulfills all the requirements.
+Let’s start by understanding the requirements for designing a system like Google Maps.

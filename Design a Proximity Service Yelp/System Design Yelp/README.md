@@ -6,13 +6,18 @@ The user provides the name of a place or its GPS location, and the system finds 
 
 Services based on proximity servers are helpful in finding nearby attractions such as restaurants, theaters, or recreational sites. Designing such a system is challenging because we have to efficiently find all the possible places in a given radius with minimum latency. This means that we have to narrow down all the locations in the world, which could be in the billions, and only pinpoint the relevant ones.
 
-![Yelp](./yelp)
+![Yelp](./yelp/1.jpg)
+![Yelp](./yelp/2.jpg)
+![Yelp](./yelp/3.jpg)
+![Yelp](./yelp/4.jpg)
+![Yelp](./yelp/5.jpg)
+![Yelp](./yelp/6.jpg)
 
 ## How will we design Yelp?
 Here is the breakdown of Yelp’s design:
 
-1。Requirements: In this lesson, we define the requirements and estimate the required servers, storage, and bandwidth of our system.
-2。Design:In this lesson, we define the API design, the database schema, the components of our system, and the workflow of Yelp.
-3。Design considerations: In this lesson, we dive deep into the design of the Yelp system.
-4。Quiz: In this lesson, we take a quiz to test our knowledge of Yelp design.
+1. [Requirements](../Requirements%20of%20Yelp's%20Design/): In this lesson, we define the requirements and estimate the required servers, storage, and bandwidth of our system.
+2. [Design](../Design%20of%20Yelp/):In this lesson, we define the API design, the database schema, the components of our system, and the workflow of Yelp.
+3. [Design considerations](../Design%20Considerations%20of%20Yelp/): In this lesson, we dive deep into the design of the Yelp system.
+4. [Quiz](../Quiz%20on%20Yelp's%20Design/): In this lesson, we take a quiz to test our knowledge of Yelp design.
 Let’s start our design by defining its requirements.

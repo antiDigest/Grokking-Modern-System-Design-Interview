@@ -117,7 +117,10 @@ The following slides show how the process of searching for a place works. If a n
 
 The following slides show how the process of searching for a place works. If a node has the places we need, we stop there. Otherwise, we explore more nodes until we reach our search radius. After finding the node, we query the database for information related to the places and return the desired ones.
 
-![steps](./quadtree)
+![steps](./quadtree/1.jpg)
+![steps](./quadtree/2.jpg)
+![steps](./quadtree/3.jpg)
+![steps](./quadtree/4.jpg)
 
 
 ### Storage space estimation for QuadTrees
@@ -195,3 +198,12 @@ Let’s see how our system design fulfills our requirements.
 - Consistency: The users have a consistent view of the data regarding places, reviews, and photos because we used reliable and fault-tolerant databases like key-value stores and relational databases.
 ## Summary
 The proximity-based servers allow the user to search for a specific place or places nearby. The map data of the world is huge and dividing it into segments and finding the specific segment was a challenge in itself. So, we used QuadTrees to optimize our search and provided the user with a list of places with minimum latency.
+
+## How will we design Yelp?
+Here is the breakdown of Yelp’s design:
+
+1. [Requirements](../Requirements%20of%20Yelp's%20Design/): In this lesson, we define the requirements and estimate the required servers, storage, and bandwidth of our system.
+2. [Design](../Design%20of%20Yelp/):In this lesson, we define the API design, the database schema, the components of our system, and the workflow of Yelp.
+3. [Design considerations](../Design%20Considerations%20of%20Yelp/): In this lesson, we dive deep into the design of the Yelp system.
+4. [Quiz](../Quiz%20on%20Yelp's%20Design/): In this lesson, we take a quiz to test our knowledge of Yelp design.
+Let’s start our design by defining its requirements.

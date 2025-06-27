@@ -139,3 +139,14 @@ The availability will be affected.
 Explanation
 Both leader and followers will be down so they will be unable to process the requests.
 ```
+
+## How will we design Yelp?
+Here is the breakdown of Yelp’s design:
+
+1. [Requirements](../Requirements%20of%20Yelp's%20Design/): In this lesson, we define the requirements and estimate the required servers, storage, and bandwidth of our system.
+2. [Design](../Design%20of%20Yelp/):In this lesson, we define the API design, the database schema, the components of our system, and the workflow of Yelp.
+3. [Design considerations](../Design%20Considerations%20of%20Yelp/): In this lesson, we dive deep into the design of the Yelp system.
+4. [Quiz](../Quiz%20on%20Yelp's%20Design/): In this lesson, we take a quiz to test our knowledge of Yelp design.
+Let’s start our design by defining its requirements.
+
+## Move on to [Design Uber](../../Design%20Uber/System%20Design%20Uber/)

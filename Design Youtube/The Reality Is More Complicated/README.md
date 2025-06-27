@@ -118,7 +118,10 @@ Let’s see how the end user gets the content on their device. Since we have the
 
 However, in the case of non-popular content, the user is served from colocation sites or YouTube’s data center where the content is stored initially. We have already learned how YouTube can reduce latency times by having distributed caches at different design layers.
 
-![Deliver](./deliver)
+![Deliver](./deliver/1.jpg)
+![Deliver](./deliver/2.jpg)
+![Deliver](./deliver/3.jpg)
+![Deliver](./deliver/4.jpg)
 
 ### Adaptive streaming
 While the content is being served, the bandwidth of the user is also being monitored at all times. Since the video is divided into chunks of different qualities, each of the same time frame, the chunks are provided to clients based on changing network conditions.
@@ -180,3 +183,19 @@ We might use some lossless but fast compression (for example, Google Snappy) on 
 9. Question: Are there any other benefits to making file chunks other than in adaptive bitrates?
 
 We discussed video file chunks in the context of adaptive bit rates only. Such chunks also help to parallelize any preprocessing, which is important to meet real-time requirements, especially for live streams. Parallel processing is again a full-fledged topic in itself, and we’ve left it to you for further exploration.
+
+
+## How will we design YouTube?
+We’ve divided the design of YouTube into five lessons:
+
+1. [Requirements](../Requirements%20of%20YouTube's%20Design/): This is where we identify the functional and non-functional requirements. We also estimate the resources required to serve millions of users each day. This lesson answers questions like how much storage space YouTube will need to store 500 hours of video content uploaded to YouTube per day.
+
+2. [Design](../Design%20of%20YouTube/): In this lesson, we explain how we’ll design the YouTube service. We also briefly explain the API design and database schemas. Lastly, we will also briefly go over how YouTube’s search works.
+
+3. [Evaluation](../Evaluation%20of%20YouTube's%20Design/): This lesson explains how YouTube is able to fulfill all the requirements through the proposed design. It also looks at how scaling in the future can affect the system and what solutions are required to deal with scaling problems.
+
+4. [Reality is more complicated](../The%20Reality%20Is%20More%20Complicated/): During this lesson, we’ll explore different techniques that YouTube employs to deliver content effectively to the client and avoid network congestions.
+
+5. [Quiz](../Quiz%20on%20YouTube's%20Design/): We reinforce major concepts we learned designing YouTube by considering how we could design Netflix’s system.
+
+Our discussion on the usage of various building blocks in the design will be limited since we’ve already explored them in detail in the building blocks chapter.

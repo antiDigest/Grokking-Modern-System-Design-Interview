@@ -75,7 +75,16 @@ Aerial distance is the distance between two places measured in a straight line t
 
 Suppose the aerial distance between the source and the destination is 10 kilometers. In that case, we can include segments that are at a distance of 10 kilometers from the source and destination in each direction. This is a significant improvement over the large graph.
 
-![How](./shortest_path)
+![How](./shortest_path/01.jpg)
+![How](./shortest_path/02.jpg)
+![How](./shortest_path/03.jpg)
+![How](./shortest_path/04.jpg)
+![How](./shortest_path/05.jpg)
+![How](./shortest_path/06.jpg)
+![How](./shortest_path/07.jpg)
+![How](./shortest_path/08.jpg)
+![How](./shortest_path/09.jpg)
+![How](./shortest_path/10.jpg)
 
 Let’s summarize how we met the challenge of scalability. We divided our problem so that instead of working on a large road network as a whole, we worked on parts (segments) of it. The queries for a specific part of the road network are processed on that part only, and for the queries that require processing more than one part of the network, we connect those parts, as we have shown above.
 
@@ -92,3 +101,15 @@ For computing the ETA with reasonable accuracy, we collect the live location dat
 The information above helps us provide a more accurate ETA. For example, if we know that the traffic will be high at a specific time on a particular road, the ETA should also be greater than usual.
 
 In this lesson, we looked at how we meet the scalability challenge through segments and ETA computation using live data. In the next lesson, we’ll discuss the design in more detail.
+
+
+
+## How will we design Google Maps?
+We divide the design of Google Maps into five lessons:
+
+1. [Requirements](../Requirements%20of%20Google%20Maps'%20Design/): In this lesson, we’ll list the functional and non-functional requirements of a Google Maps system. We will also identify the challenges involved in designing such a system. Lastly, we’ll estimate the resources like servers and bandwidth needed to serve queries by millions of users.
+2. [Design](../Design%20of%20Google%20Maps/): This lesson consists of the high-level and API design of a system like Google maps. We’ll describe the services and the workflow of the system.
+3. [Meeting the challenges](../Challenges%20of%20Google%20Maps'%20Design/): We will discuss how we overcome the challenges that we highlighted in the requirements lesson.
+4. [Detailed design](../Detailed%20Design%20of%20Google%20Maps/): Based on the solution to the challenges, we will improve our earlier design and also elaborate on different aspects of it. We will describe the detailed design, including storage schema.
+5. [Evaluation](../Evaluation%20of%20Google%20Maps'%20Design/): This lesson explains how our designed Google Maps system fulfills all the requirements.
+Let’s start by understanding the requirements for designing a system like Google Maps.

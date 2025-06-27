@@ -261,3 +261,22 @@ D)
 Explanation
 Streaming servers are an alternative to colocation sites. These will not be enough for 100,000 users within the same geographical location.
 ```
+
+
+## How will we design YouTube?
+We’ve divided the design of YouTube into five lessons:
+
+1. [Requirements](../Requirements%20of%20YouTube's%20Design/): This is where we identify the functional and non-functional requirements. We also estimate the resources required to serve millions of users each day. This lesson answers questions like how much storage space YouTube will need to store 500 hours of video content uploaded to YouTube per day.
+
+2. [Design](../Design%20of%20YouTube/): In this lesson, we explain how we’ll design the YouTube service. We also briefly explain the API design and database schemas. Lastly, we will also briefly go over how YouTube’s search works.
+
+3. [Evaluation](../Evaluation%20of%20YouTube's%20Design/): This lesson explains how YouTube is able to fulfill all the requirements through the proposed design. It also looks at how scaling in the future can affect the system and what solutions are required to deal with scaling problems.
+
+4. [Reality is more complicated](../The%20Reality%20Is%20More%20Complicated/): During this lesson, we’ll explore different techniques that YouTube employs to deliver content effectively to the client and avoid network congestions.
+
+5. [Quiz](../Quiz%20on%20YouTube's%20Design/): We reinforce major concepts we learned designing YouTube by considering how we could design Netflix’s system.
+
+Our discussion on the usage of various building blocks in the design will be limited since we’ve already explored them in detail in the building blocks chapter.
+
+
+## Move on to [Design Quora](../../Design%20Quora/System%20Design%20Quora/)

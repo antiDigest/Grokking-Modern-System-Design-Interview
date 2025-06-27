@@ -63,3 +63,16 @@ Accuracy           Collect live data.
 
 ## Conclusion
 Google Maps is one of the most widely used applications in the world, where users find the shortest route between two locations. A map system models the road network with a graph data structure. To find the route, the shortest path algorithm runs over the graph. We’ve seen scalability issues with a large graph of the road network. We solved the problem by splitting the world into small segments. Each segment consists of a small graph that can be loaded into the memory to find the paths quickly. We’ve also seen that the estimated time of arrival can be improved by analyzing the live location data.
+
+
+## How will we design Google Maps?
+We divide the design of Google Maps into five lessons:
+
+1. [Requirements](../Requirements%20of%20Google%20Maps'%20Design/): In this lesson, we’ll list the functional and non-functional requirements of a Google Maps system. We will also identify the challenges involved in designing such a system. Lastly, we’ll estimate the resources like servers and bandwidth needed to serve queries by millions of users.
+2. [Design](../Design%20of%20Google%20Maps/): This lesson consists of the high-level and API design of a system like Google maps. We’ll describe the services and the workflow of the system.
+3. [Meeting the challenges](../Challenges%20of%20Google%20Maps'%20Design/): We will discuss how we overcome the challenges that we highlighted in the requirements lesson.
+4. [Detailed design](../Detailed%20Design%20of%20Google%20Maps/): Based on the solution to the challenges, we will improve our earlier design and also elaborate on different aspects of it. We will describe the detailed design, including storage schema.
+5. [Evaluation](../Evaluation%20of%20Google%20Maps'%20Design/): This lesson explains how our designed Google Maps system fulfills all the requirements.
+Let’s start by understanding the requirements for designing a system like Google Maps.
+
+## Move on to [Design Yelp](../../Design%20a%20Proximity%20Service%20Yelp/System%20Design%20Yelp/)

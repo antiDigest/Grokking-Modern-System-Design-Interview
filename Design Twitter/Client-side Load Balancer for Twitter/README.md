@@ -128,3 +128,14 @@ Deterministic aperture (continuous ring)     ✔️                          ✔
 
 ## Conclusion
 This design problem highlights that tweaking the performance of common building blocks and utilizing the right (rich) combination of them is necessary for real-world services. Our needs from one service to the next will dictate which design point we choose in our solution space. In this chapter, we saw examples of how Twitter uses a combination of data stores and custom algorithms for load-balancing.
+
+
+## How will we design Twitter?
+We’ll divide Twitter’s design into four sections:
+
+1. [Requirements](../Requirements%20of%20Twitter’s%20Design/): This lesson describes the functional and non-functional requirements of Twitter. We’ll also estimate multiple aspects of Twitter, such as storage, bandwidth, and computational resources.
+2. [Design](../High-level%20Design%20of%20Twitter/): In this lesson, we’ll discuss the high-level design of Twitter in this lesson. We also briefly explain the API design and identify the significant components of the Twitter architecture. Moreover, we will discuss how to manage the Top-k problem, such as Tweets liked or viewed by millions of users on Twitter.
+3. [Detailed Design](../Detailed%20Design%20of%20Twitter/): In this lesson, we’ll discuss the high-level design of Twitter in this lesson. We also briefly explain the API design and identify the significant components of the Twitter architecture. Moreover, we will discuss how to manage the Top-k problem, such as Tweets liked or viewed by millions of users on Twitter.
+4. [Client-side load balancers](../Client-side%20Load%20Balancer%20for%20Twitter/): This lesson discusses how Twitter performs load balancing for its microservices system to manage billions of requests between various services’ instances. Furthermore, we also see why Twitter uses a customized load-balancing technique instead of other commonly used approaches.
+5. [Quiz](../Quiz%20on%20Twitter's%20Design/): Finally, we’ll reinforce major concepts of Twitter design with a quiz.
+Let’s begin with defining Twitter’s requirements.

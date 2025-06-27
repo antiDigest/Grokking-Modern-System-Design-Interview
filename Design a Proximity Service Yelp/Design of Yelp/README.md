@@ -179,3 +179,12 @@ Adding a place or feedback: The load balancers route the write requests to the w
 Making segments: The segment’s producer splits the world map taken from the third-party map service into smaller segments. The places inside each segment are stored in a key-value store. Even though this is a one-time job, this process is repeated periodically for newer segments and places. Since the probability of new places being added is low, we update our segments every month.
 
 We’ve discussed the design of Yelp, its API design, and the relevant storage schema. In the next lesson, we’ll talk about the design considerations.
+
+## How will we design Yelp?
+Here is the breakdown of Yelp’s design:
+
+1. [Requirements](../Requirements%20of%20Yelp's%20Design/): In this lesson, we define the requirements and estimate the required servers, storage, and bandwidth of our system.
+2. [Design](../Design%20of%20Yelp/):In this lesson, we define the API design, the database schema, the components of our system, and the workflow of Yelp.
+3. [Design considerations](../Design%20Considerations%20of%20Yelp/): In this lesson, we dive deep into the design of the Yelp system.
+4. [Quiz](../Quiz%20on%20Yelp's%20Design/): In this lesson, we take a quiz to test our knowledge of Yelp design.
+Let’s start our design by defining its requirements.

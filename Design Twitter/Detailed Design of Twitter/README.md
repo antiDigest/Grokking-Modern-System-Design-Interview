@@ -60,7 +60,11 @@ Moreover, a single counter for each specific operation on the particular Tweet i
 
 Trends: Twitter shows Top-k trends (hashtags or keywords) locally and globally. Here, “locally” refers to when a topic or hashtag is used within the exact location where the requested user is active. Alternatively, “globally” refers to when the particular hashtag is used worldwide. There is a possibility that users from some regions are not using a specific hashtag in their Tweets but get this hashtag in their trends timeline. Hashtags with the maximum frequency (counts) become trends both locally and globally. Furthermore, Twitter shows various promoted trends (known as “paid trends”) in specified regions under trends. The below slides represent hashtags in the sliding window selected as Top-k trends over time.
 
-![Trends](./topK)
+![Trends](./topK/1.jpg)
+![Trends](./topK/2.jpg)
+![Trends](./topK/3.jpg)
+![Trends](./topK/4.jpg)
+![Trends](./topK/5.jpg)
 
 Timeline: Twitter shows two types of timelines: home and user timelines. Here, we’ll discuss the home timeline that displays a stream of Tweets posted by the followed accounts. The decision to show Top-k Tweets in the timeline includes followed accounts Tweets and Tweets that are liked or Retweeted by the followed accounts. There’s also another category of promoted Tweets displayed in the home timeline.
 
@@ -85,3 +89,14 @@ Later, the data is moved to the cloud pub-sub through an event processor. Next, 
 - We can use the Zipkin tracing system that performs sampling on requests. Moreover, we can use Zookeeper to maintain different data, including configuration information, distributed synchronization, naming registry, and so on.
 
 ![Design](./twitter_design.jpg)
+
+
+## How will we design Twitter?
+We’ll divide Twitter’s design into four sections:
+
+1. [Requirements](../Requirements%20of%20Twitter’s%20Design/): This lesson describes the functional and non-functional requirements of Twitter. We’ll also estimate multiple aspects of Twitter, such as storage, bandwidth, and computational resources.
+2. [Design](../High-level%20Design%20of%20Twitter/): In this lesson, we’ll discuss the high-level design of Twitter in this lesson. We also briefly explain the API design and identify the significant components of the Twitter architecture. Moreover, we will discuss how to manage the Top-k problem, such as Tweets liked or viewed by millions of users on Twitter.
+3. [Detailed Design](../Detailed%20Design%20of%20Twitter/): In this lesson, we’ll discuss the high-level design of Twitter in this lesson. We also briefly explain the API design and identify the significant components of the Twitter architecture. Moreover, we will discuss how to manage the Top-k problem, such as Tweets liked or viewed by millions of users on Twitter.
+4. [Client-side load balancers](../Client-side%20Load%20Balancer%20for%20Twitter/): This lesson discusses how Twitter performs load balancing for its microservices system to manage billions of requests between various services’ instances. Furthermore, we also see why Twitter uses a customized load-balancing technique instead of other commonly used approaches.
+5. [Quiz](../Quiz%20on%20Twitter's%20Design/): Finally, we’ll reinforce major concepts of Twitter design with a quiz.
+Let’s begin with defining Twitter’s requirements.

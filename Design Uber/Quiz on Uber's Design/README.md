@@ -109,3 +109,16 @@ The traffic details
 Explanation
 Traffic is not consistent. It changes every second. CDN usually stores the static data that is not changed frequently.
 ```
+
+## How will we design Uber?
+There are many unanswered questions regarding Uber. How does it work? How do drivers connect with riders? These are only two of many. This chapter will design a system like Uber and find the answer to such questions.
+
+We’ve divided the design of Uber into six sections:
+
+1. [Requirements](../Requirements%20of%20Uber’s%20Design/): This lesson will describe the functional and non-functional requirements of a system like Uber. We’ll also estimate the requirements of multiple aspects of Uber, such as storage, bandwidth, and the computation resources.
+2. [High-level Design](../High-level%20Design%20of%20Uber/): We’ll discuss the high-level design of Uber in this lesson. In addition, we’ll also briefly explain the API design of the Uber service.
+3. [Detailed Design](../Detailed%20Design%20of%20Uber/): We’ll explore the detailed design of Uber in this lesson. Moreover, we will also discuss the working of different components used in designing Uber.
+4. [Payment Service and Fraud Detection](../Payment%20Service%20and%20Fraud%20Detection%20in%20Uber%20Design/): We’ll learn how the payment system works in Uber design. Moreover, we’ll also discuss how we can catch different frauds related to payments in Uber-like systems.
+5. [Evaluation](../Evaluation%20of%20Uber’s%20Design/): This lesson will explain how Uber can fulfill all the non-functional requirements through the proposed design.
+6. [Quiz](../Quiz%20on%20Uber's%20Design/): We’ll reinforce major concepts of Uber design via a quiz.
+Let’s go over the requirements for designing a system like Uber in the next lesson.
