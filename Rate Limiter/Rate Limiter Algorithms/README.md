@@ -24,7 +24,10 @@ The following illustration represents the working of the token bucket algorithm.
 
 The following illustration demonstrates how token consumption and rate-limiting logic work. In this example, the capacity of the bucket is three, and it is refilled at a rate of three tokens per minute.
 
-![Token bucket](./token_bucket)
+![Token bucket](./token_bucket/1.jpg)
+![Token bucket](./token_bucket/2.jpg)
+![Token bucket](./token_bucket/3.jpg)
+![Token bucket](./token_bucket/4.jpg)
 
 #### Essential parameters
 We require the following essential parameters to implement the token bucket algorithm:
@@ -90,7 +93,10 @@ The main advantage of this algorithm is that it doesn’t suffer from the edge c
 
 Let’s understand how the sliding window log algorithm works in the illustration below. Assume that we have a maximum rate limit of two requests in a minute.
 
-![Sliding window log algorithm](./sliding_window)
+![Sliding window log algorithm](./sliding_window/1.jpg)
+![Sliding window log algorithm](./sliding_window/2.jpg)
+![Sliding window log algorithm](./sliding_window/3.jpg)
+![Sliding window log algorithm](./sliding_window/4.jpg)
 
 
 #### Essential parameters
@@ -165,3 +171,15 @@ Sliding window counter   Yes, but it requires relatively more space than other s
 ## Conclusion
 
 In this lesson, we explored various popular rate-limiting algorithms. We also shed light on the advantages and disadvantages of these algorithms. Each of these algorithms can be deployed based on the user choice and the type of use case.
+
+
+
+## How will we design a rate limiter?
+In the following lessons, we will learn about the following:
+
+1. [Requirements](../Requirements%20of%20a%20Rate%20Limiter’s%20Design/): This is where we discuss the functional and non-functional requirements of the rate limiter. We also describe the types of throttling and locations where a rate limiter can be placed to perform its functions efficiently.
+2. [High-level design](../Design%20of%20a%20Rate%20Limiter/): In this section, we look at the high-level design to provide an overview of a rate limiter.
+3. [Detailed design](../Design%20of%20a%20Rate%20Limiter/): In this section, we discuss the detailed design of a rate limiter and explain various building blocks involved in the detailed design.
+4. [Rate limiter algorithms](../Rate%20Limiter%20Algorithms/): In this lesson, we explain different algorithms that play a vital role in the operations of a rate limiter.
+5. [Quiz](../Quiz%20on%20the%20Rate%20Limiter’s%20Design/): To assess your understanding of rate limiters, we’ve provided a quiz at the end of this chapter.
+In the next lesson, let’s start by understanding the requirements and design of a rate limiter.

@@ -149,3 +149,11 @@ The design of pub-sub utilizes many building blocks that have been discussed in 
 - Distributed messaging queue: We’ll use use a messaging queue to store messages sent by the producer.
 - Key-value: We’ll use a key-value store to hold information about consumers.
 In the next lesson, we’ll focus on designing a pub-sub system.
+
+
+
+## How do we design a pub-sub system?
+We have divided the pub-sub system design into the following lessons:
+
+1. [Introduction](../Introduction%20to%20Pub-sub/): In this lesson, we learn about the use cases of the pub-sub system, define its requirements, and design the API for it.
+2. [Design](../Design%20of%20a%20Pub-sub%20System/): In this lesson, we discuss two designs of the pub-sub system, one with messaging queues and the other with a broker.

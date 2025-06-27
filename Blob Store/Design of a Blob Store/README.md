@@ -194,4 +194,14 @@ In the next lesson, we talk about the design considerations of a blob store.
 
 
 
+## How do we design a blob store system?
+We have divided the design of the blob store into five lessons and a quiz.
+
+1. [Requirements](../Requirements%20of%20a%20Blob%20Store's%20Design/): In this lesson, we identify the functional and non-functional requirements of a blob store. We also estimate the resources required by our blob store system.
+2. [Design](../Design%20of%20a%20Blob%20Store/): This lesson presents us with a high-level design, the API design, and a detailed design of the blob store, while explaining the details of all the components and the workflow.
+3. [Design considerations](../Design%20Considerations%20of%20a%20Blob%20Store/): In this lesson, we discuss some important aspects of design. For example, we learn about the database schema, partitioning strategy, blob indexing, pagination, and replication.
+4. [Evaluation](../Evaluation%20of%20a%20Blob%20Store's%20Design/): In this lesson, we evaluate our blob store based on our requirements.
+5. [Quiz](../Quiz%20on%20the%20Blob%20Store's%20Design/): In this lesson, we assess understanding of the blob store design.
+Let’s start with the requirements of a blob store system.
+
 

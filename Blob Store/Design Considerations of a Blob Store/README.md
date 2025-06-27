@@ -168,7 +168,16 @@ Since the blob chunks are placed at different data nodes, deleting from many dif
 Marking the blob as deleted, but not actually deleting it at the moment, causes internal metadata inconsistencies, meaning that things continue to take up storage space that should be free. These metadata inconsistencies have no impact on the user. For example, for a blob marked as deleted in the metadata, we still have the entries for that blob’s chunks in the metadata. The data nodes are still holding on to that blob’s chunks. Therefore, we have a service called a garbage collector that cleans up metadata inconsistencies later. The deletion of a blob causes the chunks associated with that blob to be freed. However, there could be an appreciable time delay between the time a blob is deleted by a user and the time of the corresponding increase in free space in the blob store. We can bear this appreciable time delay because, in return, we have a real-time fast response benefit for the user’s delete blob request.
 
 The whole deletion process is shown in the following illustration:
-![Garbage collection](./gc)
+![Garbage collection](./gc/01.jpg)
+![Garbage collection](./gc/02.jpg)
+![Garbage collection](./gc/03.jpg)
+![Garbage collection](./gc/04.jpg)
+![Garbage collection](./gc/05.jpg)
+![Garbage collection](./gc/06.jpg)
+![Garbage collection](./gc/07.jpg)
+![Garbage collection](./gc/08.jpg)
+![Garbage collection](./gc/09.jpg)
+![Garbage collection](./gc/10.jpg)
 ## Stream a file
 To stream a file, we need to define how many Bytes are allowed to be read at one time. Let’s say we read X number of Bytes each time. The first time we read the first X Bytes starting from the 0th Byte (0 to X-1) and the next time, we read the next X Bytes (X to 2X−1).
 ```
@@ -189,3 +198,15 @@ Caching can take place at multiple levels. Below are some examples:
 Note: The caching of the blob store is usually done using CDN. The Azure blob store service cache the publicly accessible blob in Azure Content Delivery Network until that blob’s TTL (time-to-live) elapses. The origin server defines the TTL, and CDN determines it from the Cache-Control header in the HTTP response from the origin server.
 ```
 We covered the design factors that should be taken into account while designing a blob store. Now, we’ll evaluate what we designed.
+
+
+
+## How do we design a blob store system?
+We have divided the design of the blob store into five lessons and a quiz.
+
+1. [Requirements](../Requirements%20of%20a%20Blob%20Store's%20Design/): In this lesson, we identify the functional and non-functional requirements of a blob store. We also estimate the resources required by our blob store system.
+2. [Design](../Design%20of%20a%20Blob%20Store/): This lesson presents us with a high-level design, the API design, and a detailed design of the blob store, while explaining the details of all the components and the workflow.
+3. [Design considerations](../Design%20Considerations%20of%20a%20Blob%20Store/): In this lesson, we discuss some important aspects of design. For example, we learn about the database schema, partitioning strategy, blob indexing, pagination, and replication.
+4. [Evaluation](../Evaluation%20of%20a%20Blob%20Store's%20Design/): In this lesson, we evaluate our blob store based on our requirements.
+5. [Quiz](../Quiz%20on%20the%20Blob%20Store's%20Design/): In this lesson, we assess understanding of the blob store design.
+Let’s start with the requirements of a blob store system.

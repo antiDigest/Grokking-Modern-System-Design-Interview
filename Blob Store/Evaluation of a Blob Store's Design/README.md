@@ -49,3 +49,17 @@ We synchronously replicate the disk data blocks inside a storage cluster upon a 
 After responding to the write request and replicating data within the storage cluster, we asynchronously replicate blobs in the data centers placed far away or in other regions to ensure availability.
 ## Conclusion
 We saw that a blob store is designed to store large-sized and unstructured data. A blob store helps applications store images, videos, audio, and so on. Nowadays, it’s used by many applications like YouTube, Facebook, Instagram, Twitter, and more. We designed a system where users can perform a blob store’s basic function. Lastly, we evaluated our design based on our non-functional requirements.
+
+
+
+
+
+## How do we design a blob store system?
+We have divided the design of the blob store into five lessons and a quiz.
+
+1. [Requirements](../Requirements%20of%20a%20Blob%20Store's%20Design/): In this lesson, we identify the functional and non-functional requirements of a blob store. We also estimate the resources required by our blob store system.
+2. [Design](../Design%20of%20a%20Blob%20Store/): This lesson presents us with a high-level design, the API design, and a detailed design of the blob store, while explaining the details of all the components and the workflow.
+3. [Design considerations](../Design%20Considerations%20of%20a%20Blob%20Store/): In this lesson, we discuss some important aspects of design. For example, we learn about the database schema, partitioning strategy, blob indexing, pagination, and replication.
+4. [Evaluation](../Evaluation%20of%20a%20Blob%20Store's%20Design/): In this lesson, we evaluate our blob store based on our requirements.
+5. [Quiz](../Quiz%20on%20the%20Blob%20Store's%20Design/): In this lesson, we assess understanding of the blob store design.
+Let’s start with the requirements of a blob store system.

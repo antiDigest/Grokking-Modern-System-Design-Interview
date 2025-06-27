@@ -14,7 +14,12 @@ descriptors:
                             Rate-limiting rules from Lyft
 ```
 
-![High-level design](./design)
+![High-level design](./design/1.jpg)
+![High-level design](./design/2.jpg)
+![High-level design](./design/3.jpg)
+![High-level design](./design/4.jpg)
+![High-level design](./design/5.jpg)
+![High-level design](./design/6.jpg)
 
 In the above rate-limiting rule, the unit is set to day and the request_per_unit is set to 5. These parameters define that the system can allow five marketing messages per day.
 
@@ -84,7 +89,10 @@ Request ID     Maximum Limit    Count
 
 If the condition is true, the rate limiter will first respond back to the front-end server with an Allowed signal. The corresponding count and other relevant information are updated offline in the next steps. The rate limiter writes back the updated data in the cache. Following this approach reduces latency and avoids the contention that incoming requests could have caused.
 
-![Rate limiter](./critical_path)
+![Rate limiter](./critical_path/1.jpg)
+![Rate limiter](./critical_path/2.jpg)
+![Rate limiter](./critical_path/3.jpg)
+![Rate limiter](./critical_path/4.jpg)
 
 ```
 Note: We’ve seen a form of rate limiting in TCP network protocol, where the recipient can throttle the sender by advertising the size of the window (the outstanding data a recipient is willing to receive). The sender sends the minimum value of either the congestion window or the advertised window. Many network traffic shapers use similar mechanisms to provide preferential treatment to different network flows.
@@ -100,3 +108,14 @@ In this lesson, we discussed the design of a rate limiter in distributed systems
 - Scalability: The number of rate limiters can be increased or decreased based on the number of incoming requests within the defined limit.
 
 Now, our system provides high availability, low latency, and scalability in light of the above discussion.
+
+
+## How will we design a rate limiter?
+In the following lessons, we will learn about the following:
+
+1. [Requirements](../Requirements%20of%20a%20Rate%20Limiter’s%20Design/): This is where we discuss the functional and non-functional requirements of the rate limiter. We also describe the types of throttling and locations where a rate limiter can be placed to perform its functions efficiently.
+2. [High-level design](../Design%20of%20a%20Rate%20Limiter/): In this section, we look at the high-level design to provide an overview of a rate limiter.
+3. [Detailed design](../Design%20of%20a%20Rate%20Limiter/): In this section, we discuss the detailed design of a rate limiter and explain various building blocks involved in the detailed design.
+4. [Rate limiter algorithms](../Rate%20Limiter%20Algorithms/): In this lesson, we explain different algorithms that play a vital role in the operations of a rate limiter.
+5. [Quiz](../Quiz%20on%20the%20Rate%20Limiter’s%20Design/): To assess your understanding of rate limiters, we’ve provided a quiz at the end of this chapter.
+In the next lesson, let’s start by understanding the requirements and design of a rate limiter.

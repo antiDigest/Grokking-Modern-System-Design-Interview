@@ -71,7 +71,15 @@ The broker server is the core component of our pub-sub system. It will handle wr
 
 As we know, a topic is a persistent sequence of messages stored in the local storage of the broker. Once the data has been added to the topic, it cannot be modified. Reading and writing a message from or to a topic is an I/O task for computers, and scaling such tasks is challenging. This is the reason we split the topics into multiple partitions. The data belonging to a single topic can be present in numerous partitions. For example, let’s assume have Topic A and we allocate three partitions for it. The producers will send their messages to the relevant topic. The messages received will be sent to various partitions on basis of the round-robin algorithm. We’ll use a variation of round-robin: weighted round-robin. The following slides show how the messages are stored in various partitions belonging to a single topic.
 
-![Broker](./how_broker_works)
+![Broker](./how_broker_works/1.jpg)
+![Broker](./how_broker_works/2.jpg)
+![Broker](./how_broker_works/3.jpg)
+![Broker](./how_broker_works/4.jpg)
+![Broker](./how_broker_works/5.jpg)
+![Broker](./how_broker_works/6.jpg)
+![Broker](./how_broker_works/7.jpg)
+![Broker](./how_broker_works/8.jpg)
+![Broker](./how_broker_works/9.jpg)
 
 ```
 Question 1
@@ -115,7 +123,9 @@ Our system will need to keep appropriate metadata persistently. This metadata wi
 We’ll discuss consumer manager later in the lesson, which will keep the required information.
 ```
 
-![Multiple topics](./multiple_topics)
+![Multiple topics](./multiple_topics/1.jpg)
+![Multiple topics](./multiple_topics/2.jpg)
+![Multiple topics](./multiple_topics/3.jpg)
 
 We discussed that a message will be stored in a segment. We’ll identify each segment using an offset. Since these are immutable records, the readers are independent and they can read messages anywhere from this file using the necessary API functions. The following slides show the segment level detail.
 
@@ -155,3 +165,15 @@ The finalized design of our pub-sub system is shown below.
 We saw two designs of pub-sub, using queues and using our custom storage optimized for writing and reading small-sized data.
 
 There are numerous use cases of a pub-sub. Due to decoupling between producers and consumers, the system can scale dynamically, and the failures are well-contained. Additionally, due to proper accounting of data consumption, the pub-sub is a system of choice for a large-scale system that produces enormous data. We can determine precisely which data is needed and not needed.
+
+
+
+
+## How do we design a pub-sub system?
+We have divided the pub-sub system design into the following lessons:
+
+1. [Introduction](../Introduction%20to%20Pub-sub/): In this lesson, we learn about the use cases of the pub-sub system, define its requirements, and design the API for it.
+2. [Design](../Design%20of%20a%20Pub-sub%20System/): In this lesson, we discuss two designs of the pub-sub system, one with messaging queues and the other with a broker.
+
+
+## Move on to [Rate Limiter](../../Rate%20Limiter/System%20Design%20The%20Rate%20Limiter/)
