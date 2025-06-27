@@ -9,7 +9,7 @@ The following are the functional requirements:
 - Insert data: The user of a distributed cache system must be able to insert an entry to the cache.
 - Retrieve data: The user should be able to retrieve data corresponding to a specific key.
 
-[Functional and non-functional requirements of a distributed cache](./req.jpg)
+![Functional and non-functional requirements of a distributed cache](./req.jpg)
 
 ### Non-functional requirements
 We’ll consider the following non-functional requirements:
@@ -96,10 +96,22 @@ Apart from the details in the sections above, optimizing the time-to-live (TTL) 
 ## High-level design
 The following figure depicts our high-level design:
 
-[High-level design of distributed cache](./design.jpg)
+![High-level design of distributed cache](./design.jpg)
 
 The main components in this high-level design are the following:
 
 - Cache client: This library resides in the service application servers. It holds all the information regarding cache servers. The cache client will choose one of the cache servers using a hash and search algorithm for each incoming insert and retrieve request. All the cache clients should have a consistent view of all the cache servers. Also, the resolution technique to move data to and from the cache servers should be the same. Otherwise, different clients will request different servers for the same data.
 
 - Cache servers: These servers maintain the cache of the data. Each cache server is accessible by all the cache clients. Each server is connected to the database to store or retrieve data. Cache clients use TCP or UDP protocol to perform data transfer to or from the cache servers. However, if any cache server is down, requests to those servers are resolved as a missed cache by the cache clients.
+
+
+
+## How will we design distributed cache?
+We’ll divide the task of designing and reinforcing learning major concepts of distributed cache into five lessons:
+
+1. [Background of Distributed Cache](../Background%20of%20Distributed%20Cache/README.md): It’s imperative to build the background knowledge necessary to make critical decisions when designing distributed caches. This lesson will revisit some basic but important concepts.
+2. [High-level Design of a Distributed Cache](../High-level%20Design%20of%20a%20Distributed%20Cache/README.md): We’ll build a high-level design of a distributed cache in this lesson.
+3. [Detailed Design of a Distributed Cache](../Detailed%20Design%20of%20a%20Distributed%20Cache/README.md): We’ll identify some limitations of our high-level design and work toward a scalable, affordable, and performant solution.
+4. [Evaluation of a Distributed Cache Design](../Evaluation%20of%20a%20Distributed%20Cache's%20Design/README.md): This lesson will evaluate our design for various non-functional requirements, such as scalability, consistency, availability, and so on.
+5. [Memcached versus Redis](../Memcached%20versus%20Redis/README.md): We’ll discuss well-known industrial solutions, namely Memcached and Redis. We’ll also go through their details and compare their features to help us understand their potential use cases and how they relate to our design.
+Let’s begin by exploring the background of the distributed cache in the next lesson.

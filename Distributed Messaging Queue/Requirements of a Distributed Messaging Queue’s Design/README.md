@@ -48,13 +48,28 @@ However, several aspects restrain us from using the single-server messaging queu
 Such a queue is also called a bounded queue, due to its fixed size within the system.
 ```
 
-[Multiple producers and consumers interact via a single messaging queue](./queue.jpg)
+![Multiple producers and consumers interact via a single messaging queue](./queue.jpg)
 
 ## Building blocks we will use
 The design of a distributed messaging queue utilizes the following building blocks:
-[The building blocks used to design a distributed messaging queue](./bb.jpg)
+![The building blocks used to design a distributed messaging queue](./bb.jpg)
 
 - Database(s) will be required to store the metadata of queues and users.
 - Caches are important to keep frequently accessed data, whether it be data pertaining to users or queues metadata.
 - Load balancers are used to direct incoming requests to servers where the metadata is stored.
 In our discussion on messaging queues, we focused on their functional and non-functional requirements. Before moving on to the process of designing a distributed messaging queue, it’s essential for us to discuss some key considerations and challenges that may affect the design.
+
+
+
+
+## How do we design a distributed messaging queue?
+We divide the design of a distributed messaging queue into the following five lessons:
+
+1. [Requirements](../Requirements%20of%20a%20Distributed%20Messaging%20Queue’s%20Design/README.md): Here, we focus on the functional and non-functional requirements of designing a distributed messaging queue. We also discuss a single server messaging queue and its drawbacks in this lesson.
+2. [Design consideration](../Considerations%20of%20a%20Distributed%20Messaging%20Queue’s%20Design/README.md): In this lesson, we discuss some important factors that may affect the design of a distributed messaging queue—for example, the order of placing messages in a queue, their extraction, their visibility in the queue, and the concurrency of incoming messages.
+3. [Design: Part 1](../Design%20of%20a%20Distributed%20Messaging%20Queue%20Part%201/README.md): In this lesson, we discuss the design of a distributed messaging queue in detail. We also describe the process of replication of queues and the interaction between various building blocks involved in the design.
+4. [Design: Part 2](../Design%20of%20a%20Distributed%20Messaging%20Queue%20Part%202/README.md): In this lesson, we discuss the design of a distributed messaging queue in detail. We also describe the process of replication of queues and the interaction between various building blocks involved in the design.
+5. [Evaluation](../Evaluation%20of%20a%20Distributed%20Messaging%20Queue’s%20Design/README.md): In this lesson, we evaluate the design of a distributed messaging queue based on its functional and non-functional requirements.
+6. [Quiz](../Quiz%20on%20the%20Distributed%20Messaging%20Queue’s%20Design/README.md): At the end of the chapter, we evaluate understanding of the design of a distributed messages queue via a quiz.
+Let’s start by understanding the requirements of designing a distributed messaging queue.
+

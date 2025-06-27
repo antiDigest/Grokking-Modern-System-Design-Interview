@@ -20,7 +20,7 @@ With the best-effort ordering approach, the system puts the messages in a specif
 
 For example, as shown in the following figure, the producer sends four messages, A, B, C, and D, in the same order as illustrated. Due to network congestion or some other issue, message B is received after message D. Hence, the order of messages is A, C, D, and B at the receiving end. Therefore, in this approach, the messages will be put in the queue in the same order they were received instead of the order in which they were produced on the client side.
 
-[Best-effort ordering: Messages are placed in a queue in the same order that they’re received and not in the order they were sent](./ordering.jpg)
+![Best-effort ordering: Messages are placed in a queue in the same order that they’re received and not in the order they were sent](./ordering.jpg)
 
 ### Strict ordering
 The strict ordering technique preserves the ordering of messages more rigorously. Through this approach, messages are placed in a queue in the order that they’re produced.
@@ -90,10 +90,23 @@ Another solution is to serialize the requests using the system’s buffer at bot
 
 Applications might use multiple queues with dedicated producers and consumers to keep the ordering cost per queue under check, although this comes at the cost of more complicated application logic.
 
-[Avoiding race conditions: Producers and consumers are serialized at both ends of the queue](./serialization.jpg)
+![Avoiding race conditions: Producers and consumers are serialized at both ends of the queue](./serialization.jpg)
 
 In this lesson, we discussed some key considerations and challenges in the design process of a messaging queue and answered the following questions:
 
 - Why is the order of messages important, and how do we enforce that order?
 - How does ordering affect performance? How do we handle concurrency while accessing a queue?
 Now, we are ready to start designing a distributed messaging queue.
+
+
+
+## How do we design a distributed messaging queue?
+We divide the design of a distributed messaging queue into the following five lessons:
+
+1. [Requirements](../Requirements%20of%20a%20Distributed%20Messaging%20Queue’s%20Design/README.md): Here, we focus on the functional and non-functional requirements of designing a distributed messaging queue. We also discuss a single server messaging queue and its drawbacks in this lesson.
+2. [Design consideration](../Considerations%20of%20a%20Distributed%20Messaging%20Queue’s%20Design/README.md): In this lesson, we discuss some important factors that may affect the design of a distributed messaging queue—for example, the order of placing messages in a queue, their extraction, their visibility in the queue, and the concurrency of incoming messages.
+3. [Design: Part 1](../Design%20of%20a%20Distributed%20Messaging%20Queue%20Part%201/README.md): In this lesson, we discuss the design of a distributed messaging queue in detail. We also describe the process of replication of queues and the interaction between various building blocks involved in the design.
+4. [Design: Part 2](../Design%20of%20a%20Distributed%20Messaging%20Queue%20Part%202/README.md): In this lesson, we discuss the design of a distributed messaging queue in detail. We also describe the process of replication of queues and the interaction between various building blocks involved in the design.
+5. [Evaluation](../Evaluation%20of%20a%20Distributed%20Messaging%20Queue’s%20Design/README.md): In this lesson, we evaluate the design of a distributed messaging queue based on its functional and non-functional requirements.
+6. [Quiz](../Quiz%20on%20the%20Distributed%20Messaging%20Queue’s%20Design/README.md): At the end of the chapter, we evaluate understanding of the design of a distributed messages queue via a quiz.
+Let’s start by understanding the requirements of designing a distributed messaging queue.

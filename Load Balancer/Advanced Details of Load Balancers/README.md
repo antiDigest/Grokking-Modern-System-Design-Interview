@@ -46,12 +46,12 @@ As the name indicates, stateful load balancing involves maintaining a state of t
 
 Essentially, the stateful LBs retain a data structure that maps incoming clients to hosting servers. Stateful LBs increase complexity and limit scalability because session information of all the clients is maintained across all the load balancers. That is, load balancers share their state information with each other to make forwarding decisions.
 
-[Stateful load balancing](./stateful.jpg)
+![Stateful load balancing](./stateful.jpg)
 
 #### Stateless load balancing
 Stateless load balancing maintains no state and is, therefore, faster and lightweight. Stateless LBs use consistent hashing to make forwarding decisions. However, if infrastructure changes (for example, a new application server joining), stateless LBs may not be as resilient as stateful LBs because consistent hashing alone isn’t enough to route a request to the correct application server. Therefore, a local state may still be required along with consistent hashing.
 
-[Stateless load balancers using hash buckets to map requests to end servers](./hash.jpg)
+![Stateless load balancers using hash buckets to map requests to end servers](./hash.jpg)
 
 Therefore, a state maintained across different load balancers is considered as stateful load balancing. Whereas, a state maintained within a load balancer for internal use is assumed as stateless load balancing.
 
@@ -68,7 +68,7 @@ Note: Layer 7 load balancers are smart in terms of inspection. However layer 4 l
 
 ## Load balancer deployment
 We discussed the trade-offs of load balancing performed at different OSI layers. In practice, however, a single layer LB isn’t enough for a large data center. In fact, multiple layers of load balancers coordinate to take informed forwarding decisions. A traditional data center may have a three-tier LB as shown below:
-[Three-tier load balancer in a typical data center](./3tiers.jpg)
+![Three-tier load balancer in a typical data center](./3tiers.jpg)
 
 ### Tier-0 and tier-1 LBs
 If DNS can be considered as the tier-0 load balancer, equal cost multipath (ECMP) routers are the tier-1 LBs. From the name of ECMP, it’s evident that this layer divides incoming traffic on the basis of IP or some other algorithm like round-robin or weighted round-robin. Tier-1 LBs will balance the load across different paths to higher tiers of load balancers.
@@ -97,8 +97,8 @@ To summarize, tier 1 balances the load among the load balancers themselves. Tier
 
 ### Practical example
 Let’s look at an example where requests from a client come in and get forwarded to different application servers based on the application data inside the client’s network packets.
-[Practical example](./example1.jpg)
-[Practical example](./example2.jpg)
+![Practical example](./example1.jpg)
+![Practical example](./example2.jpg)
 
 Let’s look at the illustration above in the following steps:
 1. R1 indicates request 1 coming through one of the ECMP routers (tier-1 LBs).
@@ -163,12 +163,12 @@ Software load balancers are becoming increasingly popular because of their flexi
 
 ### Cloud load balancers
 With the advent of the field of cloud computing, Load Balancers as a Service (LBaaS) has been introduced. This is where cloud owners provide load balancing services. Users pay according to their usage or the service-level agreement (SLA) with the cloud provider. Cloud-based LBs may not necessarily replace a local on-premise load balancing facility, but they can perform global traffic management between different zones. Primary advantages of such load balancers include ease of use, management, metered cost, flexibility in terms of usage, auditing, and monitoring services to improve business decisions. An example of how cloud-based LBs can provide GSLB is given below:
-[GSLB is obtained through LBaaS, and the regions contain data centers that are the property of application providers]
+![GSLB is obtained through LBaaS, and the regions contain data centers that are the property of application providers]
 
 ```
 Note: Another interesting implementation of load balancers comes in the form of client-side load balancing. Client-side load balancing is suited where there are numerous services, each with many instances (such as load balancing in Twitter). Our focus, however, is on traditional load balancers because most three-tier applications employ these in their design.
 ```
-[GSLB is obtained through LBaaS, and the regions contain data centers that are the property of application providers](./gslb.jpg)
+![GSLB is obtained through LBaaS, and the regions contain data centers that are the property of application providers](./gslb.jpg)
 
 ## Conclusion
 LBs have come a long way to become a service offered in the cloud, starting since their inception in the form of hardware. They’re a key component of any enterprise-level service. Horizontal scalability of hosting servers will always require a good load balancing layer capable of providing load balancing, session maintenance, TLS offloading, service discovery, and more.

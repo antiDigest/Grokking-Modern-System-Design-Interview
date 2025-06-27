@@ -4,7 +4,7 @@ When network partitions and node failures occur during an update, an object’s 
 ```
 The version history contains the details of objects that have been modified.
 ```
-[Data Versioning](./version)
+![Data Versioning](./version)
 
 To handle inconsistency, we need to maintain causality between the events. We can do this using the timestamps and update all conflicting values with the value of the latest request. But time isn’t reliable in a distributed system, so we can’t use it as a deciding factor.
 
@@ -46,15 +46,15 @@ Note: This process of resolving conflicts is comparable to how it’s done in Gi
 ```
 
 ### Vector clock usage example
-Let’s consider an example. Say we have a write operation request. Node A handles the first version of the write request, E1. The corresponding vector clock has node information and its counter—that is, [A,1]. Node A handles another write for the same object on which the previous write was performed. So, for E2, we have [A,2]. E1 is no longer required because E2 was updated on the same node. E2 reads the changes made by E1, and then new changes are made. Suppose a network partition happens. Now, the request is handled by two different nodes, B and C. The context with updated versions, which are E3, and their related clocks, which are ([A,2], [B,1]) and ([A,2], [C,1]), are now in the system.
+Let’s consider an example. Say we have a write operation request. Node A handles the first version of the write request, E1. The corresponding vector clock has node information and its counter—that is, ![A,1]. Node A handles another write for the same object on which the previous write was performed. So, for E2, we have ![A,2]. E1 is no longer required because E2 was updated on the same node. E2 reads the changes made by E1, and then new changes are made. Suppose a network partition happens. Now, the request is handled by two different nodes, B and C. The context with updated versions, which are E3, and their related clocks, which are (![A,2], ![B,1]) and (![A,2], ![C,1]), are now in the system.
 
-Suppose the network partition is repaired, and the client requests a write again, but now we have conflicts. The context ( [A,3], [B,1], [C,1] ) of the conflicts are returned to the client. After the client does reconciliation and A coordinates the write, we have E5 with the clock ([A,4]).
-[Vector clock usage example](./example)
+Suppose the network partition is repaired, and the client requests a write again, but now we have conflicts. The context ( ![A,3], ![B,1], ![C,1] ) of the conflicts are returned to the client. After the client does reconciliation and A coordinates the write, we have E5 with the clock (![A,4]).
+![Vector clock usage example](./example)
 
 ### Compromise with vector clocks limitations
 The size of vector clocks may increase if multiple servers write to the same object simultaneously. It’s unlikely to happen in practice because writes are typically handled by one of the top n nodes in a preference list.
 
-For example, if there are network partitions or multiple server failures, write requests may be processed by nodes not in the top n nodes in the preference list. As a result we can have a long version like this: ([A,10], [B,4], [C,1], [D,2], [E,1], [F,3], [G,5], [H,7], [I,2], [J,2], [K,1], [L,1]). It’s a hassle to store and maintain such a long version history.
+For example, if there are network partitions or multiple server failures, write requests may be processed by nodes not in the top n nodes in the preference list. As a result we can have a long version like this: (![A,10], ![B,4], ![C,1], ![D,2], ![E,1], ![F,3], ![G,5], ![H,7], ![I,2], ![J,2], ![K,1], ![L,1]). It’s a hassle to store and maintain such a long version history.
 
 We can limit the size of the vector clock in these situations. We employ a clock truncation strategy to store a timestamp with each (node, counter) pair to show when the data item was last updated by the node. Vector clock pairs are purged when the number of (node, counter) pairs exceeds a predetermined threshold (let’s say 10). Because the descendant linkages can’t be precisely calculated, this truncation approach can lead to a lack of efficiency in reconciliation.
 
@@ -97,7 +97,7 @@ n             r             w          Description
 ```
 Let’s say n = 3, which means we have three nodes where the data is copied to. Now, for w = 2, the operation makes sure to write in two nodes to make this request successful. For the third node, the data is updated asynchronously.
 
-[Usage](./usage)
+![Usage](./usage)
 
 In this model, the latency of a get operation is decided by the slowest of the r replicas. The reason is that for the larger value of r, we focus more on availability and compromise consistency.
 

@@ -3,7 +3,7 @@
 ## Introduction
 Typeahead suggestion, also referred to as the autocomplete feature, enables users to search for a known and frequently searched query. This feature comes into play when a user types a query in the search box. The typeahead system provides a list of suggestions to complete a query based on the user’s search history, the current context of the search, and trending content across different users and regions. Frequently searched queries always appear at the top of the suggestion list. The typeahead system doesn’t make the search faster. However, it helps the user form a sentence more quickly. It’s an essential part of all search engines that enhances the user experience.
 
-[The typeahead suggestion system in action]
+![The typeahead suggestion system in action]
 
 ## How will we design a typeahead suggestion system?
 We’ve divided the chapter on the design of the typeahead suggestion system into six lessons:

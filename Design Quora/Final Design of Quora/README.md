@@ -16,7 +16,7 @@ P99 stands for 99th percentile. It means that 99 percent of the queries are ente
 
 The issues highlighted above require changes to the earlier proposed design. Therefore, we’ll make the following adjustments and update our design:
 
-[Detailed design of Quora](./detailed_design.jpg)
+![Detailed design of Quora](./detailed_design.jpg)
 
 ## Detailed design of Quora
 Let’s understand the improvements in our design:
@@ -24,7 +24,7 @@ Let’s understand the improvements in our design:
 ### Service hosts
 We combine the web and application servers within a single powerful machine that can handle all the processes at once. This technique eliminates the network I/O and the latency introduced due to the network hops required between the manager, worker, and routing library processes. The illustration below provides an abstract view of the updated web server architecture:
 
-[The updated design, where web and application servers are combined in the service host](./servers.jpg)
+![The updated design, where web and application servers are combined in the service host](./servers.jpg)
 
 
 ### Vertical sharding of MySQL
@@ -36,7 +36,7 @@ The goal is to improve performance and reduce the load due to an increasing numb
 2. We combine multiple tables into a single partition, where join operations are anticipated. The concept is depicted in Partition 1, which embeds Tables 1 and 2.
 Therefore, we are able to co-locate related data and reduce traffic on hot data. The illustration below depicts vertical sharding at Quora.
 
-[The architecture of vertical sharding at Quora](./partitions.jpg)
+![The architecture of vertical sharding at Quora](./partitions.jpg)
 
 After we complete the partitioning, we require two types of mappings or metadata to complete our scaling process:
 
@@ -78,7 +78,7 @@ Feature extration service: Quora refers to their feature extraction service as A
 
 Features like comments, upvotes, and downvotes require frequent page updates from the client side. Polling is a technique where the client (browser) frequently requests the server for new updates. The server may or may not have any updates but still responds to the client. Therefore, the server may get uselessly overburdened. To resolve this issue, Quora uses a technique called long polling, where if a client requests for an update, the server may not respond for as long as 60 seconds if there are no updates. However, if there is an update, the server will reply immediately and allow the client to make new requests.
 
-[Polling vs. long polling]
+![Polling vs. long polling]
 
 Lastly, Memcached can employ multiget() to obtain multiple keys from the cache shards to reduce the retrieval latency of multiple keys.
 

@@ -4,7 +4,7 @@ A service has no visibility of the errors that don’t occur at its infrastructu
 ## Initial design
 To ensure that the client’s requests reach the server, we’ll act as clients and perform reachability and health checks. We’ll need various vantage points across the globe. We can run a service, let’s call it prober, that periodically sends requests to the service to check availability. This way, we can monitor reachability to our service from many different places.
 
-[Prober checking availability of website](./probe.jpg)
+![Prober checking availability of website](./probe.jpg)
 
 ### Issues with probers
 We can have the following issues with probers:
@@ -24,7 +24,7 @@ Instead of using a prober on vantage points, we can embed the probers into the a
 - Collector: This is a report collector independent of the primary service. It’s made independent to avoid the situations where client agents want to report an error to the failed service. We summarize errors reports from collectors and look for spikes in the errors graph to see client-side issues.
 The following illustration shows how an agent reaches an independent collector when primary service isn’t reachable:
 
-[Evaluating the agent's report to see a spike in errors](./evaluate.jpg)
+![Evaluating the agent's report to see a spike in errors](./evaluate.jpg)
 
 These collectors are a hierarchy of big data processing systems. We can place them near the client network, and over time, we can accumulate these statistics from all such localized sites. We’ll use online stream processing systems to make such a system near real-time. If we’re mainly looking for summary statistics, our system can tolerate the loss of some error reports. Some reports will be relative to the overall user population. We might say 1% of service users are “some.” If we don’t want to lose any reports, we’ll need to design a system with more care, which will be more expensive.
 
@@ -41,7 +41,7 @@ Another solution can be to use a client-side application that the service contro
 
 The client can fill in the request header if the client has already consented to that. The service can then reply with appropriate values for the policy and collection endpoints.
 
-[Activate and deactivate reports](./activate_deactivate.jpg)
+![Activate and deactivate reports](./activate_deactivate.jpg)
 
 ## Reach collectors under faulty conditions
 The collectors need to be in a different failure domain from the web service endpoint that we’re trying to monitor. The client side can try various collectors in different failure domains until one works. We can see a similar pattern in the following examples. At times, we refer to such a phenomenon as being outside the blast radius of a fault.
@@ -81,3 +81,24 @@ Any intermediary (like ISPs or middleboxes) can’t change, add, or remove the e
 In a distributed system, it’s difficult to detect and respond to errors on the client side. So, it’s necessary to monitor such events to provide a good user experience.
 
 We can handle errors using an independent agent that sends service reports about any failures to a collector. Such collectors should be independent of the primary service in terms of infrastructure and deployment.
+
+
+
+## How will we design a distributed monitoring system?
+We’ve divided the distributed monitoring system design into the following chapters and lessons:
+
+1. Distributed Monitoring
+- [Introduction to Distributed Monitoring](../Introduction%20to%20Distributed%20Monitoring/README.md): Learn why monitoring in a distributed system is crucial, how costly downtime is, and the types of monitoring.
+- [Prerequisites for a Monitoring System](../System%20Design%20Distributed%20Monitoring/README.md): Explore a few essential concepts about metrics and alerting in a monitoring system.
+2. [Monitoring Server-side Errors](../../Monitor%20Server-side%20Errors/Design%20of%20a%20Blob%20Store/README.md)
+- [Designing a Monitoring System](../../Monitor%20Server-side%20Errors/Design%20of%20aa%20Blob%20Store/README.md): Define the requirements and high-level design of the monitoring system.
+- [A Detailed Design of the Monitoring System](../../Monitor%20Server-side%20Errors/Detailed%20Design%20of%20a%20Monitoring%20System/README.md): Go into the details of designing a monitoring system, and explore the components involved.
+- [Visualize Data in a Monitoring System](../../Monitor%20Server-side%20Errors/Visualize%20Data%20in%20a%20Monitoring%20System/README.md): Learn a unique way to visualize an enormous amount of monitoring data.
+3. [Monitor Client-side Errors](../../Monitor%20Client-side%20Errors/Focus%20on%20Client-side%20Errors%20in%20a%20Monitoring%20System/README.md)
+- [Focus on Client-side Errors](../../Monitor%20Client-side%20Errors/Focus%20on%20Client-side%20Errors%20in%20a%20Monitoring%20System/README.md): Get introduced to client-side errors and why it’s important to monitor them.
+- [Design a Client-side Monitoring System](../../Monitor%20Client-side%20Errors/Design%20of%20a%20Client-side%20Monitoring%20System/README.md): Learn to design a system that monitors the client-side errors.
+
+In the next lesson, we’ll look at why monitoring is essential in a distributed system through an example. We’ll also look at the downtime cost of failures and monitoring types.
+
+
+## Move on to [Distributed Cache](../../Distributed%20Cache/System%20Design%20The%20Distributed%20Cache/README.md).

@@ -6,7 +6,7 @@ To expose the functionality of our service, we can use REST APIs for the followi
 - Redirecting a short URL
 - Deleting a short URL
 
-[System API design overview](./api.jpg)
+![System API design overview](./api.jpg)
 
 ### Shortening a URL
 We can create new short URLs with the following definition:
@@ -97,7 +97,7 @@ We built a sequencer in our building blocks section to generate 64-bit unique nu
 
 Take a look at the diagram below to understand how the overall short URL generation unit will work.
 
-[Internal working of a short URL generator](./internal.jpg)
+![Internal working of a short URL generator](./internal.jpg)
 
 Other building blocks: Beside the elements mentioned above, we’ll also incorporate other building blocks like load balancers, cache, and rate limiters.
 
@@ -144,7 +144,7 @@ Let’s assume there are n already generated short URLs in the database. The pro
 ## Design diagram
 A simple design diagram of the URL shortening system is given below.
 
-[A design diagram of the URL shortening service](./design_diagram.jpg)
+![A design diagram of the URL shortening service](./design_diagram.jpg)
 
 ## Workflow
 
@@ -193,7 +193,7 @@ Both of these approaches ensure smooth traffic handling and mitigate the risk of
 4. Custom short links: This task begins with checking the eligibility of the requested short URL. The maximum length allowed is 11 alphanumeric digits. We can find the details on the allowed format and the specific digits in the next lesson. Once verified, the system checks its availability in the database. If the requested URL is available, the user receives a successful short URL generation message, or an error message in the opposite case.
 The illustration below depicts how URL shortening, redirection, and deletion work.
 
-[Operations](./op)
+![Operations](./op)
 
 Question
 Upon successful allocation of a custom short URL, how does the system modify its records?
@@ -203,7 +203,7 @@ Since the custom short URL is the base-58 encoding of an available base-10 uniqu
 
 On the backend, the system accesses the server with the base-10 equivalent unique ID of that specific base-58 short URL. It marks the ID as unavailable in the range, eliminating any chance of reallocating the same ID to any other request.
 
-[Conversion](./bases.jpg)
+![Conversion](./bases.jpg)
 
 This technique also helps availability. The node generating short URLs will no longer need to maintain a list of used and unused unique IDs in memory. Instead, a database is maintained for each of the lists. For good performance, this database can be NoSQL.
 

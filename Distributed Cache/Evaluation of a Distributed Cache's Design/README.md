@@ -47,7 +47,7 @@ The numbers above highlight the importance of the eviction algorithm to increase
 We can create shards based on requirements and changing server loads. While we add new cache servers to the cluster, we also have to do a limited number of rehash computations, thanks to consistent hashing.
 
 Adding replicas reduces the load on hot shards. Another way to handle the hotkeys problem is to do further sharding within the range of those keys. Although the scenario where a single key will become hot is rare, it’s possible for the cache client to devise solutions to avoid the single hotkey contention issue. For example, cache clients can intelligently avoid such a situation that a single key becomes a bottleneck, or we can use dynamic replication for specific keys, and so on. Nonetheless, the solutions are complex and beyond the scope of this lesson.
-[Guarantees provided by a distributed cache]
+![Guarantees provided by a distributed cache]
 
 ## High availability
 We have improved the availability through redundant cache servers. Redundancy adds a layer of reliability and fault tolerance to our design. We also used the leader-follower algorithm to conveniently manage a cluster shard. However, we haven’t achieved high availability because we have two shard replicas, and at the moment, we assume that the replicas are within a data center.
@@ -98,3 +98,15 @@ locking mechanism: A mechanism by which access to shared data is limited to a si
 
 ## Summary
 We studied the basics of the cache and designed a distributed cache that has a good level of availability, high performance, high scalability, and low cost. Our mechanism maintains high availability using replicas, though if all replicas are in one data center, such a scheme won’t tackle full data center failures. Now that we’ve learned about the basics of design, let’s explore popular open-source frameworks like Memcached and Redis.
+
+
+
+## How will we design distributed cache?
+We’ll divide the task of designing and reinforcing learning major concepts of distributed cache into five lessons:
+
+1. [Background of Distributed Cache](../Background%20of%20Distributed%20Cache/README.md): It’s imperative to build the background knowledge necessary to make critical decisions when designing distributed caches. This lesson will revisit some basic but important concepts.
+2. [High-level Design of a Distributed Cache](../High-level%20Design%20of%20a%20Distributed%20Cache/README.md): We’ll build a high-level design of a distributed cache in this lesson.
+3. [Detailed Design of a Distributed Cache](../Detailed%20Design%20of%20a%20Distributed%20Cache/README.md): We’ll identify some limitations of our high-level design and work toward a scalable, affordable, and performant solution.
+4. [Evaluation of a Distributed Cache Design](../Evaluation%20of%20a%20Distributed%20Cache's%20Design/README.md): This lesson will evaluate our design for various non-functional requirements, such as scalability, consistency, availability, and so on.
+5. [Memcached versus Redis](../Memcached%20versus%20Redis/README.md): We’ll discuss well-known industrial solutions, namely Memcached and Redis. We’ll also go through their details and compare their features to help us understand their potential use cases and how they relate to our design.
+Let’s begin by exploring the background of the distributed cache in the next lesson.

@@ -29,7 +29,7 @@ For example, suppose we have two queues with the identities 101 and 102 residing
 
 As shown in the following illustration, the internal cluster manager is a component that’s responsible for mapping between the primary host, secondary hosts, and queues. Moreover, it also helps in the primary host selection. Therefore, it needs to be reliable, scalable, and performant.
 
-[Primary-secondary model of distributed queue: A request is received for a queue with ID 101, which is served accordingly](./primary-secondary.jpg)
+![Primary-secondary model of distributed queue: A request is received for a queue with ID 101, which is served accordingly](./primary-secondary.jpg)
 
 
 ### A cluster of independent hosts
@@ -45,7 +45,7 @@ Each host consists of mapping between the queues and the hosts within a cluster,
 
 Assume that we have a cluster, say Y, having hosts A, B, and C. This cluster has two queues with IDs 101 and 103 stored on different hosts, as shown in the following table. This table is stored on each host within the cluster Y. When a random host receives a message, say host C, for a queue having ID 103, host C replicates this message on the other hosts where the queue 103 is stored, i.e., Node A and Node B.
 
-[Mapping](./mapping.jpg)
+![Mapping](./mapping.jpg)
 
 The same process is applied to receive message requests from the consumer. Similar to the first approach, the randomly selected host is responsible for message delivery and cleanup upon a successful processing of the message.
 
@@ -53,7 +53,7 @@ Furthermore, another component called an external cluster manager is introduced,
 
 The following figure illustrates the cluster of independent hosts. There are two clusters, A and B, which consist of several nodes. The external cluster manager has the mapping table between queues and their corresponding cluster. Whenever a frontend receives a request for a queue, it determines the corresponding cluster for the queue and forwards the request to the cluster where the queue resides. The nodes within that cluster are responsible for storing and sending messages accordingly.
 
-[A cluster of independent hosts that consist of distributed queues](./cluster.jpg)
+![A cluster of independent hosts that consist of distributed queues](./cluster.jpg)
 ```
 Question
 What kind of anomalies can arise while replicating messages on other hosts?
@@ -74,3 +74,16 @@ Based on the needs of an application, we can pick one or the other.
 We have completed the design of a distributed messaging queue and discussed the two models for organizing the back-end server. We also described the management process of queues and how messages are processed at the backend. Furthermore, we discussed how back-end servers are managed through different cluster managers.
 
 In the next lesson, we discuss how our system fulfills the functional and non-functional requirements that were described earlier in the chapter.
+
+
+
+## How do we design a distributed messaging queue?
+We divide the design of a distributed messaging queue into the following five lessons:
+
+1. [Requirements](../Requirements%20of%20a%20Distributed%20Messaging%20Queue’s%20Design/README.md): Here, we focus on the functional and non-functional requirements of designing a distributed messaging queue. We also discuss a single server messaging queue and its drawbacks in this lesson.
+2. [Design consideration](../Considerations%20of%20a%20Distributed%20Messaging%20Queue’s%20Design/README.md): In this lesson, we discuss some important factors that may affect the design of a distributed messaging queue—for example, the order of placing messages in a queue, their extraction, their visibility in the queue, and the concurrency of incoming messages.
+3. [Design: Part 1](../Design%20of%20a%20Distributed%20Messaging%20Queue%20Part%201/README.md): In this lesson, we discuss the design of a distributed messaging queue in detail. We also describe the process of replication of queues and the interaction between various building blocks involved in the design.
+4. [Design: Part 2](../Design%20of%20a%20Distributed%20Messaging%20Queue%20Part%202/README.md): In this lesson, we discuss the design of a distributed messaging queue in detail. We also describe the process of replication of queues and the interaction between various building blocks involved in the design.
+5. [Evaluation](../Evaluation%20of%20a%20Distributed%20Messaging%20Queue’s%20Design/README.md): In this lesson, we evaluate the design of a distributed messaging queue based on its functional and non-functional requirements.
+6. [Quiz](../Quiz%20on%20the%20Distributed%20Messaging%20Queue’s%20Design/README.md): At the end of the chapter, we evaluate understanding of the design of a distributed messages queue via a quiz.
+Let’s start by understanding the requirements of designing a distributed messaging queue.

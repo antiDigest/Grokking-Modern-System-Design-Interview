@@ -8,11 +8,12 @@ A unique ID helps us identify the flow of an event in the logs and is useful for
 ```
 Canopy: An End-to-End Performance Tracing and Analysis System
 ```
-[Assigning a unique TraceID to each event](./seq.jpg)
+![Assigning a unique TraceID to each event](./seq.jpg)
+
 ## How do we design a sequencer?
 We’ve divided the sequencer’s comprehensive design into the following two lessons:
 
-1. Design of a Unique ID Generator: After enlisting the requirements of the design, we discuss three ways to generate unique IDs: using UUID, using a database, and using a range handler.
-2. Unique IDs with Causality: In this lesson, we incorporate an additional factor of time in the generation of IDs and explain the process by taking causality into consideration.
+1. [Design of a Unique ID Generator](../Design%20of%20a%20Unique%20ID%20Generator/README.md): After enlisting the requirements of the design, we discuss three ways to generate unique IDs: using UUID, using a database, and using a range handler.
+2. [Unique IDs with Causality](../Unique%20IDs%20with%20Causality/README.md): In this lesson, we incorporate an additional factor of time in the generation of IDs and explain the process by taking causality into consideration.
 
 Unique IDs are important for identifying events and objects within a distributed system. However, designing a unique ID generator within a distributed system is challenging. In the next lesson, let’s look at the requirements for a distributed unique ID generation system.
