@@ -50,3 +50,6 @@ We discuss different trade-offs we made in our solution and also identify room f
 
 
 Next, we’ll apply our guideline (RESHADED) to many design problems.
+
+
+## Getting started with [Youtube](../../Design%20Youtube/System%20Design%20YouTube/)

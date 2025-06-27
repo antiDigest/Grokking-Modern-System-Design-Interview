@@ -4,7 +4,12 @@ In today’s world, an increasing number of designs are moving to microservice a
 
 Moreover, it is also not necessary that a microservice is deployed on only one node. It can be deployed on thousands of nodes. Consider the following example, where hundreds of microservices are interdependent, and failure of one service can result in failures of other services. And if we do not have logs, we might not determine the root cause of failure. This emphasizes the need for logging.
 
-![Logging](./logging)
+![Logging](./logging/1.jpg)
+![Logging](./logging/2.jpg)
+![Logging](./logging/3.jpg)
+![Logging](./logging/4.jpg)
+![Logging](./logging/5.jpg)
+![Logging](./logging/6.jpg)
 
 ## Restrain the log size
 The number of logs increases over time. At a time, perhaps hundreds of concurrent messages need to be logged. But the question is, are they all important enough to be logged? To solve this, logs have to be structured. We need to decide what to log into the system on the application or logging level.
@@ -47,3 +52,10 @@ We should be careful while logging. The logging information should only contain 
 - The logging mechanism should be secure and not vulnerable because logs contain the application’s flow, and an insecure logging mechanism is vulnerable to hackers.
 ### Vulnerability in logging infrastructure
 A zero-day vulnerability in Log4j, a famous logging framework for Java, has been identified recently. Log4j has contained the hidden vulnerability, Log4Shell (CVE-2021-44228), since 2013. Apache gave the highest available score, a CVSS severity rating of 10, to Log4Shell. The exploit is simple to execute and affects hundreds of millions of devices. Security experts are convinced that this vulnerability can allow devastating cyberattacks internationally because it can enable attackers to run malicious code and take control of the machine.
+
+
+
+## How will we design a distributed logging system?
+1. [Introduction](../Introduction%20to%20Distributed%20Logging/): We’ll discuss how logging works at a distributed level. We’ll also show how we can restrict the huge size of a log file, and structure them. This lesson will guide us about the requirements we should consider while logging information about a system.
+
+2. [Design](../Design%20of%20a%20Distributed%20Logging%20Service/): In this lesson, we’ll define the requirements, API design, and detailed design of our distributed logging system.

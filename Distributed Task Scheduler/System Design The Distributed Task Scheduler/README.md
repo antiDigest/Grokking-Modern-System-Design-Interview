@@ -46,8 +46,8 @@ Our goal is to design a task scheduler similar to the data center-level task sch
 The above two requirements make the task scheduling problem challenging. We’ll design a distributed task scheduler that can handle all these tasks by making it scalable, reliable, and fault-tolerant.
 
 ## How will we design a task scheduling system?
-1. Requirements: We’ll identify the functional and non-functional requirements of a task scheduling system in this lesson.
-2. Design: This lesson will discuss the system design of our task scheduling system and explores the components of the system and database schema.
-3. Design considerations: In this lesson, we’ll highlight some design factors, such as task prioritization, resource optimization, and so on.
-4. Evaluation: We’ll evaluate our design of task scheduler based on our requirements.
+1. [Requirements](../Requirements%20of%20a%20Distributed%20Task%20Scheduler's%20Design/): We’ll identify the functional and non-functional requirements of a task scheduling system in this lesson.
+2. [Design](../Design%20of%20a%20Distributed%20Task%20Scheduler/): This lesson will discuss the system design of our task scheduling system and explores the components of the system and database schema.
+3. [Design considerations](../Design%20Considerations%20of%20a%20Distributed%20Task%20Scheduler/): In this lesson, we’ll highlight some design factors, such as task prioritization, resource optimization, and so on.
+4. [Evaluation](../Evaluation%20of%20a%20Distributed%20Task%20Scheduler's%20Design/): We’ll evaluate our design of task scheduler based on our requirements.
 Let’s start by understanding the requirements of a task scheduling system.

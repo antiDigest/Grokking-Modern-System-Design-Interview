@@ -55,14 +55,33 @@ There are tasks that don’t need urgent execution. For example, in a social app
 ## Task idempotency
 If the task executes successfully, but for some reason the machine fails to send an acknowledgement, the scheduler will schedule the task again. The task is executed again, and we end up with the wrong result, which means the task was non-idempotent. An example of non-idempotence is shown in the following illustration:
 
-![non-idempotent](./nonidempotency)
+![non-idempotent](./nonidempotency/01.jpg)
+![non-idempotent](./nonidempotency/02.jpg)
+![non-idempotent](./nonidempotency/03.jpg)
+![non-idempotent](./nonidempotency/04.jpg)
+![non-idempotent](./nonidempotency/05.jpg)
+![non-idempotent](./nonidempotency/06.jpg)
+![non-idempotent](./nonidempotency/07.jpg)
+![non-idempotent](./nonidempotency/08.jpg)
+![non-idempotent](./nonidempotency/09.jpg)
+![non-idempotent](./nonidempotency/10.jpg)
+![non-idempotent](./nonidempotency/11.jpg)
 
 We don’t want the final result to change when executing the task again. This is critical in financial applications while transferring money. We require that tasks are idempotent. An idempotent task produces the same result, no matter how many times we execute it. The execution of an idempotent task is shown in the following illustration:
 ```
 Idempotence is a characteristic of certain operations in mathematics and computer science that allows them to be applied several times without influencing the outcome.
 ```
 
-![idempotent](./idempotent)
+![idempotent](./idempotent/01.jpg)
+![idempotent](./idempotent/02.jpg)
+![idempotent](./idempotent/03.jpg)
+![idempotent](./idempotent/04.jpg)
+![idempotent](./idempotent/05.jpg)
+![idempotent](./idempotent/06.jpg)
+![idempotent](./idempotent/07.jpg)
+![idempotent](./idempotent/08.jpg)
+![idempotent](./idempotent/09.jpg)
+![idempotent](./idempotent/10.jpg)
 
 Let’s make the task of uploading a video to the database an idempotent operation. We don’t want the video to be duplicated in the database in case the uploader didn’t receive the acknowledgment. Idempotency ensures that the video is not duplicated. This property is added in the implementation by the developers where they identify the video by something (for example, its name) and overwrite the old one. This way, no matter how many times someone uploads it, the final result is the same. Idempotency enables us to simply re-execute a failed task.
 
@@ -93,3 +112,11 @@ What happens when the same task fails multiple times?
 Answer
 We can use a dead-letter queue facility to isolate repeatedly failing tasks.
 ```
+
+
+## How will we design a task scheduling system?
+1. [Requirements](../Requirements%20of%20a%20Distributed%20Task%20Scheduler's%20Design/): We’ll identify the functional and non-functional requirements of a task scheduling system in this lesson.
+2. [Design](../Design%20of%20a%20Distributed%20Task%20Scheduler/): This lesson will discuss the system design of our task scheduling system and explores the components of the system and database schema.
+3. [Design considerations](../Design%20Considerations%20of%20a%20Distributed%20Task%20Scheduler/): In this lesson, we’ll highlight some design factors, such as task prioritization, resource optimization, and so on.
+4. [Evaluation](../Evaluation%20of%20a%20Distributed%20Task%20Scheduler's%20Design/): We’ll evaluate our design of task scheduler based on our requirements.
+Let’s start by understanding the requirements of a task scheduling system.

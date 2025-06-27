@@ -138,3 +138,15 @@ In this lesson, we learned how to handle a large number of data, and a large num
 - Replicating each partition, which means that we replicate the indexing and searching process as well.
 
 We successfully designed a system that scales with read (search) and write (indexing) operations colocated on the same node. But, this scaling method brings some drawbacks. We’ll look into the drawbacks and their solutions in the next lesson.
+
+
+
+## How will we design a distributed search system?
+We divided the design of a distributed search system into five lessons:
+
+1. [Requirements](../Requirements%20of%20a%20Distributed%20Search%20System's%20Design/): In this lesson, we list the functional and non-functional requirements of a distributed search system. We also estimate our system’s resources, such as servers, storage, and the bandwidth needed to serve a number of queries.
+2. [Indexing](../Indexing%20in%20a%20Distributed%20Search/): This lesson provides us with background knowledge on the process of indexing with the help of an example. After discussing indexing, we also look into a centralized architecture of distributed search systems.
+3. [Initial design](../Design%20of%20a%20Distributed%20Search/): This lesson consists of the high-level design of our system, its API, and the details of the indexing and searching process.
+4. [Final design](../Scaling%20Search%20and%20Indexing/): In this lesson, we evaluate our previous design and revamp it to make it more scalable.
+5. [Evaluation](../Evaluation%20of%20a%20Distributed%20Search's%20Design/): This lesson explains how our designed distributed search system fulfills its requirements.
+Let’s start by understanding the requirements of designing a distributed search system.

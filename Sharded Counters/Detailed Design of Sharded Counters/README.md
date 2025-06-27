@@ -38,7 +38,11 @@ One way to solve the above problem is to use a round-robin selection of shards. 
 
 In the following illustrations, we assume that user requests are first handed out to an appropriate server by the load balancer. Then, each such server uses its own round-robin scheduling to use a shard:
 
-![Round-robin technique](./rr)
+![Round-robin technique](./rr/1.jpg)
+![Round-robin technique](./rr/2.jpg)
+![Round-robin technique](./rr/3.jpg)
+![Round-robin technique](./rr/4.jpg)
+![Round-robin technique](./rr/5.jpg)
 
 #### Random selection
 Another simple approach can be to uniformly and randomly select a shard for writing. The challenge with both round-robin selection and random selection is with variable load changes on the nodes (where shards are hosted). It is hard to appropriately distribute the load on available shards. Load variability on nodes is common because a physical node is often being used for multiple purposes.
@@ -46,7 +50,11 @@ Another simple approach can be to uniformly and randomly select a shard for writ
 #### Metrics-based selection
 The third approach is shard selection based on specific metrics. For example, a dedicated node (load balancer) manages the selection of the shards by reading the shards’ status. The below slides go over how sharded counters are created:
 
-![Metrics](./metrics)
+![Metrics](./metrics/1.jpg)
+![Metrics](./metrics/2.jpg)
+![Metrics](./metrics/3.jpg)
+![Metrics](./metrics/4.jpg)
+
 
 ### Manage read requests
 When the user sends the read request, the system will aggregate the value of all shards of the specified counter to return the total count of the feature (such as like or reply). Accumulating values from all the shards on each read request will result in low read throughput and high read latency.
@@ -103,7 +111,12 @@ We also need storage for the sharded counters, which store all information about
 
 The job of identifying the relevant counter and mapping all write requests to the appropriate counter in sharded counters can be done in parallel. We map the all-write request to the appropriate counter, and then each counter chooses a shard randomly based on some metrics to do increments and decrements. In contrast, we reduce periodically to aggregate the value of all shards of the particular counter. Then, these counter values can be stored in the Cassandra store. The slides below help illustrate these points:
 
-![Placement](./placement)
+![Placement](./placement/1.jpg)
+![Placement](./placement/2.jpg)
+![Placement](./placement/3.jpg)
+![Placement](./placement/4.jpg)
+![Placement](./placement/5.jpg)
+![Placement](./placement/6.jpg)
 
 ## Evaluation of the sharded counters
 This section will evaluate the sharded counters and explain how sharded counters will increase performance by providing high availability and scalability.
@@ -119,3 +132,13 @@ Another primary purpose of the sharded counters is to reduce the massive write r
 
 ## Conclusion
 Nowadays, sharded counters are a key player in improving the overall performance of giant services. They provide high scalability, availability, and reliability. Sharded counters solved significant issues, including the heavy hitters and Top K problems, that are very common in large-scale applications.
+
+
+## How will we design sharded counters?
+
+We have divided the design of sharded counters into three lessons:
+
+1. [High-level Design](../High-level%20Design%20of%20Sharded%20Counters/): We’ll discuss the high-level design of sharded counters in this lesson. In addition, we’ll also briefly explain the API design.
+2. [Detailed Design](../Detailed%20Design%20of%20Sharded%20Counters/): This lesson will dive deeply into the design of sharded counters. Moreover, we’ll also evaluate our proposed design.
+3. [Quiz](../Quiz%20on%20the%20Sharded%20Counters'%20Design/): We’ll review major concepts of sharded counters design with a quiz.
+Let’s begin with the high-level solution sketch of sharded counters.

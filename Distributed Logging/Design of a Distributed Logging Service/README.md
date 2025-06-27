@@ -86,7 +86,9 @@ Each service will push its data to the log accumulator service. It is responsibl
 - Storing the logs locally.
 - Pushing the logs to a pub-sub system.
 
-![In a server](./in_a_server)
+![In a server](./in_a_server/1.jpg)
+![In a server](./in_a_server/2.jpg)
+![In a server](./in_a_server/3.jpg)
 
 3 of 3 We should be mindful that data can be lost in the process of logging huge amounts of messages. There is a trade-off between user-perceived latency and the guarantee that log data persists. For lower latency, log services often keep data in RAM and persist them asynchronously. Additionally, we can minimize data loss by adding redundant log accumulators to handle growing concurrent users.
 
@@ -165,3 +167,13 @@ There can be various ways to design a distributed logging service, but it solely
 - We learned how logging is crucial in understanding the flow of events in a distributed system. It helps to reduce the mean time to repair (MTTR) by steering us toward the root causes of issues.
 - Logging is an I/O-intensive operation that is time-consuming and slow. It is essential to handle it carefully and not affect the critical path of other services’ execution.
 - Logging is essential for monitoring because the data fetched from logs helps monitor the health of an application. (Alert and error aggregators serve this purpose.)
+
+
+
+## How will we design a distributed logging system?
+1. [Introduction](../Introduction%20to%20Distributed%20Logging/): We’ll discuss how logging works at a distributed level. We’ll also show how we can restrict the huge size of a log file, and structure them. This lesson will guide us about the requirements we should consider while logging information about a system.
+
+2. [Design](../Design%20of%20a%20Distributed%20Logging%20Service/): In this lesson, we’ll define the requirements, API design, and detailed design of our distributed logging system.
+
+
+## Move on to [Distributed task scheduler](../../Distributed%20Task%20Scheduler/System%20Design%20The%20Distributed%20Task%20Scheduler/)

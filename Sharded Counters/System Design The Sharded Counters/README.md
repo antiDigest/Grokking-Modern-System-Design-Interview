@@ -16,7 +16,7 @@ How will we handle millions of write requests coming against the likes on thousa
 
 We have divided the design of sharded counters into three lessons:
 
-1. High-level Design: We’ll discuss the high-level design of sharded counters in this lesson. In addition, we’ll also briefly explain the API design.
-2. Detailed Design: This lesson will dive deeply into the design of sharded counters. Moreover, we’ll also evaluate our proposed design.
-3. Quiz: We’ll review major concepts of sharded counters design with a quiz.
+1. [High-level Design](../High-level%20Design%20of%20Sharded%20Counters/): We’ll discuss the high-level design of sharded counters in this lesson. In addition, we’ll also briefly explain the API design.
+2. [Detailed Design](../Detailed%20Design%20of%20Sharded%20Counters/): This lesson will dive deeply into the design of sharded counters. Moreover, we’ll also evaluate our proposed design.
+3. [Quiz](../Quiz%20on%20the%20Sharded%20Counters'%20Design/): We’ll review major concepts of sharded counters design with a quiz.
 Let’s begin with the high-level solution sketch of sharded counters.
