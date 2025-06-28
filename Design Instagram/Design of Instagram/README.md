@@ -137,3 +137,12 @@ Note: Most modern services use both SQL and NoSQL stores. Instagram officially u
 ```
 In the next lesson, we’ll identify more components to tweak our design.
 
+
+## How will we design Instagram?
+We have divided the design of Instagram into four lessons:
+
+1. [Requirements](../Requirements%20of%20Instagram’s%20Design/): This lesson will put forth the functional and non-functional requirements of Instagram. It will also estimate the resources required to achieve these requirements.
+2. [Design](../Design%20of%20Instagram/): This lesson will explain the workflow and usage of each component, API design and database schema.
+3. [Detailed design](../Detailed%20Design%20of%20Instagram/): In this lesson, we’ll explore the components of our Instagram design in detail and discuss various approaches to generate timelines. Moreover, we’ll also evaluate our proposed design.
+4. [Quiz](../Quiz%20on%20Instagram’s%20Design/): This lesson will test our understanding of the Instagram design.
+Let’s start by understanding the requirements for designing our Instagram system and provide resource estimations in the next lesson.

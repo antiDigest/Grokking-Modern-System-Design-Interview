@@ -121,3 +121,11 @@ What happens if there are two users collaborating on a document and they have di
 Answer
 With a varied Internet connection speed, the order of operations between users can lead to problems. However, operations are order dependent in OT, whereas operations in CRDTs are order independent. This is why CRDTs are a suitable solution to such a problem.
 ```
+
+## How will we design Google Docs?
+We've divided the design problem into four stages:
+
+1. [Requirements for Google Docs’ Design](../Requirements%20of%20Google%20Docs'%20Design/): This lesson will focus on establishing the requirements for designing a collaborative document editing service. We’ll also quantify the infrastructure requirements in this stage.
+2. [Google Docs’ Design](../Design%20of%20Google%20Docs/): The goal of this lesson is to come up with a design that fulfills the requirements of the service. This lesson will explain why a component is used and how it integrates with other components to fulfill functional requirements.
+3. [Concurrency in Collaborative Editing](../Concurrency%20in%20Dollaborative%20Editing/): Online document editing services have to resolve conflicts between users editing the same portion of a document. This lesson covers the type of problems that can arise and the techniques used to resolve such conflicts.
+4. [Evaluating Google Docs’ Design](../Evaluation%20of%20Google%20Docs'%20Design/): The main objective of this lesson is to evaluate our design for non-functional requirements. Mainly, we see if our design is performant, consistent, available, and scalable.

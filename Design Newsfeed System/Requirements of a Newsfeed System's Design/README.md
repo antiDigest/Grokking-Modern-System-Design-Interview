@@ -91,3 +91,13 @@ The design of newsfeed system utilizes the following building blocks:
 - CDN effectively delivers content to end-users reducing delay and burden on back-end servers.
 - Load balancers are necessary to distribute millions of incoming clients’ requests for newsfeed among the pool of available servers.
 In the next lesson, we’ll focus on the high-level and detailed design of the newsfeed system.
+
+
+## How will we design the newsfeed system?
+We have divided the design of the newsfeed system into the following three lessons:
+
+1. [Requirements](../Requirements%20of%20a%20Newsfeed%20System's%20Design/): In this lesson, we’ll identify the functional and non-functional requirements. We’ll also estimate the resource requirements to provide a personalized newsfeed to billions of users each day.
+2. [Design](../Design%20of%20a%20Newsfeed%20System/): We’ll discuss the high-level and detailed design of the newsfeed system in this lesson. We’ll also describe the API design and database schema for our proposed design. Moreover, this lesson will also help us to rank newsfeed to provide a better experience to users.
+3. [Evaluation](../Evaluation%20of%20a%20Newsfeed%20System's%20Design/): In this lesson, we’ll evaluate the design of the newsfeed system based on the non-functional requirements. We’ll also take a quiz to assess our understanding of the design of the newsfeed system.
+Let’s list down the requirements for designing our version of the newsfeed system.
+

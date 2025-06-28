@@ -37,7 +37,11 @@ When a user opens their Instagram, we send a request for timeline generation. Fi
 
 We can substantially reduce user-perceived latency by generating the timeline offline. For example, we define a service that fetches the relevant data for the user before, and as the person opens Instagram, it displays the timeline. This decreases the latency rate to show the timeline. Let’s take a look at the slides below to understand the problem and its solution.
 
-![Pull](./pull)
+![Pull](./pull/1.jpg)
+![Pull](./pull/2.jpg)
+![Pull](./pull/3.jpg)
+![Pull](./pull/4.jpg)
+![Pull](./pull/5.jpg)
 
 ```
 Question
@@ -107,3 +111,13 @@ We evaluate the Instagram design with respect to its non-functional requirements
 
 ## Conclusion
 This design problem highlights that we can provide major services by connecting our building blocks appropriately. The scalable and fault-tolerant building blocks enable us to concentrate on use-case-specific issues (such as the efficient formation of timelines).
+
+
+## How will we design Instagram?
+We have divided the design of Instagram into four lessons:
+
+1. [Requirements](../Requirements%20of%20Instagram’s%20Design/): This lesson will put forth the functional and non-functional requirements of Instagram. It will also estimate the resources required to achieve these requirements.
+2. [Design](../Design%20of%20Instagram/): This lesson will explain the workflow and usage of each component, API design and database schema.
+3. [Detailed design](../Detailed%20Design%20of%20Instagram/): In this lesson, we’ll explore the components of our Instagram design in detail and discuss various approaches to generate timelines. Moreover, we’ll also evaluate our proposed design.
+4. [Quiz](../Quiz%20on%20Instagram’s%20Design/): This lesson will test our understanding of the Instagram design.
+Let’s start by understanding the requirements for designing our Instagram system and provide resource estimations in the next lesson.

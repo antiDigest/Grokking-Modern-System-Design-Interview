@@ -22,7 +22,13 @@ Outages like the one above remind us of famous Lamport’s quip: “A distribute
 - Operators relied on logs to figure out what was going on and initially observed heightened internal DNS failures.
 The following slides show the series of events that led to the outage.
 
-![Sequence of Events](./arch)
+![Sequence of Events](./arch/1.jpg)
+![Sequence of Events](./arch/2.jpg)
+![Sequence of Events](./arch/3.jpg)
+![Sequence of Events](./arch/4.jpg)
+![Sequence of Events](./arch/5.jpg)
+![Sequence of Events](./arch/6.jpg)
+![Sequence of Events](./arch/7.jpg)
 
 ## Analysis
 - Hampered AWS services: The networking difficulties affected a variety of AWS services, impacting customers that utilized these service capabilities. Since the primary AWS network remained unaffected, certain client applications that don’t depend on these capabilities suffered relatively minor consequences as a result of this occurrence. AWS users, such as Amazon RDS, EMR, and Workspaces, were unable to generate new resources due to the inability of the system to launch new EC2 instances.
@@ -55,3 +61,10 @@ Building an application across multiple clouds or AWS regions would have made it
 
 There’s a need to uncouple services to an extreme extent to eliminate cross-dependency issues.
 ```
+
+
+## Follow various outages
+
+1. [Facebook, Whatsapp, Instagram, Oculus Outage](../Facebook,%20WhatsApp,%20Instagram,%20Oculus%20Outage/)
+2. [AWS Wide Spread Outage](../AWS%20Wide%20Spread%20Outage/)
+3. [AWS Kinesis Outage Affecting Many Organizations](../AWS%20Kinesis%20Outage%20Affecting%20Many%20Organizations/)

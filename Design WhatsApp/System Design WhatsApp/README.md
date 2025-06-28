@@ -17,9 +17,9 @@ In this chapter, we’ll focus on the high-level and detailed design of the What
 ## How will we design WhatsApp?
 We’ve divided the design of WhatsApp messenger into the following five lessons:
 
-1. Requirements: In this lesson, we’ll identify functional and non-functional requirements. We’ll also discuss resource estimations required for better and smooth operations of the proposed design of WhatsApp.
-2. High-level Design: We’ll focus on the high-level design of our WhatsApp version. We’ll also discuss essential APIs for our WhatsApp design.
-3. Detailed Design: In this lesson, we’ll describe the design of our WhatsApp messenger in detail. Initially, we’ll explain the design of each microservice, including connection with servers, send and receive messages and media content, and group messages. In the end, the design of each microservice is combined into the detailed design of WhatsApp.
-4. Evaluation: This lesson will explain how our version of WhatsApp fulfills non-functional requirements. We’ll also evaluate some trade-offs of our design.
-5. Quiz: Here, we’ll assess what we’ve learned in this chapter through a quiz.
+1. [Requirements](../Requirements%20of%20WhatsApp’s%20Design/): In this lesson, we’ll identify functional and non-functional requirements. We’ll also discuss resource estimations required for better and smooth operations of the proposed design of WhatsApp.
+2. [High-level Design](../High-level%20Design%20of%20WhatsApp/): We’ll focus on the high-level design of our WhatsApp version. We’ll also discuss essential APIs for our WhatsApp design.
+3. [Detailed Design](../Detailed%20Design%20of%20WhatsApp/): In this lesson, we’ll describe the design of our WhatsApp messenger in detail. Initially, we’ll explain the design of each microservice, including connection with servers, send and receive messages and media content, and group messages. In the end, the design of each microservice is combined into the detailed design of WhatsApp.
+4. [Evaluation](../Evaluation%20of%20WhatsApp’s%20Design/): This lesson will explain how our version of WhatsApp fulfills non-functional requirements. We’ll also evaluate some trade-offs of our design.
+5. [Quiz](../Quiz%20on%20WhatsApp’s%20Design/): Here, we’ll assess what we’ve learned in this chapter through a quiz.
 Let’s start by discussing the requirements of our version of WhatsApp.

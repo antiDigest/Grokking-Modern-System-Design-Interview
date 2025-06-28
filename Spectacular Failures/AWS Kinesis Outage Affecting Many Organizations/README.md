@@ -67,3 +67,12 @@ Possible solutions
 
 - Failures in a complex system are inevitable. However, some important services like the status dashboard should be hosted on different servers, either inside the service or in some third-party’s infrastructure.
 ```
+
+
+## Follow various outages
+
+1. [Facebook, Whatsapp, Instagram, Oculus Outage](../Facebook,%20WhatsApp,%20Instagram,%20Oculus%20Outage/)
+2. [AWS Wide Spread Outage](../AWS%20Wide%20Spread%20Outage/)
+3. [AWS Kinesis Outage Affecting Many Organizations](../AWS%20Kinesis%20Outage%20Affecting%20Many%20Organizations/)
+
+## Move on to [Concluding Remarks](../../Concluding%20Remarks/)

@@ -74,3 +74,15 @@ The web crawler system entails a multi-worker design that uses a microservices a
 
 1. Identification and design modification for crawler traps
 2. Extensibility of HTML fetching and content extraction modules
+
+
+## How will we design a Web crawler?
+This chapter consists of four lessons that encompass the overall design of the web crawler system:
+
+1. [Requirements](../Requirements%20of%20a%20Web%20Crawler's%20Design/): This lesson enlists the functional and non-functional requirements of the system and estimates calculations for various system parameters.
+2. [Design](../Design%20of%20a%20Web%20Crawler/): This lesson analyzes a bottom-up approach for a web-crawling service. We get a detailed overview of all the individual components leading to a combined operational mechanism to meet the requirements.
+3. [Improvements](../Design%20Improvements%20of%20a%20Web%20Crawler/): This lesson provides all the design improvements required to counter shortcomings, especially the crawler traps. These crawler traps include links with query parameters, internal links redirection, links holding infinite calendar pages, links for dynamic content generation, and links containing cyclic directories.
+4. [Evaluation](../Evaluation%20of%20Web%20Crawler's%20Design/): This lesson provides an in-depth evaluation of our design choices to check if they meet all the standards and requirements we expect from our design.
+Let’s begin with defining the requirements of a web crawler.
+
+## Move on to [Design Whatsapp](../../Design%20WhatsApp/System%20Design%20WhatsApp/)

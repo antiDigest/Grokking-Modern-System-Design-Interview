@@ -193,7 +193,27 @@ Both of these approaches ensure smooth traffic handling and mitigate the risk of
 4. Custom short links: This task begins with checking the eligibility of the requested short URL. The maximum length allowed is 11 alphanumeric digits. We can find the details on the allowed format and the specific digits in the next lesson. Once verified, the system checks its availability in the database. If the requested URL is available, the user receives a successful short URL generation message, or an error message in the opposite case.
 The illustration below depicts how URL shortening, redirection, and deletion work.
 
-![Operations](./op)
+![Operations](./op/01.jpg)
+![Operations](./op/02.jpg)
+![Operations](./op/03.jpg)
+![Operations](./op/04.jpg)
+![Operations](./op/05.jpg)
+![Operations](./op/06.jpg)
+![Operations](./op/07.jpg)
+![Operations](./op/08.jpg)
+![Operations](./op/09.jpg)
+![Operations](./op/10.jpg)
+![Operations](./op/11.jpg)
+![Operations](./op/12.jpg)
+![Operations](./op/13.jpg)
+![Operations](./op/14.jpg)
+![Operations](./op/15.jpg)
+![Operations](./op/16.jpg)
+![Operations](./op/17.jpg)
+![Operations](./op/18.jpg)
+![Operations](./op/19.jpg)
+![Operations](./op/20.jpg)
+![Operations](./op/21.jpg)
 
 Question
 Upon successful allocation of a custom short URL, how does the system modify its records?
@@ -211,3 +231,14 @@ The above part explains the post-processing of a custom short URL association. S
 
 1. Once we generate IDs, we put them in the unused list. As soon as we use an ID from the unused list, we put it in the used list. This eliminates the possibility of duplicate association.
 2. As encoding guarantees unique mapping between base-10 and base-58, no two long URLs will have the same short URL.
+
+
+## How will we design a URL shortening service?
+We’ve divided the URL shortening service design into the following five lessons:
+
+1. [Requirements](../Requirements%20of%20TinyURL's%20Design/): This lesson discusses the functional and non-functional requirements of the URL shortening service, along with estimating the resources required to achieve these requirements. Moreover, it also lists down the fundamental building blocks needed to build such a service.
+2. [Design and Deployment](../Design%20and%20Deployment%20of%20TinyURL/): This explains the working and usage of each component, the linkage among them, and the overall working mechanism of them as a unit.
+3. [Encoder](../Encoder%20for%20TinyURL/): This particular lesson unfolds the inner mechanism of the encoder used in the design, stating the reason we use it along with the mathematical explanation.
+4. [Evaluation](../Evaluation%20of%20TinyURL's%20Design/): Lastly, we test our design by considering different dimensions of our design requirements and include the possibility of improving it.
+5. [Quiz](../Quiz%20on%20TinyURL's%20Design/): This lesson will test our understanding of the TinyURL design.
+Let’s start by defining the requirements for a TinyURL-like URL shortening service.

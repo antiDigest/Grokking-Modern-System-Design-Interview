@@ -156,7 +156,13 @@ Note: Because of multiple instances of each service and microservices architectu
 The following slideshow gives a detailed overview of the web crawler workflow:
 
 
-![Workflow](./workflow)
+![Workflow](./workflow/1.jpg)
+![Workflow](./workflow/2.jpg)
+![Workflow](./workflow/3.jpg)
+![Workflow](./workflow/4.jpg)
+![Workflow](./workflow/5.jpg)
+![Workflow](./workflow/6.jpg)
+![Workflow](./workflow/7.jpg)
 
 The URLs stored in the scheduler’s database have priority and periodicity assigned to them. Enqueuing new URLs into the URL frontier depends on these two factors.
 
@@ -173,3 +179,11 @@ The default revisit-time is application-dependent rather than system-dependent, 
 In the next lesson, we’ll explore some shortcomings in our design and their potential workarounds.
 
 
+## How will we design a Web crawler?
+This chapter consists of four lessons that encompass the overall design of the web crawler system:
+
+1. [Requirements](../Requirements%20of%20a%20Web%20Crawler's%20Design/): This lesson enlists the functional and non-functional requirements of the system and estimates calculations for various system parameters.
+2. [Design](../Design%20of%20a%20Web%20Crawler/): This lesson analyzes a bottom-up approach for a web-crawling service. We get a detailed overview of all the individual components leading to a combined operational mechanism to meet the requirements.
+3. [Improvements](../Design%20Improvements%20of%20a%20Web%20Crawler/): This lesson provides all the design improvements required to counter shortcomings, especially the crawler traps. These crawler traps include links with query parameters, internal links redirection, links holding infinite calendar pages, links for dynamic content generation, and links containing cyclic directories.
+4. [Evaluation](../Evaluation%20of%20Web%20Crawler's%20Design/): This lesson provides an in-depth evaluation of our design choices to check if they meet all the standards and requirements we expect from our design.
+Let’s begin with defining the requirements of a web crawler.

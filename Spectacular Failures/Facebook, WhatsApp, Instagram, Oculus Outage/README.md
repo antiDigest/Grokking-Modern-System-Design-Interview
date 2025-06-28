@@ -17,7 +17,11 @@ When the networks routes where Facebook’s authoritative DNS was hosted were wi
 Then, no one was able to reach Facebook and its subsidiaries.
 The slides below depict the events in pictorial form.
 
-![Facebook’s high-level architecture](./arch)
+![Facebook’s high-level architecture](./arch/1.jpg)
+![Facebook’s high-level architecture](./arch/2.jpg)
+![Facebook’s high-level architecture](./arch/3.jpg)
+![Facebook’s high-level architecture](./arch/4.jpg)
+![Facebook’s high-level architecture](./arch/5.jpg)
 
 ## Analysis
 Some of the key takeaways from the series of events shown above are the following:
@@ -62,3 +66,10 @@ Critical infrastructure might be programmed in such a way that if something bad 
 - Network verification is the usage of network tools to investigate, troubleshoot, maintain, operate, and report to ensure that hardware, software, and network configuration will operate error-free.
 
 ```
+
+
+## Follow various outages
+
+1. [Facebook, Whatsapp, Instagram, Oculus Outage](../Facebook,%20WhatsApp,%20Instagram,%20Oculus%20Outage/)
+2. [AWS Wide Spread Outage](../AWS%20Wide%20Spread%20Outage/)
+3. [AWS Kinesis Outage Affecting Many Organizations](../AWS%20Kinesis%20Outage%20Affecting%20Many%20Organizations/)

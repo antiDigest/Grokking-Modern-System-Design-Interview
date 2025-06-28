@@ -40,3 +40,10 @@ Note: The broader concept here is to use independent failure domains. A failure 
 ![Importance of independent service](./independence.jpg)
 
 In the following lessons, we’ll discuss the failures of well-known services by giant companies, the causes of failures, and what mitigation techniques can be used to avoid these failures. Although failures are a great way to learn what went wrong and what the original designers could do to avoid such failures, we’d like to prevent them from occurring at all.
+
+
+## Follow various outages
+
+1. [Facebook, Whatsapp, Instagram, Oculus Outage](../Facebook,%20WhatsApp,%20Instagram,%20Oculus%20Outage/)
+2. [AWS Wide Spread Outage](../AWS%20Wide%20Spread%20Outage/)
+3. [AWS Kinesis Outage Affecting Many Organizations](../AWS%20Kinesis%20Outage%20Affecting%20Many%20Organizations/)

@@ -16,7 +16,14 @@ The following steps describe the communication between both clients:
 8. The chat server notifies user A that user B has read the message.
 The process is shown in the following illustrations:
 
-![How](./process)
+![How](./process/1.jpg)
+![How](./process/2.jpg)
+![How](./process/3.jpg)
+![How](./process/4.jpg)
+![How](./process/5.jpg)
+![How](./process/6.jpg)
+![How](./process/7.jpg)
+![How](./process/8.jpg)
 
 ## API design
 WhatsApp provides a vast amount of features to its users via different APIs. Some features are mentioned below:
@@ -94,3 +101,13 @@ file_id        This is a unique identifier of a file. It’s generated while upl
 
 In the next lesson, we’ll focus on the detailed design of the WhatsApp system.
 
+
+## How will we design WhatsApp?
+We’ve divided the design of WhatsApp messenger into the following five lessons:
+
+1. [Requirements](../Requirements%20of%20WhatsApp’s%20Design/): In this lesson, we’ll identify functional and non-functional requirements. We’ll also discuss resource estimations required for better and smooth operations of the proposed design of WhatsApp.
+2. [High-level Design](../High-level%20Design%20of%20WhatsApp/): We’ll focus on the high-level design of our WhatsApp version. We’ll also discuss essential APIs for our WhatsApp design.
+3. [Detailed Design](../Detailed%20Design%20of%20WhatsApp/): In this lesson, we’ll describe the design of our WhatsApp messenger in detail. Initially, we’ll explain the design of each microservice, including connection with servers, send and receive messages and media content, and group messages. In the end, the design of each microservice is combined into the detailed design of WhatsApp.
+4. [Evaluation](../Evaluation%20of%20WhatsApp’s%20Design/): This lesson will explain how our version of WhatsApp fulfills non-functional requirements. We’ll also evaluate some trade-offs of our design.
+5. [Quiz](../Quiz%20on%20WhatsApp’s%20Design/): Here, we’ll assess what we’ve learned in this chapter through a quiz.
+Let’s start by discussing the requirements of our version of WhatsApp.
