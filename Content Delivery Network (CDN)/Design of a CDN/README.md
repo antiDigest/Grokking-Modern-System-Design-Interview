@@ -38,7 +38,10 @@ This section will discuss the API design of the functionalities offered by CDN. 
 - Search content
 - Update content
 - Delete content
+
+```
 Content can be anything, like a file, video, audio, or other web object. Here, we’ll use the word “content” to refer to all of the above. For clarity, we won’t discuss the privacy-related parameters—like if the content is public or private, who should be able to access this content, if it should be encrypted, and so on—in the following APIs.
+```
 
 
 ### Retrieve (proxy server to origin server)
