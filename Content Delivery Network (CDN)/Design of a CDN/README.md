@@ -27,6 +27,8 @@ The workflow for the abstract design is given below:
 7. The scrubber server forwards good traffic to the edge proxy server.
 8. The edge proxy server serves the client request and periodically forwards accounting information to the management system. The management system updates the origin servers and sends feedback to the routing system about the statistics and detail of the content. However, the request is routed to the origin servers if the content isn’t available in the proxy servers. It’s also possible to have a hierarchy of proxy servers if the content isn’t found in the edge proxy servers. For such cases, the request gets forwarded to the parent proxy servers.
 
+![High level design](./hld.jpg)
+
 ## API Design
 This section will discuss the API design of the functionalities offered by CDN. This will help us understand how the CDN will receive requests from the clients, receive content from the origin servers, and communicate to other components in the network. Let’s develop APIs for each of the following functionalities:
 
