@@ -79,7 +79,13 @@ Content providers can use DNS redirect to send a client to a specific CDN. As an
 
 Depending on the location of the user, the response of the DNS can be different. Let’s see the slides below to understand how DNS redirection works:
 
-![DNS redistribution](./redistribution)
+![DNS redistribution](./redistribution/1.jpg)
+![DNS redistribution](./redistribution/2.jpg)
+![DNS redistribution](./redistribution/3.jpg)
+![DNS redistribution](./redistribution/4.jpg)
+![DNS redistribution](./redistribution/5.jpg)
+![DNS redistribution](./redistribution/6.jpg)
+![DNS redistribution](./redistribution/7.jpg)
 ```
 Note: The nearest proxy server doesn’t necessarily mean the one that’s geographically the closest. It could be, but it’s not only the geography that matters. Other factors like network distance, bandwidth, and traffic load already on that route also matter.
 ```
