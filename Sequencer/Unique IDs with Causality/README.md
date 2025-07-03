@@ -214,11 +214,21 @@ Google deploys a GPS receiver or atomic clock in each data center, and clocks ar
 
 The following slides explain how TrueTime’s time master servers work with GPS and atomic clocks in multiple data centers.
 
-![TrueTime](./Google)
+![TrueTime](./Google/1.jpg)
+![TrueTime](./Google/2.jpg)
+![TrueTime](./Google/3.jpg)
+![TrueTime](./Google/4.jpg)
+![TrueTime](./Google/5.jpg)
 
 The following slides explain how time is calculated when the client asks to give TrueTime.
 
-![TrueTime](./TrueTime)
+![TrueTime](./TrueTime/1.jpg)
+![TrueTime](./TrueTime/2.jpg)
+![TrueTime](./TrueTime/3.jpg)
+![TrueTime](./TrueTime/4.jpg)
+![TrueTime](./TrueTime/5.jpg)
+![TrueTime](./TrueTime/6.jpg)
+![TrueTime](./TrueTime/7.jpg)
 
 Spanner guarantees that two confidence intervals don’t overlap (that is, A_{earliest} < A_{latest} < B_{earliest} < B_{latest), then B definitely happened after A.
 
@@ -232,7 +242,7 @@ We generate our unique ID using TrueTime intervals. Let’s say the earliest int
 
 - Sequence number: This is eight bits. For every ID generated on the server, the sequence number is incremented by one. It gives us 2^{8} = 256 combinations. We’ll reset it to zero when it reaches 256.
 
-![Node B generating a unique ID for its event using TrueTime]
+![Node B generating a unique ID for its event using TrueTime](./TrueTimeGeneration.jpg)
 
 ### Pros
 TrueTime satisfies all the requirements. We’re able to generate a globally unique 64-bit identifier. The causality of events is maintained. The approach is scalable and highly available.

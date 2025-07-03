@@ -93,6 +93,7 @@ There are two steps in the DNS redirection approach:
 
 1. In the first step, it maps the clients to the appropriate network location.
 2. In the second step, it distributes the load over the proxy servers in that location to balance the load among the proxy servers (see DNS and Load Balancers building blocks for more details on this).
+
 DNS redirection takes both of these important factors—network distance and requests load—into consideration, and that reduces the latency towards a proxy server.
 
 To shift a client from one machine in a cluster to another, the DNS replies at the second step are given with short TTLs so that the client repeats the resolution after a short while. DNS keeps delivering the content by routing requests to other active servers in case of hardware failures and network congestion. It does so by load balancing the traffic, using intelligent failover, and maintaining servers across many data centers, which achieves good reliability and performance.
