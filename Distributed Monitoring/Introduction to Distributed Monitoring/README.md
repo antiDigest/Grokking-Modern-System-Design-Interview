@@ -5,7 +5,24 @@ Let’s go over how the failure of a single service can affect the smooth execut
 Let’s consider a scenario where a user uploads a video, intro-to-system-design, to YouTube. The UI service in server A takes the video information and gives the data to service 2 in server B. Service 2 makes an entry in the database and stores the video in blob storage. Another service, 3, in server C manages the replication and synchronization of databases X and Y.
 
 In this scenario, service 3 fails due to some error, and service 2 makes an entry in the database X. The database X crashes, and the request to fetch a video is routed to database Y. The user wants to play the video intro-to-system-design, but it will give an error of “Video not found…”
-![Monitoring](./monitoring)
+
+![Monitoring](./monitoring/01.jpg)
+![Monitoring](./monitoring/02.jpg)
+![Monitoring](./monitoring/03.jpg)
+![Monitoring](./monitoring/04.jpg)
+![Monitoring](./monitoring/05.jpg)
+![Monitoring](./monitoring/06.jpg)
+![Monitoring](./monitoring/07.jpg)
+![Monitoring](./monitoring/08.jpg)
+![Monitoring](./monitoring/09.jpg)
+![Monitoring](./monitoring/10.jpg)
+![Monitoring](./monitoring/11.jpg)
+![Monitoring](./monitoring/12.jpg)
+![Monitoring](./monitoring/13.jpg)
+![Monitoring](./monitoring/14.jpg)
+![Monitoring](./monitoring/15.jpg)
+
+
 
 The example above is relatively simple. In reality, complex problems are encountered since we have many data centers across the globe, and each has millions of servers. Due to a decreasing human administrators to servers ratio, it’s often not feasible to manually find the problems. Having a monitoring system reduces operational costs and encourages an automated way to detect failures.
 
