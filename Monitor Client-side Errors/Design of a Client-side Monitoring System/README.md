@@ -69,8 +69,11 @@ The human user who uses the client-side software should be in full control to pr
 - We can avoid including round-trip-time (RTT) and packet loss information.
 
 ```
+
+```
 Note: As a guiding rule, we should try to collect as little information as possible, and it must only be used for the specific purpose a user gave consent for.
 ```
+
 Ideally, for a web-based client, we should only collect the information that’s logged in the weblog when any request has been successful.
 
 We shouldn’t use any active probing except to test the service’s standard functionality and report such probes’ results. So, traceroute and RTT or packet loss information is excluded.
