@@ -54,7 +54,6 @@ How do the Educative developers find out that a learner is facing this error?
 ![Types](./types/12.jpg)
 ![Types](./types/13.jpg)
 ![Types](./types/14.jpg)
-![Types](./types/70.jpg)
 
 Now, what if a learner makes a request and it never reaches the servers of Educative. How will Educative know that a learner is facing an issue?
 
