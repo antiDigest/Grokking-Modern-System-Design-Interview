@@ -15,7 +15,7 @@ We’ve divided the distributed monitoring system design into the following chap
 
 1. Distributed Monitoring
 - [Introduction to Distributed Monitoring](../Introduction%20to%20Distributed%20Monitoring/): Learn why monitoring in a distributed system is crucial, how costly downtime is, and the types of monitoring.
-- [Prerequisites for a Monitoring System](../System%20Design%20Distributed%20Monitoring/): Explore a few essential concepts about metrics and alerting in a monitoring system.
+- [Prerequisites for a Monitoring System](../Prerequisites%20of%20a%20Monitoring%20System/): Explore a few essential concepts about metrics and alerting in a monitoring system.
 2. [Monitoring Server-side Errors](../../Monitor%20Server-side%20Errors/Design%20of%20a%20Blob%20Store/)
 - [Designing a Monitoring System](../../Monitor%20Server-side%20Errors/Design%20of%20aa%20Blob%20Store/): Define the requirements and high-level design of the monitoring system.
 - [A Detailed Design of the Monitoring System](../../Monitor%20Server-side%20Errors/Detailed%20Design%20of%20a%20Monitoring%20System/): Go into the details of designing a monitoring system, and explore the components involved.
