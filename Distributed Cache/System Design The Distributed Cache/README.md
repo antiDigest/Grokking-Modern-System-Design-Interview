@@ -16,7 +16,7 @@ Cache miss: When the requested data isn’t found in the cache, it’s called a 
 
 ![Service before using caching](./no_cache.jpg)
 
-![Service using caching to improve performance.](./no_cache.jpg)
+![Service using caching to improve performance.](./with_cache.jpg)
 
 A cache is a nonpersistent storage area used to keep repeatedly read and written data, which provides the end user with lower latency. Therefore, a cache must serve data from a storage component that is fast, has enough storage, and is affordable in terms of dollar cost as we scale the caching service. The following illustration highlights the suitability of RAM as the raw building block for caching:
 
