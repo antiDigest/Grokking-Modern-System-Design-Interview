@@ -40,7 +40,21 @@ Let’s consider an example to understand the types of errors we want to monitor
 
 How do the Educative developers find out that a learner is facing this error?
 
-![Types](./types)
+![Types](./types/01.jpg)
+![Types](./types/02.jpg)
+![Types](./types/03.jpg)
+![Types](./types/04.jpg)
+![Types](./types/05.jpg)
+![Types](./types/06.jpg)
+![Types](./types/07.jpg)
+![Types](./types/08.jpg)
+![Types](./types/09.jpg)
+![Types](./types/10.jpg)
+![Types](./types/11.jpg)
+![Types](./types/12.jpg)
+![Types](./types/13.jpg)
+![Types](./types/14.jpg)
+![Types](./types/70.jpg)
 
 Now, what if a learner makes a request and it never reaches the servers of Educative. How will Educative know that a learner is facing an issue?
 
