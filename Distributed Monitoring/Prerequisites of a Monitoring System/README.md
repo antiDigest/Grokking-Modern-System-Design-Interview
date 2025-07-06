@@ -25,7 +25,7 @@ Values that track how many physical resources our operating system uses can be a
 Note: Connect to the following terminal to see details about the CPU utilization of processes that are currently active on the virtual machine.
 ```
 
-We use the top command to view Linux processes. Running this command opens an interactive view of the running system containing a summary of the system and a list of processes or threads. The default view has the following:
+We use the `top` command to view Linux processes. Running this command opens an interactive view of the running system containing a summary of the system and a list of processes or threads. The default view has the following:
 
 - On the top, we can see how long the machine has been turned on, how many users are logged in, and the average load on the machine for the past few minutes.
 
