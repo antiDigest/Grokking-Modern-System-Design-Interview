@@ -47,6 +47,7 @@ The numbers above highlight the importance of the eviction algorithm to increase
 We can create shards based on requirements and changing server loads. While we add new cache servers to the cluster, we also have to do a limited number of rehash computations, thanks to consistent hashing.
 
 Adding replicas reduces the load on hot shards. Another way to handle the hotkeys problem is to do further sharding within the range of those keys. Although the scenario where a single key will become hot is rare, it’s possible for the cache client to devise solutions to avoid the single hotkey contention issue. For example, cache clients can intelligently avoid such a situation that a single key becomes a bottleneck, or we can use dynamic replication for specific keys, and so on. Nonetheless, the solutions are complex and beyond the scope of this lesson.
+
 ![Guarantees provided by a distributed cache]
 
 ## High availability
@@ -61,6 +62,7 @@ It’s possible to write data to cache servers in a synchronous or asynchronous 
 Inconsistency can also arise from faulty configuration files and services. Imagine a scenario where a cache server is down during a write operation, and a read operation is performed on it just after its recovery. We can avoid such scenarios for any joining or rejoining server by not allowing it to serve requests until it’s reasonably sure that it’s up to date.
 ## Affordability
 Our proposed design has a low cost because it’s feasible and practical to create such a system using commodity hardware.
+
 ```
 Question 1
 What happens if the leader node fails in the leader-follower protocol?

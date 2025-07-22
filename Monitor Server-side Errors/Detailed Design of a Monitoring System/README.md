@@ -80,7 +80,7 @@ Note: Using a hierarchy of systems for scaling is a common design pattern in sys
 
 ![The data center monitoring systems push the data to the global monitoring system](./monitor2.jpg)
 
-```
+```note
 Question 1
 What happens if a local or global monitoring system is down?
 
@@ -88,7 +88,7 @@ Answer
 We can store the data locally and wait for the system to be up and running again. But there’s a limit for the local data storage. So, either we delete previous data or we don’t store new data. To make a decision, relevant policies need to be created.
 ```
 
-```
+```note
 Question 2
 How can a monitoring system reliably work if it uses the same infrastructure in a data center that it was supposed to monitor? Consider this given that a failure of a network in a data center can knock out the monitoring components.
 
