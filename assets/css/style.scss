@@ -2,7 +2,9 @@
 ---
 
 @import "{{ site.theme }}";
+
 pre {
-    overflow: hidden;
-    word-break: break-word;
-}
+    white-space: pre-wrap; /* Enables wrapping for long lines */
+    word-break: break-all; /* Breaks words to prevent overflow */
+    overflow-x: hidden; /* Hides the horizontal scrollbar */
+  }
