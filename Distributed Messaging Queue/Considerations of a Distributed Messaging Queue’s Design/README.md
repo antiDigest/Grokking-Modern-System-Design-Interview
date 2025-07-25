@@ -8,6 +8,7 @@ Let’s discuss the following two categories of messages ordering in a queue:
 
 - Best-effort ordering
 - Strict ordering
+
 ```
 In a queue, the order of messages is implicitly associated with the incoming messages. Once the messages are put in a queue, the same order is followed in the consumption and processing of these messages.
 
