@@ -3,7 +3,7 @@
 In a distributed messaging queue, data resides on several machines. Our aim is to design a distributed messaging queue that has the following functional and non-functional requirements.
 
 ### Functional requirements
-- Listed below are the actions that a client should be able to perform:
+Listed below are the actions that a client should be able to perform:
 
 - Queue creation: The client should be able to create a queue and set some parameters—for example, queue name, queue size, and maximum message size.
 
@@ -14,6 +14,7 @@ In a distributed messaging queue, data resides on several machines. Our aim is t
 - Delete message: The consumer processes should be able to delete a message from the queue after a successful processing of the message.
 
 - Queue deletion: Clients should be able to delete a specific queue.
+
 ```
 A queue size is the maximum number of messages a queue can contain. For example, Amazon’s standard queue size is unlimited. However, for inflight messages, the size is limited to 120,000.
 
