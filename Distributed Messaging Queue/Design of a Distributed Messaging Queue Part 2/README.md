@@ -10,18 +10,24 @@ This is the core part of the architecture where major activities take place. Whe
 Before delving into the details of these models, let’s discuss the two types of cluster managers responsible for queue management: internal and external cluster managers. The differences between these two cluster managers are shown in the following table.
 
 ```
-Internal versus External Cluster Managers                                        Internal Cluster Manager
+Internal versus External Cluster Managers                                        
                 
-External Cluster Manager                                                         It manages the assignment of queues within a cluster.
+External Cluster Manager VS Internal Cluster Manager
 
-It manages the assignment of queues across clusters.                             It knows about each and every node within a cluster.
-                                                                                 It knows about each cluster. However, it doesn’t have information on every host that’s present inside a cluster.
-   
-It listens to the heartbeat from each node.                                      It monitors the health of each independent cluster.
+External: It manages the assignment of queues across clusters.
+Internal: It manages the assignment of queues within a cluster.
 
-It manages host failure, instance addition, and removals from the cluster.       It manages and utilizes clusters.
+External: It knows about each cluster. However, it doesn’t have information on every host that’s present inside a cluster.
+Internal: It knows about each and every node within a cluster.
 
-It partitions a queue into several parts and each part gets a primary server.    It may split a queue across several clusters, so that messages for the same queue are equally distributed between several clusters.
+External: It monitors the health of each independent cluster.
+Internal: It listens to the heartbeat from each node.
+
+External: It manages and utilizes clusters.
+Internal: It manages host failure, instance addition, and removals from the cluster. 
+
+External: It may split a queue across several clusters, so that messages for the same queue are equally distributed between several clusters.
+Internal: It partitions a queue into several parts and each part gets a primary server.    
 ```
 ### Primary-secondary model
 In the primary-secondary model, each node is considered a primary host for a collection of queues. The responsibility of a primary host is to receive requests for a particular queue and be fully responsible for data replication. The request is received by the frontend, which in turn communicates with the metadata service to determine the primary host for the request.
