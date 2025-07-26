@@ -40,7 +40,9 @@ A question might arise here: how to identify that two (or more) requests are dup
 ```
 
 - Usage data collection: This refers to the collection of real-time data that can be used for audit purposes.
+
 #### Metadata service
+
 This component is responsible for storing, retrieving, and updating the metadata of queues in the metadata store and cache. Whenever a queue is created or deleted, the metadata store and cache are updated accordingly. The metadata service acts as a middleware between the front-end servers and the data layer. Since the metadata of the queues is kept in the cache, the cache is checked first by the front-end servers for any relevant information related to the receipt of the request. If a cache miss occurs, the information is retrieved from the metadata store and the cache is updated accordingly.
 
 ```
