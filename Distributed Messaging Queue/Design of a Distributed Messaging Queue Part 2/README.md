@@ -43,12 +43,13 @@ As shown in the following illustration, the internal cluster manager is a compon
 
 In the approach involving a cluster of independent hosts, we have several clusters of multiple independent hosts that are distributed across data centers. As the frontend receives a message, it determines the corresponding cluster via the metadata service from the external cluster manager. The message is then forwarded to a random host in the cluster, which replicates the message in other hosts where the queue is stored.
 
-
+```
 Question
 How does a random host within a cluster replicate data—that is, messages—in the queues on other hosts within the same cluster?
 
 Answer
 Each host consists of mapping between the queues and the hosts within a cluster, making the replication easier.
+```
 
 Assume that we have a cluster, say Y, having hosts A, B, and C. This cluster has two queues with IDs 101 and 103 stored on different hosts, as shown in the following table. This table is stored on each host within the cluster Y. When a random host receives a message, say host C, for a queue having ID 103, host C replicates this message on the other hosts where the queue 103 is stored, i.e., Node A and Node B.
 
