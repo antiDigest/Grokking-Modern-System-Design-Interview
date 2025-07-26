@@ -6,6 +6,7 @@ This is the core part of the architecture where major activities take place. Whe
 
 1. Primary-secondary model
 2. A cluster of independent hosts
+
 Before delving into the details of these models, let’s discuss the two types of cluster managers responsible for queue management: internal and external cluster managers. The differences between these two cluster managers are shown in the following table.
 
 ```
