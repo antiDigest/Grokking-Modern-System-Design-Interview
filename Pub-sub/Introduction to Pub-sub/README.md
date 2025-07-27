@@ -55,6 +55,7 @@ A topic is a collection of related events or messages. The producers can create 
 ```
 
 - Delete messages: A message should be deleted from the topic or system after a certain retention period as defined by the user of the system.
+
 ### Non-functional requirements
 We consider the following non-functional requirements when designing a pub-sub system:
 
@@ -67,6 +68,7 @@ We consider the following non-functional requirements when designing a pub-sub s
 - Fault tolerance: Our system should be able to operate in the event of failures.
 
 - Concurrent: The system should handle concurrency issues where reading and writing are performed simultaneously.
+
 ## API Design
 We’ll exclude some parameters from the functions below, such as the producer or consumer’s identifier. Let’s assume that this information is available from the underlying connection context. The API design for this problem is as follows:
 
