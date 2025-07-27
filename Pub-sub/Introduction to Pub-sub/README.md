@@ -72,7 +72,7 @@ We consider the following non-functional requirements when designing a pub-sub s
 ## API Design
 We’ll exclude some parameters from the functions below, such as the producer or consumer’s identifier. Let’s assume that this information is available from the underlying connection context. The API design for this problem is as follows:
 
-**Create a topic**
+#### Create a topic
 
 The API call to create a topic should look like this:
 ```
@@ -88,7 +88,7 @@ topic_ID          It uniquely identifies the topic.
 topic_name        It contains the name of the topic. 
 ```
 
-**Read a message**
+#### Read a message
 
 The API call to read data from the system should look like this:
 ```
@@ -102,7 +102,7 @@ Parameter   Description
 topic_ID    It is the ID of the topic against which the message will be read.
 ```
 
-**Subscribe to a topic**
+#### Subscribe to a topic
 
 The API call to subscribe to a topic from the system should look like this:
 ```
@@ -116,7 +116,7 @@ topic_ID    The ID of the topic to which the consumer will be subscribed.
 ```
 
 
-**Unsubscribe from a topic**
+#### Unsubscribe from a topic
 
 The API call to unsubscribe from a topic from the system should look like this:
 ```
@@ -129,7 +129,7 @@ Parameter    Description
 topic_ID     The ID of the topic against which the consumers will be unsubscribed.
 ```
 
-**Delete a topic**
+#### Delete a topic
 
 The API call to delete a topic from the system should look like this:
 ```
@@ -141,6 +141,7 @@ Parameter   Description
 
 topic_ID    The ID of the topic which is to be deleted.
 ```
+
 ## Building blocks we will use
 
 The design of pub-sub utilizes many building blocks that have been discussed in the initial chapters. We’ll consider the following lessons on building blocks.
