@@ -62,10 +62,12 @@ Let’s estimate the bandwidth required for uploading data to and retrieving dat
 Incoming traffic: To estimate the bandwidth required for incoming traffic, we consider the total data uploaded per day, which indirectly means the total storage needed per day that we calculated above. The amount of data transferred to the servers per second can be computed using the following formula:
 
        Total bandwidth = Total storage per day / (24x60x60)
+
 ```
-                 Bandwidth Required for Uploading Videos on YouTube
- Total storage per day (TB)      	Seconds in a day       	Bandwidth (Gb/s)
- 12.51                        86400                  1.16
+Bandwidth Required for Uploading Videos on YouTube
+Total storage per day (TB): 12.51
+Seconds in a day: 86400
+Bandwidth (Gb/s): 1.16
 ```
 
 Outgoing traffic: Since the blob store is a read-intensive store, most of the bandwidth is required for outgoing traffic. Considering the aforementioned assumptions, we calculate the bandwidth required for outgoing traffic using the following formula:
@@ -73,10 +75,13 @@ Outgoing traffic: Since the blob store is a read-intensive store, most of the ba
 Total bandwidth = (No. of active users per day x No. of requests per day per user x Total data size)/ seconds in a day
 
 ```
-             Bandwidth Required for Downloading Videos on YouTube
-No. of active users per day      	No. of requests per user	       Data size (MB)      	Bandwidth required (Gb/s)
-         5000000                                    50                        20                    462.96
+Bandwidth Required for Downloading Videos on YouTube
+No. of active users per day: 5000000 
+No. of requests per user: 50
+Data size (MB): 20
+Bandwidth required (Gb/s): 462.96
 ```                         
+
 ![Summarizing the bandwidth requirements of a blob store system for YouTube videos only](./bandwidth.jpg)
  
 ## Building blocks we will use
