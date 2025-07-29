@@ -30,6 +30,8 @@ There are three layers of abstractions:
 2. Container: Each user has a set of containers that are all uniquely identified by a container_ID. These containers contain blobs.
 3. Blob: This layer contains information about blobs that are uniquely identified by their blob_ID. This layer maintains information about the metadata of blobs that’s vital for achieving the availability and reliability of the system.
 We can take routing, storage, and sharding decisions on the basis of these layers. The table below summarizes these layers.
+
+
 ```
                                                     Layered Information
 Level                           Uniquely identified by         Information                                      Sharded by            Mapping
@@ -44,6 +46,7 @@ Blob                             blob_ID                     {list of chunks,  c
 ```
 Note: We generate unique IDs for user accounts, containers, and blobs using a unique ID generator.
 ```
+
 Besides storing the actual blob data, we have to maintain some metadata for managing the blob storage. Let’s see what that data is.
 
 ## Blob metadata
