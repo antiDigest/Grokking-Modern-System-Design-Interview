@@ -130,6 +130,7 @@ The application owners set the number of results to return depending on these fa
 
 - How much time they assume the users should wait for query response.
 - How many results they can return in that time. We have shown five results per page, which is a very small number. We use this number just for visualization purposes.
+
 ```
 Question
 How do we decide which five blobs to return first out of the 2,000 blobs totalt?
@@ -139,6 +140,7 @@ Here, we utilize indexing to sort and categorize the blobs. We should do this be
 ```
 
 For pagination, we need a continuation token as a starting point for the part of the list that’s returned next. A continuation token is a string token that’s included in the response of a query if the total number of queried results exceeds the maximum number of results that we can return at once. As a result, it serves as a pointer, allowing the re-query to pick up where we left off.
+
 ## Replication
 Replication is carried out on two levels to support availability and strong consistency. To keep the data strongly consistent, we synchronously replicate data among the nodes that are used to serve the read requests, right after performing the write operation. To achieve availability, we can replicate data to different regions or data centers after performing the write operation. We don’t serve the read request from the other data center or regions until we have not replicated data there.
 
@@ -187,8 +189,10 @@ The whole deletion process is shown in the following illustration:
 ![Garbage collection](./gc/08.jpg)
 ![Garbage collection](./gc/09.jpg)
 ![Garbage collection](./gc/10.jpg)
+
 ## Stream a file
 To stream a file, we need to define how many Bytes are allowed to be read at one time. Let’s say we read X number of Bytes each time. The first time we read the first X Bytes starting from the 0th Byte (0 to X-1) and the next time, we read the next X Bytes (X to 2X−1).
+
 ```
 Question
 How do we know which Bytes we have read first and which Bytes we have to read next?
@@ -203,12 +207,12 @@ Caching can take place at multiple levels. Below are some examples:
 - The metadata for a blob’s chunks is cached on the client side when it’s read for the first time. The client can go directly to the data nodes without communicating to the master node to read the same blob a second time.
 - At the front-end servers, we cache the partition map and use it to determine which partition server to forward each request to.
 - The frequently accessed chunks are cached at the master node, which helps us stream large objects efficiently. It also reduces disk I/O.
+
 ```
 Note: The caching of the blob store is usually done using CDN. The Azure blob store service cache the publicly accessible blob in Azure Content Delivery Network until that blob’s TTL (time-to-live) elapses. The origin server defines the TTL, and CDN determines it from the Cache-Control header in the HTTP response from the origin server.
 ```
+
 We covered the design factors that should be taken into account while designing a blob store. Now, we’ll evaluate what we designed.
-
-
 
 ## How do we design a blob store system?
 We have divided the design of the blob store into five lessons and a quiz.
