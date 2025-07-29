@@ -93,11 +93,8 @@ We use the following building blocks in the design of our blob store system:
 - Load balancer: A load balancer is needed to distribute the request load onto different servers.
 - Database: A database is used to store metadata information for the blobs.
 - Monitoring: Monitoring is needed to inspect storage devices and the space available on them in order to add storage on time if needed.
+
 In this lesson, we discussed the requirements and estimations of the blob store system. We’ll design the blob store system in the next lesson, all while following the delineated requirements.
-
-
-
-
 
 ## How do we design a blob store system?
 We have divided the design of the blob store into five lessons and a quiz.
