@@ -87,9 +87,9 @@ What if the blob size isn’t a multiple of our configured chunk size? How does 
 
 Answer
 If the blob size isn’t a multiple of the chunk size, the last chunk won’t be full.
-```
 
 The master node also keeps the size of each blob to determine the number of Bytes to read for the last chunk.
+```
 
 ## Partition data
 We talked about the different levels of abstraction in a blob store—the account layer, the container layer, and the blob layer. There are billions of blobs that are stored and read. There is a large number of data nodes on which we store these blobs. If we look for the data nodes that contain specific blobs out of all of the data nodes, it would be a very slow process. Instead, we can group data nodes and call each group a partition. We maintain a partition map table that contains a list of all the blobs in each partition. If we distribute the blobs on different partitions independent of their container IDs and account IDs, we encounter a problem, as shown in the following illustration:
