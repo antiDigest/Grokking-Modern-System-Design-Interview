@@ -147,6 +147,7 @@ We describe the workflow based on the basic operations we can perform on a blob 
 4. We replicate each chunk for redundancy purposes. All choices regarding chunk replication are made at the master node. Hence, the master node also allocates the storage and data nodes for storing replicas.
 5. The master node stores the blob metadata in the metadata storage. We discuss the blob’s metadata schema in detail in the next lesson.
 6. After writing the blob, a fully qualified path of the blob is returned to the client. The path consists of the user ID, container ID where the user has added the blob, the blob ID, and the access level of the blob.
+
 ```
 Question
 What does the master node do if a user concurrently writes two blobs with the same name inside the same container?
@@ -161,9 +162,11 @@ The master node serializes such operations and assigns a version number to the b
 2. The master node first checks whether that blob is private or public, based on the path of the blob and whether we’re authorized to transfer that blob or not.
 3. After authorizing the blob, the master node looks for the chunks for that blob in the metadata and looks at their mappings to data nodes. The master node returns the chunks and their mappings (data nodes) to the client.
 4. The client then reads the chunk data from the data nodes.
+
 ```
 Note: The metadata information for reading the blob is cached at the client machine, so that the next time a client wants to read the same blob, we won’t have to burden the master node. Additionally, the client’s read operation will be faster the next time.
 ```
+
 ```
 Question
 Suppose the master node moves data from one data node to another because of an impending disk failure. The user will now have stale information if they use the cached metadata to access the data. How do we handle such situations?
@@ -189,9 +192,6 @@ Operation log: A logical timeline, defining the serialized order of concurrent o
 ```
 
 In the next lesson, we talk about the design considerations of a blob store.
-
-
-
 
 
 ## How do we design a blob store system?
