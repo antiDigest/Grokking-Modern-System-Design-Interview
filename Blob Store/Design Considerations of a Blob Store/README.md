@@ -69,7 +69,10 @@ Chunk           Datanode ID          Replica 1 ID         Replica 2 ID          
 
 2                d1b2                 r1b2                  r2b2                     r3b2
 ```
+
+```
 Note: To avoid complexity, the chunk size is fixed for all the blobs in a blob store. The chunk size depends on the performance requirements of a blob store. We desire a larger chunk size to maintain small metadata at the master node because a large chunk size results in a higher disk latency, which leads to slower performance. Interestingly, disks can have almost the same latency for reading and writing a range of data. For example, a disk can have similar latency for writing MBs in the range of 4–8. Additionally, they can have similar latency for writing data in the range of 9–20 MBs. This is due to the use of contiguous sectors on the disks, and caching on the disk and on the server by its OS.
+```
 
 ```
 A chunk is the minimum unit of data for writing and reading.
