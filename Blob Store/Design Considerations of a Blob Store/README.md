@@ -81,11 +81,13 @@ We maintain three replicas for each block. When writing a blob, the master node 
 
 In the example above, the blob size is a multiple of the chunk size, so the master node can determine how many Bytes to read for each chunk.
 
+```
 Question
 What if the blob size isn’t a multiple of our configured chunk size? How does the master node know how many Bytes to read for the last chunk?
 
 Answer
 If the blob size isn’t a multiple of the chunk size, the last chunk won’t be full.
+```
 
 The master node also keeps the size of each blob to determine the number of Bytes to read for the last chunk.
 
