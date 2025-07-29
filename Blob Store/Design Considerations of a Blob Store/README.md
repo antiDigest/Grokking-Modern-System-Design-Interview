@@ -29,6 +29,7 @@ There are three layers of abstractions:
 1. User account: Users uniquely get identified on this layer through their account_ID. Blobs uploaded by users are maintained in their containers.
 2. Container: Each user has a set of containers that are all uniquely identified by a container_ID. These containers contain blobs.
 3. Blob: This layer contains information about blobs that are uniquely identified by their blob_ID. This layer maintains information about the metadata of blobs that’s vital for achieving the availability and reliability of the system.
+
 We can take routing, storage, and sharding decisions on the basis of these layers. The table below summarizes these layers.
 
 
