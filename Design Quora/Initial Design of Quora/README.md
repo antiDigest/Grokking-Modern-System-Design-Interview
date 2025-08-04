@@ -32,7 +32,7 @@ The design of Quora is complex because we have a large number of functional and 
 - Posting question, answers, comments: The web servers receive user requests through the load balancer and direct them to the application servers. Meanwhile, the web servers generate part of the web page and let the worker process in the application servers do the rest of the page generation. The questions and answers data is stored in a MySQL database, whereas any videos and images are stored in the blob storage. A similar approach is used to post comments and upvote or downvote answers. Task prioritization is performed by employing different queues for different tasks. We perform prioritization because certain tasks require immediate attention—for example, fetching data from the database for a user request—while others are not so urgent—for example, sending a weekly email digest. The worker processes will perform tasks by fetching from these queues.
 
 
-
+```
 Question 1
 When would a service like Quora require a notifications feature?
 
@@ -42,13 +42,15 @@ Quora will need a notification service in the following scenarios:
 A user posts a question on a topic subscribed by a would-be respondent.
 A user posts an answer to a question asked by another user.
 A post a user is interested in or wrote received new comments or upvotes/downvotes, and so on.
+```
 
-
+```
 Question 2
 How is it possible for Quora to send notifications to users through the above-described mechanism?
 
 Hide Answer
 Since tasks are added to different priority queues, it is possible to maintain a queue for notifications. While higher priority tasks are enqueued to high-priority queues, a notification task will be added to a medium or lower priority queue. The illustration below visualizes the described concept:
+```
 
 ![Notifications]
 
