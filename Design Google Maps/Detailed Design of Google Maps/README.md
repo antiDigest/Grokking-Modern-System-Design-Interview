@@ -19,13 +19,14 @@ The segment’s ID.
 The serverID on which the segment is hosted.
 In reality, each segment is a polygon, so we store boundary coordinates (latitude/longitude), possibly as a list.
 A list of segment IDs of the neighbors segments.
+
 **Graph database**
 
 The road network inside the segment in the form of a graph.
 
 ![Storage schema](./storage.jpg)
 
-Relational DB
+**Relational DB**
 
 We store the information to determine whether, at a particular hour of the day, the roads are congested. This later helps us decide whether or not to update the graph (weights) based on the live data.
 
