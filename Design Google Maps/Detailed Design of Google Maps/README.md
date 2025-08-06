@@ -84,6 +84,7 @@ To detect transitory and normal conditions, we keep two copies of all relevant d
 ```
 
 - The graph preprocessing service recalculates the new paths on the updated segment graph. We’ve seen how the paths are updated continuously in the background based on the live data.
+
 We’ve learned how the segments work, how a user finds the location between two points, and how the ETA's accuracy is improved by utilizing the live location data.
 
 
