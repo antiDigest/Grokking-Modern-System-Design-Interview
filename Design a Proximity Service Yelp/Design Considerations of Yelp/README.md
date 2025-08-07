@@ -115,8 +115,6 @@ In the following illustration, node F can find its neighboring node, G, by first
 
 The following slides show how the process of searching for a place works. If a node has the places we need, we stop there. Otherwise, we explore more nodes until we reach our search radius. After finding the node, we query the database for information related to the places and return the desired ones.
 
-The following slides show how the process of searching for a place works. If a node has the places we need, we stop there. Otherwise, we explore more nodes until we reach our search radius. After finding the node, we query the database for information related to the places and return the desired ones.
-
 ![steps](./quadtree/1.jpg)
 ![steps](./quadtree/2.jpg)
 ![steps](./quadtree/3.jpg)
