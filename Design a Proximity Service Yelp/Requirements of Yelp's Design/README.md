@@ -98,6 +98,7 @@ For incoming traffic, let’s assume the following:
 - One million reviews of different places are added every day.
 - Each review, takes up 537 Bytes.
 We divide the total size of information per day by 86,400 to convert it into per second bandwidth.
+
 ```
                         Estimating Incoming Bandwidth Requirements
  Average Number of Places Added Daily                             5
@@ -118,6 +119,7 @@ For outgoing traffic, let’s assume the following:
 - Each place has a single photo attached to it that has an average size of 3 MB.
 - Every returned entry contains the place and photo information.
 Considering that there are 60 million active daily users, we come to the following estimations:
+
 ```
                 Estimating Outgoing Bandwidth Requirements
  Average Number of Places Returned on Each Search Request               20
@@ -131,6 +133,7 @@ Considering that there are 60 million active daily users, we come to the followi
  Total Outgoing Bandwidth Required (Gbps)                           331.2
 
 ```
+
 We need a total of approximately 51 Kbps of incoming traffic and approximately 331 Gbps of outgoing, assuming that the uploaded content is not compressed.
 
 Total bandwidth requirements = 51 Kbps+331 Gbps≈331 Gbps.
@@ -138,6 +141,7 @@ Total bandwidth requirements = 51 Kbps+331 Gbps≈331 Gbps.
 ![The total bandwidth required by Yelp](./bandwidth.jpg)
 
 ## Building blocks we will use
+
 The design process of Yelp utilizes many building blocks that have already been discussed in the initial chapters of the course. We’ll consider the following concepts while designing Yelp:
 
 ![Building blocks in the high-level design of Yelp](./bb.jpg)
@@ -146,6 +150,7 @@ The design process of Yelp utilizes many building blocks that have already been 
 - Load balancer: We’ll use the load balancer to manage the large amount of requests.
 - Blob storage: We’ll store images in the blob storage.
 - Database: We’ll store information about places and users in the database.
+
 We’ll also rely on Google Maps to understand the feature of searching for places within a particular radius.
 
 
