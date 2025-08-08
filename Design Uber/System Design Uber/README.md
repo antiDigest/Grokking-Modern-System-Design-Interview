@@ -2,13 +2,13 @@
 ## What is Uber?
 Uber is an application that provides ride-hailing services to its users. Anyone who needs a ride can register and book a vehicle to travel from source to destination. Anyone who has a vehicle can register as a driver and take riders to their destination. Drivers and riders can communicate through the Uber app on their smartphones.
 
-![Uber](./uber/1.jpg)
-![Uber](./uber/2.jpg)
-![Uber](./uber/3.jpg)
-![Uber](./uber/4.jpg)
-![Uber](./uber/5.jpg)
-![Uber](./uber/6.jpg)
-![Uber](./uber/7.jpg)
+![Uber](./Uber/1.jpg)
+![Uber](./Uber/2.jpg)
+![Uber](./Uber/3.jpg)
+![Uber](./Uber/4.jpg)
+![Uber](./Uber/5.jpg)
+![Uber](./Uber/6.jpg)
+![Uber](./Uber/7.jpg)
 
 
 The illustration below shows the number of active users of Uber from the start of 2017 to 2020 (source: Statista):
