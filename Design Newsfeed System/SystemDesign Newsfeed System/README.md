@@ -10,7 +10,7 @@ A newsfeed is essential for social media platform users because it keeps them in
 
 This chapter will discuss the high-level and detailed design of a newsfeed system for a social platform like Facebook, Twitter, Instagram, etc.
 
-![Newsfeeds on a mobile application]
+![Newsfeeds on a mobile application](mobile.jpg)
 
 ## How will we design the newsfeed system?
 We have divided the design of the newsfeed system into the following three lessons:
