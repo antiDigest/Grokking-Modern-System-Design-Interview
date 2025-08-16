@@ -23,7 +23,7 @@ For recrawling purposes, we need to define the recrawl frequency for each URL. T
 ```
 
 
-Question 1
+##### Question 1
 Can we estimate the size of the priority queue? What are the pros and cons of a centralized and distributed priority queue.
 
 Answer
