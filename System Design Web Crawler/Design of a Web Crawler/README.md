@@ -44,10 +44,10 @@ If we use our distributed queue, all workers can get data out of the same queue 
 Having a single queue is beneficial for the deduplication of redundant links and better for the overall crawler resources. We’ll handle the recrawling priority and frequency another way, as explained in the next sections, for which we need the distribution mechanism.
 
 
-Question 2
+##### Question 2
 How will we distribute the URL frontier among different workers and what purpose will this serve?
 
-Answer
+##### Answer
 As was defined earlier, the URL frontier is a priority queue used in the scheduler and it holds the URLs that need to be crawled through. When we talk about its distribution, we mean taking the hash value of the hostname’s URLs and mapping them to specific workers. This way, each worker will have its own sub-queue.
 
 This fulfills the following two requirements of our system:
