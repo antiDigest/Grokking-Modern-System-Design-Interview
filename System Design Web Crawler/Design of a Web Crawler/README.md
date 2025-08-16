@@ -26,7 +26,7 @@ For recrawling purposes, we need to define the recrawl frequency for each URL. T
 ##### Question 1
 Can we estimate the size of the priority queue? What are the pros and cons of a centralized and distributed priority queue.
 
-Answer
+##### Answer
 Assumption: Let’s assume that at any point, we have roughly one million URLs in the URL frontier to be crawled upon.
 
 Let’s calculate the size of the priority queue needed to store all of these URLs. Size of priority queue=1 million URLs×2048 Bytes=2.048 GB
