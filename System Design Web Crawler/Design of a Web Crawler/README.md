@@ -9,6 +9,11 @@ Here are the details of the building blocks and the components needed for our de
 - Scheduler: This is one of the key building blocks that schedules URLs for crawling. It’s composed of two units: a priority queue and a relational database.
 
   1. A priority queue (URL frontier): The queue hosts URLs that are made ready for crawling based on the two properties associated with each entry: priority and updates frequency.
+
+  2. Relational database: It stores all the URLs along with the two associated parameters mentioned above. The database gets populated by new requests from the following two input streams:
+  * The user’s added URLs, which include seed and runtime added URLs.
+  * The crawler’s extracted URLs.
+
 ```
 As a requirement, we need to assign variable priorities to URLs, depending on their content. This attribute defines the precedence of a URL while in the URL frontier.
 ```
@@ -16,15 +21,6 @@ As a requirement, we need to assign variable priorities to URLs, depending on th
 ```
 For recrawling purposes, we need to define the recrawl frequency for each URL. This attribute ensures a defined number of placements in the URL frontier for each URL.
 ```
-  2. Relational database: It stores all the URLs along with the two associated parameters mentioned above. The database gets populated by new requests from the following two input streams:
-
-  - The user’s added URLs, which include seed and runtime added URLs.
-  - The crawler’s extracted URLs.
-
-
-
-
-
 
 
 Question 1
