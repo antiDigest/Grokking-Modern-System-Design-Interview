@@ -4,6 +4,8 @@ In today’s technological world, WhatsApp is an important messaging application
 
 In December 2020, the WhatsApp CEO tweeted that WhatsApp users share more than 100 billion messages per day, an increase of approximately 54% since 2018. The increase in messages sent globally per day is depicted in the following chart:
 
+![chart](./chart.jpg)
+
 ## Design problem
 As system designers, we should be aware of the growth rate of users. There are many interesting questions about WhatsApp:
 
