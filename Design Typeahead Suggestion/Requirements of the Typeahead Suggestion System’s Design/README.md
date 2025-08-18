@@ -25,7 +25,7 @@ Storage required per year:
 
 60GB/day×365=21.9TB/year
 
-![Storage requirements for the typeahead suggestion system](./storage.jpg)
+![Storage requirements for the typeahead suggestion system]()
 
 ### Bandwidth estimation
 3.5 billion queries will reach our system every day. Assume that each query a user types is 15 characters long on average.
